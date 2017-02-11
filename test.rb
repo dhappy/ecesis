@@ -1,4 +1,5 @@
 #!/usr/bin/env ruby
+# coding: utf-8
 
 require 'pry'
 
@@ -28,15 +29,9 @@ end
 opts = DeepStruct.new({
   src: { base: '.../award/Hugo/year/' },
   dest: { base: '.../book/by/' },
-  query: { base: 'https://query.wikidata.org/sparql?format=json&query=' }
-})
-
-OptionParser.new do |options|
-  options.banner = "Usage: #{$0} [-n]"
-  options.on('-n', '--dry-run') { opts.dry = true }
-end.parse!
-
-opts.query ||= """
+  query: {
+    base: 'https://query.wikidata.org/sparql?format=json&query=',
+    sparql: """
 SELECT DISTINCT ?item ?itemLabel ?authorLabel ?when WHERE {  
   ?item wdt:P166 wd:Q255032.
   ?item wdt:P50 ?author.
@@ -44,29 +39,42 @@ SELECT DISTINCT ?item ?itemLabel ?authorLabel ?when WHERE {
   SERVICE wikibase:label { bd:serviceParam wikibase:language 'en' }    
 }
 """
+  }
+})
 
-query_url = "#{opts.query.base}#{opts.query}"
+OptionParser.new do |options|
+  options.banner = "Usage: #{$0} [-n]"
+  options.on('-n', '--dry-run') { opts.dry = true }
+end.parse!
+
+query_url = "#{opts.query.base}#{opts.query.sparql}"
 puts "Querying: #{query_url}\n"
 
 source = JSON.parse(Net::HTTP.get(URI.parse(query_url)), symbolize_names: true)
 
+if not File.exist?(opts.src.base)
+  puts "Creating #{opts.src.base}"
+  FileUtils.mkdir_p opts.src.base if not opts.dry
+end
+
 source[:results][:bindings].each do |entry|
-  entry = OpenStruct.new(entry.each { |k, v| entry[k] = v[:value] })
+  entry = DeepStruct.new(entry.each { |k, v| entry[k] = v[:value] })
 
   year = entry.when.match(/([^-]+)-/)[1]
+  item = "#{opts.src.base}#{year}"
+  dest = "#{opts.dest.base}#{entry.authorLabel}/#{entry.itemLabel}"
 
-  binding.pry
-  
-  item = "#{opts.src.base}/#{year}"
-  dest = "#{opts.dest.base}/#{entry.author}#{entry.itemLabel}"
-
-  if not File.exist?(opts.src.base)
-    puts "Creating #{opts.src.base}"
-    FileUtils.mkdir_p opts.src.base if not opts.dry
+  if not File.exist?(dest) and false
+    puts "Creating #{dest}"
+    FileUtils.mkdir_p dest if not opts.dry
   end
 
-  puts ""
-  FileUtils.ln_s item, dest if not opts.dry
+  if File.exists?(item) or File.symlink?(item)
+    puts "Skipping: Exists: #{item}"
+  else
+    puts "Linking: '#{item}' → '#{dest}"
+    FileUtils.ln_s dest, item if not opts.dry
+  end
 end
 
 #binding.pry
