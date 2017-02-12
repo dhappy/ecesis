@@ -32,12 +32,12 @@ opts = DeepStruct.new({
   query: {
     base: 'https://query.wikidata.org/sparql?format=json&query=',
     sparql: """
-SELECT DISTINCT ?item ?itemLabel ?authorLabel ?when WHERE {  
-  ?item wdt:P166 wd:Q255032.
-  ?item wdt:P50 ?author.
-  ?item wdt:P577 ?when.
-  SERVICE wikibase:label { bd:serviceParam wikibase:language 'en' }    
-}
+SELECT DISTINCT ?itemLabel ?authorLabel ?when
+ WHERE {
+  ?award ps:P166 wd:Q255032; pq:P585 ?when.
+  ?item p:P166 ?award; wdt:P50 ?author.
+  SERVICE wikibase:label { bd:serviceParam wikibase:language 'en' }
+ }
 """
   }
 })
@@ -50,7 +50,8 @@ end.parse!
 query_url = "#{opts.query.base}#{opts.query.sparql}"
 puts "Querying: #{query_url}\n"
 
-source = JSON.parse(Net::HTTP.get(URI.parse(query_url)), symbolize_names: true)
+ret = Net::HTTP.get(URI.parse(query_url))
+source = JSON.parse(ret, symbolize_names: true)
 
 if not File.exist?(opts.src.base)
   puts "Creating #{opts.src.base}"
@@ -70,7 +71,8 @@ source[:results][:bindings].each do |entry|
   end
 
   if File.exists?(item) or File.symlink?(item)
-    puts "Skipping: Exists: #{item}"
+    puts "Skipping (#{dest}):"
+    puts " Skip: Exists: #{item}"
   else
     puts "Linking: '#{item}' → '#{dest}"
     FileUtils.ln_s dest, item if not opts.dry
