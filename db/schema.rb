@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_10_052154) do
+ActiveRecord::Schema.define(version: 2019_12_10_171459) do
 
   create_table "authors", force: :cascade do |t|
     t.text "name"
@@ -21,6 +21,21 @@ ActiveRecord::Schema.define(version: 2019_12_10_052154) do
   create_table "awards", force: :cascade do |t|
     t.text "name"
     t.text "description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "awards_years", force: :cascade do |t|
+    t.integer "award_id"
+    t.integer "year_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["award_id"], name: "index_awards_years_on_award_id"
+    t.index ["year_id"], name: "index_awards_years_on_year_id"
+  end
+
+  create_table "categories", force: :cascade do |t|
+    t.text "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
