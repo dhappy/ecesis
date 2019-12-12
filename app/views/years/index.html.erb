@@ -13,7 +13,7 @@
   <tbody>
     <% @years.each do |year| %>
       <tr>
-        <td><%= year.number %></td>
+        <td><%= link_to year.number, year %></td>
         <td><%= link_to 'Show', year %></td>
         <td><%= link_to 'Edit', edit_year_path(year) %></td>
         <td><%= link_to 'Destroy', year, method: :delete, data: { confirm: 'Are you sure?' } %></td>

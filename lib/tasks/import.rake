@@ -19,10 +19,11 @@ namespace :import do
           name: cat
         )
         yr.categories << category
+
         data.each do |nominee|
-          next unless nominee.has_key?(:author)
-          author = Author.find_or_create_by(name: nominee[:author])
-          title = Title.find_or_create_by(name: nominee[:title])
+          next unless nominee.has_key?('author')
+          author = Author.find_or_create_by(name: nominee['author'])
+          title = Title.find_or_create_by(name: nominee['title'])
           author.titles << title
           category.entries << Book.find_or_create_by(
             author: author, title: title
@@ -30,6 +31,5 @@ namespace :import do
         end
       end
     end
-    byebug
   end
 end

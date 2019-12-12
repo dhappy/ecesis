@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_10_171459) do
+ActiveRecord::Schema.define(version: 2019_12_10_214033) do
 
   create_table "authors", force: :cascade do |t|
     t.text "name"
@@ -34,7 +34,40 @@ ActiveRecord::Schema.define(version: 2019_12_10_171459) do
     t.index ["year_id"], name: "index_awards_years_on_year_id"
   end
 
+  create_table "books", force: :cascade do |t|
+    t.integer "author_id", null: false
+    t.integer "title_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["author_id"], name: "index_books_on_author_id"
+    t.index ["title_id"], name: "index_books_on_title_id"
+  end
+
+  create_table "books_categories", force: :cascade do |t|
+    t.integer "book_id", null: false
+    t.integer "category_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["book_id"], name: "index_books_categories_on_book_id"
+    t.index ["category_id"], name: "index_books_categories_on_category_id"
+  end
+
   create_table "categories", force: :cascade do |t|
+    t.text "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "categories_years", force: :cascade do |t|
+    t.integer "category_id", null: false
+    t.integer "year_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["category_id"], name: "index_categories_years_on_category_id"
+    t.index ["year_id"], name: "index_categories_years_on_year_id"
+  end
+
+  create_table "titles", force: :cascade do |t|
     t.text "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -46,4 +79,10 @@ ActiveRecord::Schema.define(version: 2019_12_10_171459) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "books", "authors"
+  add_foreign_key "books", "titles"
+  add_foreign_key "books_categories", "books"
+  add_foreign_key "books_categories", "categories"
+  add_foreign_key "categories_years", "categories"
+  add_foreign_key "categories_years", "years"
 end

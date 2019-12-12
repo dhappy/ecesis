@@ -5,5 +5,11 @@
   <%= @category.name %>
 </p>
 
+<ul>
+  <% @category.entries.each do |entry| %>
+    <li><%= link_to entry, entry %></li>
+  <% end %>
+</ul>
+
 <%= link_to 'Edit', edit_category_path(@category) %> |
 <%= link_to 'Back', categories_path %>

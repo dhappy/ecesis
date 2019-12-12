@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  root 'awards#index'
+
+  resources :books_categories
+  resources :books
+  resources :titles
   resources :categories
   resources :years
   resources :awards
