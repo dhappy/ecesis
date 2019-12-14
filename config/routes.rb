@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :source_strings
+  resources :entries
   root 'awards#index'
 
   resources :books_categories

@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  award: one
+  category: one
+  year: one
+  won: false
+  nominee: one
+
+two:
+  award: two
+  category: two
+  year: two
+  won: false
+  nominee: two

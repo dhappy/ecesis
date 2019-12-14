@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Award:</strong>
+  <%= @entry.award_id %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @entry.category_id %>
+</p>
+
+<p>
+  <strong>Year:</strong>
+  <%= @entry.year_id %>
+</p>
+
+<p>
+  <strong>Won:</strong>
+  <%= @entry.won %>
+</p>
+
+<p>
+  <strong>Nominee:</strong>
+  <%= @entry.nominee_id %>
+</p>
+
+<%= link_to 'Edit', edit_entry_path(@entry) %> |
+<%= link_to 'Back', entries_path %>

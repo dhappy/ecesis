@@ -11,22 +11,28 @@ namespace :import do
     data = File.open(args[:file]) do |f|
       JSON.parse(f.read)
     end
-    data.each do |year, data|
-      yr = Year.find_or_create_by(number: year.to_i)
-      award.years << yr
+    data.each do |yr, data|
+      year = Year.find_or_create_by(number: yr.to_i)
       data.each do |cat, data|
         category = Category.find_or_create_by(
           name: cat
         )
-        yr.categories << category
 
         data.each do |nominee|
-          next unless nominee.has_key?('author')
-          author = Author.find_or_create_by(name: nominee['author'])
-          title = Title.find_or_create_by(name: nominee['title'])
-          author.titles << title
-          category.entries << Book.find_or_create_by(
-            author: author, title: title
+          nominee = (
+            Book.for(
+              nominee['author'], nominee['title']
+            )
+          )
+          source = SourceString.find_or_create_by(
+            text: nominee['raw']
+          )
+          Entry.find_or_create_by(
+            award: award,
+            year: year,
+            category: category,
+            won: nominee['won'],
+            nominee: book
           )
         end
       end

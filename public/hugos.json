@@ -1562,7 +1562,7 @@
       },
       {
         "raw": "“Open to Me, My Sister” (alt: “My Sister’s Brother”) by Philip José Farmer [FSF May 1960]",
-        "title": "Open to Me, My Sister” (alt: “My Sister’s Brother”)",
+        "title": "Open to Me, My Sister (alt: “My Sister’s Brother”)",
         "author": "Philip José Farmer",
         "publisher": "FSF May 1960"
       },
@@ -2256,45 +2256,78 @@
         "won": true
       },
       {
+        "title": "The Goblin Emperor",
+	      "author": "Katherine Addison (Sarah Monette)",
+	      "publisher": "Tor Books",
         "raw": "The Goblin Emperor, Katherine Addison (Sarah Monette) (Tor Books)"
       },
       {
-        "raw": "Ancillary Sword, Ann Leckie (Orbit US/Orbit UK)"
+          "raw": "Ancillary Sword, Ann Leckie (Orbit US/Orbit UK)",
+	  "title": "Ancillary Sword",
+	  "author": "Ann Leckie",
+	  "publisher": "Orbit US/Orbit UK"
+
       },
       {
         "raw": "No Award"
       },
       {
-        "raw": "Skin Game, Jim Butcher (Orbit UK/Roc Books)"
+          "raw": "Skin Game, Jim Butcher (Orbit UK/Roc Books)",
+	  "title": "Skin Game",
+	  "author": "Jim Butcher",
+	  "publisher": "Orbit UK/Roc Books"
+
       },
       {
-        "raw": "The Dark Between the Stars, Kevin J. Anderson (Tor Books)"
+          "raw": "The Dark Between the Stars, Kevin J. Anderson (Tor Books)",
+	  "title": "The Dark Between the Stars",
+	  "author": "Kevin J. Anderson",
+	  "publisher": "Tor Books"
+
       }
     ],
-    "Best Novella (5337 final ballots, 1083 nominating ballots, 201 entries, range 145-338)": [
+    "Best Novella": [
       {
         "raw": "No Award",
         "won": true
       },
       {
-        "raw": "“Flow”, Arlan Andrews, Sr. (Analog, 11-2014)"
+          "raw": "“Flow”, Arlan Andrews, Sr. (Analog, 11-2014)",
+          "title": "Flow",
+	  "author": "Arlan Andrews, Sr.",
+	  "publisher": "Analog, 11-2014"
       },
       {
-        "raw": "Big Boys Don’t Cry, Tom Kratman (Castalia House)"
+          "raw": "Big Boys Don’t Cry, Tom Kratman (Castalia House)",
+          "title": "Big Boys Don’t Cry",
+	  "author": "Tom Kratman",
+	  "publisher": "Castalia House"
       },
       {
-        "raw": "One Bright Star to Guide Them, John C. Wright (Castalia House)"
+          "raw": "One Bright Star to Guide Them, John C. Wright (Castalia House)",
+          "title": "One Bright Star to Guide Them",
+	  "author": "John C. Wright",
+	  "publisher": "Castalia House"
       },
       {
-        "raw": "“The Plural of Helen of Troy”, John C. Wright (City Beyond Time: Tales of the Fall of Metachronopolis, Castalia House)"
+          "raw": "“The Plural of Helen of Troy”, John C. Wright (City Beyond Time: Tales of the Fall of Metachronopolis, Castalia House)",
+          "title": "The Plural of Helen of Troy",
+	  "author": "John C. Wright",
+	  "publisher": "City Beyond Time: Tales of ,the Fall of Metachronopolis, Castalia House"
       },
       {
-        "raw": "“Pale Realms of Shade”, John C. Wright (The Book of Feasts & Seasons, Castalia House)"
+          "raw": "“Pale Realms of Shade”, John C. Wright (The Book of Feasts & Seasons, Castalia House)",
+          "title": "“Pale Realms of Shade”",
+	  "author": "John C. Wright",
+	  "publisher": "The Book of Feasts & Seasons, Castalia House"
       }
     ],
     "Best Novelette (5104 final ballots, 1031 nominating ballots, 314 entries, (72-267)": [
       {
-        "raw": "“The Day the World Turned Upside Down”, Thomas Olde Heuvelt, Lia Belt translator (Lightspeed, 04-2014)",
+          "raw": "“The Day the World Turned Upside Down”, Thomas Olde Heuvelt, Lia Belt translator (Lightspeed, 04-2014)",
+          "title": "“The Day the World Turned Upside Down”",
+	  "author": "Thomas Olde Heuvelt, Lia Belt translator",
+	  "publisher": "Lightspeed, 04-2014)",
         "won": true
       },
       {
@@ -2445,13 +2478,13 @@
         "raw": "The Flash: “Pilot”, teleplay by Andrew Kreisberg & Geoff Johns, story by Greg Berlanti, Andrew Kreisberg & Geoff Johns, directed by David Nutter (The CW) (Berlanti Productions, DC Entertainment, Warner Bros. Television)",
         "title": "The Flash: “Pilot”, teleplay",
         "author": "Andrew Kreisberg & Geoff Johns, story by Greg Berlanti, Andrew Kreisberg & Geoff Johns, directed by David Nutter",
-        "publisher": "The CW) (Berlanti Productions, DC Entertainment, Warner Bros. Television"
+        "publisher": "(The CW) (Berlanti Productions, DC Entertainment, Warner Bros. Television)"
       },
       {
         "raw": "Grimm: “Once We Were Gods”, written by Alan DiFiore, directed by Steven DePaul (NBC) (GK Productions, Hazy Mills Productions, Universal TV)",
         "title": "Grimm: “Once We Were Gods”",
         "author": "Alan DiFiore, directed by Steven DePaul",
-        "publisher": "NBC) (GK Productions, Hazy Mills Productions, Universal TV"
+        "publisher": "(NBC) (GK Productions, Hazy Mills Productions, Universal TV)"
       }
     ],
     "Best Editor, Short Form (4850 final ballots, 870 nominating ballots, 187 entries, range 162-279)": [
@@ -2604,7 +2637,7 @@
         "raw": "Cedar Sanderson"
       }
     ],
-    "Best Fan Artist (3476 final ballots, 296 nominating ballots, 198 entries, range 23-48)": [
+    "Best Fan Artist": [
       {
         "raw": "Elizabeth Leggett",
         "won": true
