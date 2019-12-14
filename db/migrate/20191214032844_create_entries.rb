@@ -5,7 +5,7 @@ class CreateEntries < ActiveRecord::Migration[6.0]
       t.references :category, null: false, foreign_key: true
       t.references :year, null: false, foreign_key: true
       t.boolean :won
-      t.references :nominee, null: false, foreign_key: true
+      t.integer :nominee_id, null: true, foreign_key: true
 
       t.timestamps
     end

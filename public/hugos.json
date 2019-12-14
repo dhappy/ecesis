@@ -1043,7 +1043,7 @@
     ]
   },
   "2016": {
-    "Best Novel (2903 final ballots, 3695 nominating ballots)": [
+    "Best Novel": [
       {
         "raw": "The Fifth Season by N.K. Jemisin (Orbit)",
         "title": "The Fifth Season",
@@ -1076,7 +1076,7 @@
         "publisher": "Roc"
       }
     ],
-    "Best Novella (2,903 final ballots, 2416 nominating ballots)": [
+    "Best Novella": [
       {
         "raw": "Binti by Nnedi Okorafor (Tor.com)",
         "title": "Binti",
@@ -1109,7 +1109,7 @@
         "publisher": "Tor.com"
       }
     ],
-    "Best Novelette (2560 final ballots, 1975 nominating ballots)": [
+    "Best Novelette": [
       {
         "raw": "“Folding Beijing” by Hao Jingfang, trans. Ken Liu (Uncanny Magazine, Jan-Feb 2015)",
         "title": "Folding Beijing",
@@ -1145,7 +1145,7 @@
         "publisher": "There Will Be War Volume X, Castalia House"
       }
     ],
-    "Best Short Story (2706 final ballots, 2451 nominating ballots)": [
+    "Best Short Story": [
       {
         "raw": "“Cat Pictures Please” by Naomi Kritzer (Clarkesworld, January 2015)",
         "title": "Cat Pictures Please",
@@ -1181,7 +1181,7 @@
         "publisher": "voxday.blogspot.com, Jun 2015"
       }
     ],
-    "Best Related Work (2545 final ballots, 2080 nominating ballots)": [
+    "Best Related Work": [
       {
         "raw": "No Award",
         "won": true
@@ -1217,7 +1217,7 @@
         "publisher": "Castalia House"
       }
     ],
-    "Best Graphic Story (2171 final ballots, 1838 nominating ballots)": [
+    "Best Graphic Story": [
       {
         "raw": "The Sandman: Overture written by Neil Gaiman, art by J.H. Williams III (Vertigo)",
         "title": "The Sandman: Overture",
@@ -1253,7 +1253,7 @@
         "publisher": "dyingalone.net"
       }
     ],
-    "Best Dramatic Presentation, Long Form (2171 final ballots, 2904 nominating ballots)": [
+    "Best Dramatic Presentation, Long Form": [
       {
         "raw": "The Martian screenplay by Drew Goddard, directed by Ridley Scott (Scott Free Productions; Kinberg Genre; TSG Entertainment; 20th Century Fox)",
         "title": "The Martian screenplay",
@@ -1286,7 +1286,7 @@
         "publisher": "Marvel Studios; Walt Disney Studios Motion Pictures"
       }
     ],
-    "Best Dramatic Presentation, Short Form (2423 final ballots, 2219 nominating ballots)": [
+    "Best Dramatic Presentation, Short Form": [
       {
         "raw": "Jessica Jones: “AKA Smile” written by Scott Reynolds, Melissa Rosenberg, and Jamie King, directed by Michael Rymer (Marvel Television; ABC Studios; Tall Girls Productions;Netflix)",
         "title": "Jessica Jones: “AKA Smile",
@@ -1322,7 +1322,7 @@
         "publisher": "DHX Media/Vancouver; Hasbro Studios"
       }
     ],
-    "Best Editor, Short Form (2257 final ballots, 1891 nominating ballots)": [
+    "Best Editor, Short Form": [
       {
         "raw": "Ellen Datlow",
         "won": true
@@ -1343,7 +1343,7 @@
         "raw": "Jerry Pournelle"
       }
     ],
-    "Best Editor, Long Form (2386 final ballots, 1764 nominating ballots)": [
+    "Best Editor, Long Form": [
       {
         "raw": "Sheila E. Gilbert",
         "won": true
@@ -1364,7 +1364,7 @@
         "raw": "Vox Day"
       }
     ],
-    "Best Professional Artist (1907 final ballots, 1481 nominating ballots)": [
+    "Best Professional Artist": [
       {
         "raw": "Abigail Larson",
         "won": true
@@ -1385,7 +1385,7 @@
         "raw": "Lars Braad Andersen"
       }
     ],
-    "Best Semiprozine (2063 final ballots, 1457 nominating ballots)": [
+    "Best Semiprozine": [
       {
         "raw": "Uncanny Magazine edited by Lynne M. Thomas & Michael Damian Thomas, Michi Trota, and Erika Ensign & Steven Schapansky",
         "won": true
@@ -1406,7 +1406,7 @@
         "raw": "Sci Phi Journal edited by Jason Rennie"
       }
     ],
-    "Best Fanzine (2281 final ballots, 1455 nominating ballots)": [
+    "Best Fanzine": [
       {
         "raw": "File 770 edited by Mike Glyer",
         "won": true
@@ -1427,7 +1427,7 @@
         "raw": "Castalia House Blog edited by Jeffro Johnson"
       }
     ],
-    "Best Fancast (1497 final ballots, 1267 nominating ballots)": [
+    "Best Fancast": [
       {
         "raw": "No Award",
         "won": true
@@ -1448,7 +1448,7 @@
         "raw": "HelloGreedo, HelloGreedo"
       }
     ],
-    "Best Fan Writer (1909 final ballots, 1568 nominating ballots)": [
+    "Best Fan Writer": [
       {
         "raw": "Mike Glyer",
         "won": true
@@ -1469,7 +1469,7 @@
         "raw": "Douglas Ernst"
       }
     ],
-    "Best Fan Artist (1855 final ballots, 1073 nominating ballots)": [
+    "Best Fan Artist": [
       {
         "raw": "Steve Stiles",
         "won": true
@@ -1488,27 +1488,6 @@
       },
       {
         "raw": "disse86"
-      }
-    ],
-    "The John W. Campbell Award for Best New Writer (2406 final ballots, 1922 nominating ballots)\nAward for the best new professional science fiction or fantasy writer of 2014 or 2015, sponsored by Dell Magazines. (Not a Hugo Award, but administered along with the Hugo Awards.)": [
-      {
-        "raw": "Andy Weir*",
-        "won": true
-      },
-      {
-        "raw": "Alyssa Wong*"
-      },
-      {
-        "raw": "No Award"
-      },
-      {
-        "raw": "Pierce Brown*"
-      },
-      {
-        "raw": "Sebastien de Castell*"
-      },
-      {
-        "raw": "Brian Niemeier"
       }
     ]
   },
@@ -2322,7 +2301,7 @@
 	  "publisher": "The Book of Feasts & Seasons, Castalia House"
       }
     ],
-    "Best Novelette (5104 final ballots, 1031 nominating ballots, 314 entries, (72-267)": [
+    "Best Novelette": [
       {
           "raw": "“The Day the World Turned Upside Down”, Thomas Olde Heuvelt, Lia Belt translator (Lightspeed, 04-2014)",
           "title": "“The Day the World Turned Upside Down”",
@@ -2346,7 +2325,7 @@
         "raw": "“Championship B’tok”, Edward M. Lerner (Analog, 09-2014)"
       }
     ],
-    "Best Short Story (5267 final ballots, 1174 nominating ballots, 728 entries, range 132-226)": [
+    "Best Short Story": [
       {
         "raw": "No Award",
         "won": true
@@ -2367,7 +2346,7 @@
         "raw": "“The Parliament of Beasts and Birds”, John C. Wright (The Book of Feasts & Seasons, Castalia House)"
       }
     ],
-    "Best Related Work (4901 final ballots, 1150 nominating ballots, 346 entries, range 206-273)": [
+    "Best Related Work": [
       {
         "raw": "No Award",
         "won": true
@@ -2388,7 +2367,7 @@
         "raw": "Wisdom from My Internet, Michael Z. Williamson (Patriarchy Press)"
       }
     ],
-    "Best Graphic Story (4412 final ballots, 785 nominating ballots, 325 entries, range 60-201)": [
+    "Best Graphic Story": [
       {
         "raw": "Ms. Marvel Volume 1: No Normal, written by G. Willow Wilson, illustrated by Adrian Alphona  and Jake Wyatt, (Marvel Comics)",
         "title": "Ms. Marvel Volume 1: No Normal",
@@ -2454,7 +2433,7 @@
         "publisher": "Warner Bros. Pictures, Village Roadshow Pictures, RatPac-Dune Entertainment, LEGO System A/S, Vertigo Entertainment, Lin Pictures, Warner Bros. Animation (as Warner Animation Group)"
       }
     ],
-    "Best Dramatic Presentation, Short Form (4705 final ballots, 938 nominating ballots, 470 entries, range 71-170)": [
+    "Best Dramatic Presentation, Short Form": [
       {
         "raw": "Orphan Black: “By Means Which Have Never Yet Been Tried”, ” written by Graeme Manson, directed by John Fawcett (Temple Street Productions, Space/BBC America)",
         "title": "Orphan Black: “By Means Which Have Never Yet Been Tried”, ",
@@ -2487,7 +2466,7 @@
         "publisher": "(NBC) (GK Productions, Hazy Mills Productions, Universal TV)"
       }
     ],
-    "Best Editor, Short Form (4850 final ballots, 870 nominating ballots, 187 entries, range 162-279)": [
+    "Best Editor, Short Form": [
       {
         "raw": "No Award",
         "won": true
@@ -2508,7 +2487,7 @@
         "raw": "Edmund R. Schubert (Withdrew after ballot finalized)"
       }
     ],
-    "Best Editor, Long Form (4907 final ballots, 712 nominating ballots, 124 entries, range 166-368)": [
+    "Best Editor, Long Form": [
       {
         "raw": "No Award",
         "won": true
@@ -2529,7 +2508,7 @@
         "raw": "Vox Day"
       }
     ],
-    "Best Professional Artist (4354 final ballots, 753 nominating ballots, 300 entries, range 118-188)": [
+    "Best Professional Artist": [
       {
         "raw": "Julie Dillon",
         "won": true
@@ -2550,7 +2529,7 @@
         "raw": "Carter Reid"
       }
     ],
-    "Best Semiprozine (3880 final ballots, 660 nominating ballots, 100 entries, range 94-229)": [
+    "Best Semiprozine": [
       {
         "raw": "Lightspeed Magazine, edited by John Joseph Adams, Stefan Rudnicki, Rich Horton, Wendy N. Wagner, and Christie Yant",
         "won": true
@@ -2571,7 +2550,7 @@
         "raw": "Andromeda Spaceways In-Flight Magazine, Andromeda Spaceways Publishing Association Incorporated, 2014 editors David Kernot and Sue Bursztynski"
       }
     ],
-    "Best Fanzine (3818 final ballots, 576 nominating ballots, 162 entries, range 68-208)": [
+    "Best Fanzine": [
       {
         "raw": "Journey Planet, edited by James Bacon, Christopher J Garcia, Colin Harris, Alissa McKersie, and Helen J. Montgomery",
         "won": true
@@ -2595,7 +2574,7 @@
         "raw": "The Revenge of Hump Day, edited by Tim Bolgeo"
       }
     ],
-    "Best Fancast (3884 final ballots, 668 nominating ballots, 162 entries, range 69-179)": [
+    "Best Fancast": [
       {
         "raw": "Galactic Suburbia Podcast, Alisa Krasnostein, Alexandra Pierce, Tansy Rayner Roberts (Presenters) and Andrew Finch (Producer)",
         "won": true
@@ -2616,7 +2595,7 @@
         "raw": "Dungeon Crawlers Radio, Daniel Swenson (Producer/Host), Travis Alexander & Scott Tomlin (Hosts), Dale Newton (Host/Tech), Damien Swenson (Audio/Video Tech)"
       }
     ],
-    "Best Fan Writer (3884 final ballots, 777 nominating ballots, 265 entries, range 129-201)": [
+    "Best Fan Writer": [
       {
         "raw": "Laura J. Mixon",
         "won": true
@@ -2653,27 +2632,6 @@
       },
       {
         "raw": "Brad W. Foster"
-      }
-    ],
-    "The John W. Campbell Award for Best New Writer (4338 final ballots, 851 nominating ballots, 220 entries, range 106-229) \nAward for the best new professional science fiction or fantasy writer of 2013 or 2014, sponsored by Dell Magazines. (Not a Hugo Award, but administered along with the Hugo Awards.)": [
-      {
-        "raw": "Wesley Chu*",
-        "won": true
-      },
-      {
-        "raw": "No Award"
-      },
-      {
-        "raw": "Kary English*"
-      },
-      {
-        "raw": "Eric S. Raymond"
-      },
-      {
-        "raw": "Jason Cordova"
-      },
-      {
-        "raw": "Rolf Nelson"
       }
     ]
   },
@@ -6604,8 +6562,8 @@
       },
       {
         "raw": "Chicks Dig Comics: A Celebration of Comic Books by the Women Who Love Them, Edited by Lynne M. Thomas & Sigrid Ellis (Mad Norwegian Press)",
-        "title": "Chicks Dig Comics: A Celebration of Comic Books",
-        "author": "the Women Who Love Them, Edited by Lynne M. Thomas & Sigrid Ellis",
+        "title": "Chicks Dig Comics: A Celebration of Comic Books by the Women Who Love Them",
+        "author": "Edited by Lynne M. Thomas & Sigrid Ellis",
         "publisher": "Mad Norwegian Press"
       },
       {
@@ -6622,8 +6580,8 @@
       },
       {
         "raw": "I Have an Idea for a Book  The Bibliography of Martin H. Greenberg, Compiled by Martin H. Greenberg, edited by John Helfers (The Battered Silicon Dispatch Box)",
-        "title": "I Have an Idea for a Book  The Bibliography of Martin H. Greenberg, Compiled",
-        "author": "Martin H. Greenberg, edited by John Helfers",
+        "title": "I Have an Idea for a Book – The Bibliography of Martin H. Greenberg",
+        "author": "compiled by Martin H. Greenberg, edited by John Helfers",
         "publisher": "The Battered Silicon Dispatch Box"
       }
     ],
@@ -6870,24 +6828,6 @@
         "raw": "Steve Stiles"
       }
     ],
-    "The John W. Campbell Award for Best New Writer (476 nominating ballots cast)\nAward for the best new professional science fiction or fantasy writer of 2011 or 2012, sponsored by Dell Magazines. (Not a Hugo Award, but administered along with the Hugo Awards.)": [
-      {
-        "raw": "Mur Lafferty*",
-        "won": true
-      },
-      {
-        "raw": "Stina Leicht*"
-      },
-      {
-        "raw": "Chuck Wendig*"
-      },
-      {
-        "raw": "Max Gladstone"
-      },
-      {
-        "raw": "Zen Cho*"
-      }
-    ]
   },
   "1994": {
     "Best Novel": [
@@ -12221,7 +12161,7 @@
     ]
   },
   "1939": {
-    "Best Novel (208 nominating ballots)": [
+    "Best Novel": [
       {
         "raw": "The Sword in the Stone",
         "won": true
@@ -16399,7 +16339,7 @@
     ]
   },
   "2014": {
-    "Best Novel (1595 nominating ballots)": [
+    "Best Novel": [
       {
         "raw": "Ancillary Justice, Ann Leckie (Orbit US/Orbit UK)",
         "won": true
@@ -16417,7 +16357,7 @@
         "raw": "Warbound, Book III of the Grimnoir Chronicles, Larry Correia (Baen Books)"
       }
     ],
-    "Best Novella (847 nominating ballots)": [
+    "Best Novella": [
       {
         "raw": "“Equoid”, Charles Stross (Tor.com, 09-2013)",
         "won": true
@@ -16435,7 +16375,7 @@
         "raw": "The Butcher of Khardov, Dan Wells (Privateer Press)"
       }
     ],
-    "Best Novelette (728 nominating ballots)": [
+    "Best Novelette": [
       {
         "raw": "“The Lady Astronaut of Mars”, Mary Robinette Kowal (maryrobinettekowal.com/Tor.com, 09-2013)",
         "won": true
@@ -16453,7 +16393,7 @@
         "raw": "“Opera Vita Aeterna”, Vox Day (The Last Witchking, Marcher Lord Hinterlands)"
       }
     ],
-    "Best Short Story (865 nominating ballots)": [
+    "Best Short Story": [
       {
         "raw": "“The Water That Falls on You from Nowhere”, John Chu (Tor.com, 02-2013)",
         "won": true
@@ -16468,7 +16408,7 @@
         "raw": "“The Ink Readers of Doi Saket”, Thomas Olde Heuvelt (Tor.com, 04-2013)"
       }
     ],
-    "Best Related Work (752 nominating ballots)": [
+    "Best Related Work": [
       {
         "raw": "“We Have Always Fought: Challenging the Women, Cattle and Slaves Narrative”, Kameron Hurley (A Dribble of Ink)",
         "won": true
@@ -16489,7 +16429,7 @@
         "raw": "Writing Excuses Season 8, Brandon Sanderson, Dan Wells, Mary Robinette Kowal, Howard Tayler, and Jordan Sanderson"
       }
     ],
-    "Best Graphic Story (552 nominating ballots)": [
+    "Best Graphic Story": [
       {
         "raw": "“Time”, Randall Munroe (XKCD)",
         "won": true
@@ -16519,7 +16459,7 @@
         "publisher": "Jet City Comics"
       }
     ],
-    "Best Dramatic Presentation, Long Form (995 nominating ballots)": [
+    "Best Dramatic Presentation, Long Form": [
       {
         "raw": "Gravity, written by Alfonso Cuarón & Jonás Cuarón, directed by Alfonso Cuarón (Esperanto Filmoj; Heyday Films; Warner Bros.)",
         "title": "Gravity",
@@ -16552,7 +16492,7 @@
         "publisher": "Color Force; Lionsgate"
       }
     ],
-    "Best Dramatic Presentation, Short Form (760 nominating ballots)": [
+    "Best Dramatic Presentation, Short Form": [
       {
         "raw": "Game of Thrones: “The Rains of Castamere”, written by David Benioff & D.B. Weiss, directed by David Nutter (HBO Entertainment in association with Bighead, Littlehead; Television 360; Startling Television and Generator Productions)",
         "title": "Game of Thrones: “The Rains of Castamere”",
@@ -16591,7 +16531,7 @@
         "publisher": "BBC Televison"
       }
     ],
-    "Best Editor, Short Form (656 nominating ballots)": [
+    "Best Editor, Short Form": [
       {
         "raw": "Ellen Datlow",
         "won": true
@@ -16609,7 +16549,7 @@
         "raw": "Neil Clarke"
       }
     ],
-    "Best Editor, Long Form (632 nominating ballots)": [
+    "Best Editor, Long Form": [
       {
         "raw": "Ginjer Buchanan",
         "won": true
@@ -16627,7 +16567,7 @@
         "raw": "Lee Harris"
       }
     ],
-    "Best Professional Artist (624 nominating ballots)": [
+    "Best Professional Artist": [
       {
         "raw": "Julie Dillon",
         "won": true
@@ -16648,7 +16588,7 @@
         "raw": "Galen Dara"
       }
     ],
-    "Best Semiprozine (411 nominating ballots)": [
+    "Best Semiprozine": [
       {
         "raw": "Lightspeed Magazine, edited by John Joseph Adams, Rich Horton, and Stefan Rudnicki",
         "won": true
@@ -16666,7 +16606,7 @@
         "raw": "Beneath Ceaseless Skies, edited by Scott H. Andrews"
       }
     ],
-    "Best Fanzine (478 nominating ballots)": [
+    "Best Fanzine": [
       {
         "raw": "A Dribble of Ink, edited by Aidan Moher",
         "won": true
@@ -16684,7 +16624,7 @@
         "raw": "Elitist Book Reviews, edited by Steven Diamond"
       }
     ],
-    "Best Fancast (396 nominating ballots)": [
+    "Best Fancast": [
       {
         "raw": "SF Signal Podcast, Patrick Hester",
         "won": true
@@ -16708,7 +16648,7 @@
         "raw": "The Writer and the Critic, Kirstyn McDermott and Ian Mond"
       }
     ],
-    "Best Fan Writer (521 nominating ballots)": [
+    "Best Fan Writer": [
       {
         "raw": "Kameron Hurley",
         "won": true
@@ -16726,7 +16666,7 @@
         "raw": "Mark Oshiro"
       }
     ],
-    "Best Fan Artist (316 nominating ballots)": [
+    "Best Fan Artist": [
       {
         "raw": "Sarah Webb",
         "won": true
@@ -16744,7 +16684,7 @@
         "raw": "Steve Stiles"
       }
     ],
-    "The John W. Campbell Award for Best New Writer (767 nominating ballots) \nAward for the best new professional science fiction or fantasy writer of 2012 or 2013, sponsored by Dell Magazines. (Not a Hugo Award, but administered along with the Hugo Awards.)": [
+    "The John W. Campbell Award for Best New Writer \nAward for the best new professional science fiction or fantasy writer of 2012 or 2013, sponsored by Dell Magazines. (Not a Hugo Award, but administered along with the Hugo Awards.)": [
       {
         "raw": "Sofia Samatar*",
         "won": true

@@ -19,7 +19,7 @@ namespace :import do
         )
 
         data.each do |nominee|
-          nominee = (
+          book = (
             Book.for(
               nominee['author'], nominee['title']
             )
