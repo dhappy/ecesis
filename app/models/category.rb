@@ -1,3 +1,4 @@
 class Category < ApplicationRecord
-  has_and_belongs_to_many :entries, class_name: 'Book'
+  has_many :entries
+  has_many :nominees, through: :entries, class_name: 'Book'
 end

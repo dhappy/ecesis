@@ -5,9 +5,13 @@
   <%= @category.name %>
 </p>
 
-<ul>
-  <% @category.entries.each do |entry| %>
-    <li><%= link_to entry, entry %></li>
+<ul class='lines'>
+  <% @entries.each do |entry| %>
+    <li>
+      <%= link_to entry, entry %>
+      <span> </span>
+      <%= entry.nominee&.found? ? '|' : 'x' %>
+    </li>
   <% end %>
 </ul>
 

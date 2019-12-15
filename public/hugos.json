@@ -494,10 +494,10 @@
         "won": true
       },
       {
-        "raw": "Eternal Sunshine of the Spotless Mind (2004)\n[Focus Features] Directed by Michael Gondry; Screenplay by Charlie Kaufman; Story by Charlie Kaufman  Michael Gondry  Pierre Bismuth"
+        "raw": "Eternal Sunshine of the Spotless Mind (2004) [Focus Features] Directed by Michael Gondry; Screenplay by Charlie Kaufman; Story by Charlie Kaufman  Michael Gondry  Pierre Bismuth"
       },
       {
-        "raw": "Spider-Man 2 (2004) [Sony Pictures/Columbia] Directed by Sam Raimi; Screenplay by Alvin Sargent; Screen Story by Alfred Gough  Miles Millar and Michael Chabon;\nbased on the comic book by Stan Lee  Steve Ditko"
+        "raw": "Spider-Man 2 (2004) [Sony Pictures/Columbia] Directed by Sam Raimi; Screenplay by Alvin Sargent; Screen Story by Alfred Gough  Miles Millar and Michael Chabon; based on the comic book by Stan Lee  Steve Ditko"
       },
       {
         "raw": "Sky Captain and The World of Tomorrow (2004) [Paramount] Written and directed by Kerry Conran"
@@ -873,7 +873,7 @@
         "raw": "Twelve Monkeys (1995) [Atlas/Universal] Directed by Terry Gilliam; Screenplay by David Webb Peoples  Janet Peoples; based on the film La Jetee by Chris Marker"
       },
       {
-        "raw": "Toy Story (1995) [Disney/Pixar\nAnimation] Directed by John Lasseter; Screenplay by Joss Whedon and\nAndrew Stanton and Joel Cohen and Alec Sokolow; Story by John Lasseter\nand Peter Docter and Andrew Stanton and Joe Ranft"
+        "raw": "Toy Story (1995) [Disney/Pixar Animation] Directed by John Lasseter; Screenplay by Joss Whedon and Andrew Stanton and Joel Cohen and Alec Sokolow; Story by John Lasseter and Peter Docter and Andrew Stanton and Joe Ranft"
       },
       {
         "raw": "Star Trek: Deep Space Nine – “The Visitor” (1995) [Paramount] Directed by David Livingston; Written by Michael Taylor"
@@ -2313,16 +2313,28 @@
         "raw": "No Award"
       },
       {
-        "raw": "“The Triple Sun: A Golden Age Tale”, Rajnar Vajra (Analog, 07/08-2014)"
+        "raw": "“The Triple Sun: A Golden Age Tale”, Rajnar Vajra (Analog, 07/08-2014)",
+        "title": "“The Triple Sun: A Golden Age Tale”",
+        "author": "Rajnar Vajra",
+        "publisher": "Analog, 07/08-2014"
       },
       {
-        "raw": "“Ashes to Ashes, Dust to Dust, Earth to Alluvium”, Gray Rinehart (Orson Scott Card’s InterGalactic Medicine Show, 05-2014)"
+        "raw": "“Ashes to Ashes, Dust to Dust, Earth to Alluvium”, Gray Rinehart (Orson Scott Card’s InterGalactic Medicine Show, 05-2014)",
+        "title": "“Ashes to Ashes, Dust to Dust, Earth to Alluvium”",
+        "author": "Gray Rinehart",
+        "publisher": "Orson Scott Card’s InterGalactic Medicine Show, 05-2014"
       },
       {
-        "raw": "“The Journeyman: In the Stone House”, Michael F. Flynn (Analog, 06-2014)"
+        "raw": "“The Journeyman: In the Stone House”, Michael F. Flynn (Analog, 06-2014)",
+        "title": "“The Journeyman: In the Stone House”",
+        "author": "Michael F. Flynn",
+        "publisher": "Analog, 06-2014"
       },
       {
-        "raw": "“Championship B’tok”, Edward M. Lerner (Analog, 09-2014)"
+        "raw": "“Championship B’tok”, Edward M. Lerner (Analog, 09-2014)",
+        "title": "“Championship B’tok”",
+        "author": "Edward M. Lerner",
+        "publisher": "Analog, 09-2014"
       }
     ],
     "Best Short Story": [
@@ -2331,19 +2343,34 @@
         "won": true
       },
       {
-        "raw": "“Totaled”, Kary English (Galaxy’s Edge Magazine, 07-2014)"
+        "raw": "“Totaled”, Kary English (Galaxy’s Edge Magazine, 07-2014)",
+        "title": "“Totaled”",
+        "author": "Kary English",
+        "publisher": "Galaxy’s Edge Magazine, 07-2014"
       },
       {
-        "raw": "“A Single Samurai”, Steven Diamond (The Baen Big Book of Monsters, Baen Books)"
+        "raw": "“A Single Samurai”, Steven Diamond (The Baen Big Book of Monsters, Baen Books)",
+        "title": "“A Single Samurai”",
+        "author": "Steven Diamond",
+        "publisher": "The Baen Big Book of Monsters, Baen Books"
       },
       {
-        "raw": "“Turncoat”, Steve Rzasa (Riding the Red Horse, Castalia House)"
+        "raw": "“Turncoat”, Steve Rzasa (Riding the Red Horse, Castalia House)",
+        "title": "“Turncoat”",
+        "author": "Steve Rzasa",
+        "publisher": "Riding the Red Horse, Castalia House"
       },
       {
-        "raw": "“On A Spiritual Plain”, Lou Antonelli (Sci Phi Journal #2, 11-2014)"
+        "raw": "“On A Spiritual Plain”, Lou Antonelli (Sci Phi Journal #2, 11-2014)",
+        "title": "“On A Spiritual Plain”",
+        "author": "Lou Antonelli",
+        "publisher": "Sci Phi Journal #2, 11-2014"
       },
       {
-        "raw": "“The Parliament of Beasts and Birds”, John C. Wright (The Book of Feasts & Seasons, Castalia House)"
+        "raw": "“The Parliament of Beasts and Birds”, John C. Wright (The Book of Feasts & Seasons, Castalia House)",
+        "title": "“The Parliament of Beasts and Birds”",
+        "author": "John C. Wright",
+        "publisher": "The Book of Feasts & Seasons, Castalia House"
       }
     ],
     "Best Related Work": [
@@ -2352,19 +2379,34 @@
         "won": true
       },
       {
-        "raw": "“The Hot Equations: Thermodynamics and Military SF”, Ken Burnside (Riding the Red Horse, Castalia House)"
+        "raw": "“The Hot Equations: Thermodynamics and Military SF”, Ken Burnside (Riding the Red Horse, Castalia House)",
+        "title": "“The Hot Equations: Thermodynamics and Military SF”",
+        "author": "Ken Burnside",
+        "publisher": "Riding the Red Horse, Castalia House"
       },
       {
-        "raw": "“Why Science is Never Settled”, Tedd Roberts (Baen.com)"
+        "raw": "“Why Science is Never Settled”, Tedd Roberts (Baen.com)",
+        "title": "“Why Science is Never Settled”",
+        "author": "Tedd Roberts",
+        "publisher": "Baen.com"
       },
       {
-        "raw": "Transhuman and Subhuman: Essays on Science Fiction and Awful Truth, John C. Wright (Castalia House)"
+        "raw": "Transhuman and Subhuman: Essays on Science Fiction and Awful Truth, John C. Wright (Castalia House)",
+        "title": "Transhuman and Subhuman: Essays on Science Fiction and Awful Truth",
+        "author": "John C. Wright",
+        "publisher": "Castalia House"
       },
       {
-        "raw": "Letters from Gardner, Lou Antonelli (The Merry Blacksmith Press)"
+        "raw": "Letters from Gardner, Lou Antonelli (The Merry Blacksmith Press)",
+        "title": "Letters from Gardner",
+        "author": "Lou Antonelli",
+        "publisher": "The Merry Blacksmith Press"
       },
       {
-        "raw": "Wisdom from My Internet, Michael Z. Williamson (Patriarchy Press)"
+        "raw": "Wisdom from My Internet, Michael Z. Williamson (Patriarchy Press)",
+        "title": "Wisdom from My Internet",
+        "author": "Michael Z. Williamson",
+        "publisher": "Patriarchy Press"
       }
     ],
     "Best Graphic Story": [
@@ -2400,7 +2442,7 @@
         "raw": "The Zombie Nation Book #2: Reduce Reuse Reanimate, Carter Reid (The Zombie Nation)"
       }
     ],
-    "Best Dramatic Presentation, Long Form (5240 final ballots, 1285 nominating ballots, 189 entries, range 204-769)": [
+    "Best Dramatic Presentation, Long Form": [
       {
         "raw": "Guardians of the Galaxy, written by James Gunn and Nicole Perlman, directed by James Gunn (Marvel Studios, Moving Picture Company)",
         "title": "Guardians of the Galaxy",
@@ -3092,7 +3134,7 @@
     ],
     "Best Dramatic Presentation, Long Form": [
       {
-        "raw": "Game of Thrones (Season 1), created by David Benioff and D. B. Weiss;\n written by David Benioff, D. B. Weiss, Bryan Cogman, Jane Espenson, and George R. R. Martin; directed by Brian Kirk, Daniel Minahan, Tim van Patten, and Alan Taylor (HBO)",
+        "raw": "Game of Thrones (Season 1), created by David Benioff and D. B. Weiss;  written by David Benioff, D. B. Weiss, Bryan Cogman, Jane Espenson, and George R. R. Martin; directed by Brian Kirk, Daniel Minahan, Tim van Patten, and Alan Taylor (HBO)",
         "title": "",
         "author": "David Benioff, D. B. Weiss, Bryan Cogman, Jane Espenson, and George R. R. Martin; directed by Brian Kirk, Daniel Minahan, Tim van Patten, and Alan Taylor",
         "publisher": "HBO",
@@ -3300,7 +3342,7 @@
         "raw": "Galactic Suburbia Podcast, Alisa Krasnostein, Alex Pierce, and Tansy Rayner Roberts (presenters) and Andrew Finch (producer)"
       }
     ],
-    "The John W. Campbell Award for Best New Writer": [
+    "John W. Campbell Award for Best New Writer": [
       {
         "raw": "E. Lily Yu*",
         "won": true
@@ -3624,7 +3666,7 @@
         "raw": "James Gurney"
       }
     ],
-    "Best Original Art Work\nSome sources, including some from the 1990 Worldcon itself, mistakenly label this “Not a Hugo,” but it was added to the ballot by the 1990 Worldcon Committee’s authority to create an additional category. Per the WSFS Constitution, it is a Hugo Award. The 1990 WSFS Business Meeting adopted Best Original Art Work as a regular category, and the 1991 WSFS Business Meeting ratified the addition, so the Best Original Art Work category first appeared as a regular category in 1992. The 1991 Worldcon declined to use its additional-category authority that year, and therefore this category did not appear in 1991. This category should therefore be considered to have been awarded in 1990 and 1992-1996, after which it was discontinued.": [
+    "Best Original Art Work": [
       {
         "raw": "Cover (Rimrunners by C. J. Cherryh) by Don Maitz [Warner Questar, 1989]",
         "title": "Cover (Rimrunners",
@@ -5486,7 +5528,7 @@
         "raw": "Science Fiction Times ed. by James V. Taurasi, Sr., Ray Van Houten and Frank R. Prieto, Jr."
       }
     ],
-    "Best New Author of 1958": [
+    "Best New Author": [
       {
         "raw": "No winner chosen"
       },
@@ -6462,76 +6504,91 @@
       {
         "raw": "Merle Insinga"
       }
-    ],
-    "The John W. Campbell Award for Best New Writer\nAward for the best new professional science fiction or fantasy writer of 1987 or 1988, sponsored by the publisher of Analog magazine. (Not a Hugo Award, but administered along with the Hugo Awards.)": [
-      {
-        "raw": "Michaela Roessner",
-        "won": true
-      },
-      {
-        "raw": "Delia Sherman"
-      },
-      {
-        "raw": "Christopher Hinz"
-      },
-      {
-        "raw": "Kristine Kathryn Rusch"
-      },
-      {
-        "raw": "Melanie Rawn"
-      },
-      {
-        "raw": "P. J. Beese and Todd Cameron Hamilton"
-      },
-      {
-        "raw": "William Sanders"
-      }
     ]
   },
   "2013": {
     "Best Novel": [
       {
-        "raw": "Redshirts: A Novel with Three Codas, John Scalzi (Tor)",
+          "raw": "Redshirts: A Novel with Three Codas, John Scalzi (Tor)",
+          "title": "Redshirts: A Novel with Three Codas",
+	  "author": "John Scalzi",
+	  "publisher": "Tor",
         "won": true
       },
       {
-        "raw": "Captain Vorpatril’s Alliance, Lois McMaster Bujold (Baen)"
+          "raw": "Captain Vorpatril’s Alliance, Lois McMaster Bujold (Baen)",
+          "title": "Captain Vorpatril’s Alliance",
+	  "author": "Lois McMaster Bujold",
+	  "publisher": "Bae"
       },
       {
-        "raw": "2312, Kim Stanley Robinson (Orbit)"
+          "raw": "2312, Kim Stanley Robinson (Orbit)",
+          "title": "2312",
+	  "author": "Kim Stanley Robinson",
+	  "publisher": "Orbi"
       },
       {
-        "raw": "Throne of the Crescent Moon, Saladin Ahmed (DAW)"
+          "raw": "Throne of the Crescent Moon, Saladin Ahmed (DAW)",
+	  "title": "Throne of the Crescent Moon",
+	  "author": "Saladin Ahmed",
+	  "publisher": "DAW"
+
       },
       {
-        "raw": "Blackout, Mira Grant (Orbit)"
+          "raw": "Blackout, Mira Grant (Orbit)",
+	  "title": "Blackout",
+	  "author": "Mira Grant",
+	  "publisher": "Orbit"
+
       }
     ],
     "Best Novella": [
       {
-        "raw": "The Emperor’s Soul, Brandon Sanderson (Tachyon Publications) ",
-        "won": true
+          "raw": "The Emperor’s Soul, Brandon Sanderson (Tachyon Publications) ",
+	  "title": "The Emperor’s Soul",
+	  "author": "Brandon Sanderson",
+	  "publisher": "Tachyon Publications",
+          "won": true
       },
       {
-        "raw": "After the Fall, Before the Fall, During the Fall, Nancy Kress (Tachyon Publications)"
+          "raw": "After the Fall, Before the Fall, During the Fall, Nancy Kress (Tachyon Publications)",
+          "title": "After the Fall, Before the Fall, During the Fall",
+          "author": "Nancy Kress",
+          "publisher": "Tachyon Publications"
       },
       {
-        "raw": "“The Stars Do Not Lie”, Jay Lake (Asimov’s, Oct-Nov 2012)"
+          "raw": "“The Stars Do Not Lie”, Jay Lake (Asimov’s, Oct-Nov 2012)",
+	  "title": "“The Stars Do Not Lie”",
+	  "author": "Jay Lake",
+	  "publisher": "Asimov’s, Oct-Nov 2012"
       },
       {
-        "raw": "On a Red Station, Drifting, Aliette de Bodard (Immersion Press)"
+          "raw": "On a Red Station, Drifting, Aliette de Bodard (Immersion Press)",
+	  "title": "On a Red Station",
+	  "author": "Drifting, Aliette de Bodard",
+	  "publisher": "Immersion Press"
       },
       {
-        "raw": "San Diego 2014: The Last Stand of the California Browncoats, Mira Grant (Orbit)"
+          "raw": "San Diego 2014: The Last Stand of the California Browncoats, Mira Grant (Orbit)",
+          "title": "San Diego 2014: The Last Stand of the California Browncoats",
+          "author": "Mira Grant",
+          "publisher": "Orbit"
       }
     ],
     "Best Novelette": [
       {
-        "raw": "“The Girl-Thing Who Went Out for Sushi”, Pat Cadigan (Edge of Infinity, Solaris)",
-        "won": true
+          "raw": "“The Girl-Thing Who Went Out for Sushi”, Pat Cadigan (Edge of Infinity, Solaris)",
+	  "title": "“The Girl-Thing Who Went Out for Sushi”",
+	  "author": "Pat Cadigan",
+	  "publisher": "Edge of Infinity, Solaris",
+          "won": true
       },
       {
-        "raw": "“In Sea-Salt Tears”, Seanan McGuire (Self-published)"
+          "raw": "“In Sea-Salt Tears”, Seanan McGuire (Self-published)",
+	  "title": "“In Sea-Salt Tears”",
+	  "author": "Seanan McGuire",
+	  "publisher": "(Self-published)"
+
       },
       {
         "raw": "“Fade To White”, Catherynne M. Valente (Clarkesworld, August 2012)"
@@ -6827,7 +6884,7 @@
       {
         "raw": "Steve Stiles"
       }
-    ],
+    ]
   },
   "1994": {
     "Best Novel": [
@@ -7479,24 +7536,6 @@
       {
         "raw": "Tangent Online (www.tangentonline.com) by Dave Truesdale and Tobias S. Buckell"
       }
-    ],
-    "John W. Campbell Award for Best New Writer": [
-      {
-        "raw": "Jo Walton*",
-        "won": true
-      },
-      {
-        "raw": "Alexander C. Irvine*"
-      },
-      {
-        "raw": "Ken Wharton"
-      },
-      {
-        "raw": "Wen Spencer"
-      },
-      {
-        "raw": "Tobias S. Buckell*"
-      }
     ]
   },
   "1962": {
@@ -8128,103 +8167,300 @@
         "publisher": "Lucasfilm/Allison Shearmur Productions/Black Hangar Studios/Stereo D/Walt Disney Pictures"
       },
       {
-        "raw": "Stranger Things, Season One, created by the Duffer Brothers (21 Laps Entertainment/Monkey Massacre)\nDeadpool, screenplay by Rhett Reese & Paul Wernick, directed by Tim Miller (Twentieth Century Fox Film Corporation/Marvel Entertainment/Kinberg Genre/The Donners’ Company/TSG Entertainment)\nGhostbusters, screenplay by Katie Dippold & Paul Feig, directed by Paul Feig (Columbia Pictures/LStar Capital/Village Roadshow Pictures/Pascal Pictures/Feigco Entertainment/Ghostcorps/The Montecito Picture Company)\n",
+        "raw": "Stranger Things, Season One, created by the Duffer Brothers (21 Laps Entertainment/Monkey Massacre)",
         "title": "Stranger Things, Season One, created",
         "author": "the Duffer Brothers",
         "publisher": "21 Laps Entertainment/Monkey Massacre"
       },
       {
-        "raw": "Best Dramatic Presentation, Short Form"
+        "raw": "Deadpool, screenplay by Rhett Reese & Paul Wernick, directed by Tim Miller (Twentieth Century Fox Film Corporation/Marvel Entertainment/Kinberg Genre/The Donners’ Company/TSG Entertainment)",
+        "title": "Deadpool, screenplay",
+        "author": "Rhett Reese & Paul Wernick, directed by Tim Miller",
+        "publisher": "Twentieth Century Fox Film Corporation/Marvel Entertainment/Kinberg Genre/The Donners’ Company/TSG Entertainment"
       },
       {
-        "raw": "\nThe Expanse: “Leviathan Wakes”, written by Mark Fergus and Hawk Ostby, directed by Terry McDonough (SyFy)\nBlack Mirror: “San Junipero”, written by Charlie Brooker, directed by Owen Harris (House of Tomorrow)\nGame of Thrones: “The Door”, written by David Benioff and D. B. Weiss, directed by Jack Bender (HBO)\nGame of Thrones: “Battle of the Bastards”, written by David Benioff and D. B. Weiss, directed by Miguel Sapochnik (HBO)\nDoctor Who: “The Return of Doctor Mysterio”, written by Steven Moffat, directed by Ed Bazalgette (BBC Cymru Wales)\nSplendor & Misery [album], by Clipping (Daveed Diggs, William Hutson, Jonathan Snipes)\n",
+        "raw": "Ghostbusters, screenplay by Katie Dippold & Paul Feig, directed by Paul Feig (Columbia Pictures/LStar Capital/Village Roadshow Pictures/Pascal Pictures/Feigco Entertainment/Ghostcorps/The Montecito Picture Company)",
+        "title": "Ghostbusters, screenplay",
+        "author": "Katie Dippold & Paul Feig, directed by Paul Feig",
+        "publisher": "Columbia Pictures/LStar Capital/Village Roadshow Pictures/Pascal Pictures/Feigco Entertainment/Ghostcorps/The Montecito Picture Company"
+      }
+    ],
+    "Best Dramatic Presentation, Short Form": [
+      {
+        "raw": "The Expanse: “Leviathan Wakes”, written by Mark Fergus and Hawk Ostby, directed by Terry McDonough (SyFy)",
         "title": "The Expanse: “Leviathan Wakes”",
         "author": "Mark Fergus and Hawk Ostby, directed by Terry McDonough",
-        "publisher": "SyFy"
+        "publisher": "SyFy",
+        "won": true
       },
       {
-        "raw": "Best Editor, Short Form"
+        "raw": "Black Mirror: “San Junipero”, written by Charlie Brooker, directed by Owen Harris (House of Tomorrow)",
+        "title": "Black Mirror: “San Junipero”",
+        "author": "Charlie Brooker, directed by Owen Harris",
+        "publisher": "House of Tomorrow"
       },
       {
-        "raw": "\nEllen Datlow\nLynne M. Thomas & Michael Damian Thomas\nNeil Clarke\nJohn Joseph Adams\nJonathan Strahan\nSheila Williams\n"
+        "raw": "Game of Thrones: “The Door”, written by David Benioff and D. B. Weiss, directed by Jack Bender (HBO)",
+        "title": "Game of Thrones: “The Door”",
+        "author": "David Benioff and D. B. Weiss, directed by Jack Bender",
+        "publisher": "HBO"
       },
       {
-        "raw": "Best Editor, Long Form "
+        "raw": "Game of Thrones: “Battle of the Bastards”, written by David Benioff and D. B. Weiss, directed by Miguel Sapochnik (HBO)",
+        "title": "Game of Thrones: “Battle of the Bastards”",
+        "author": "David Benioff and D. B. Weiss, directed by Miguel Sapochnik",
+        "publisher": "HBO"
       },
       {
-        "raw": "\nLiz Gorinsky\nSheila E. Gilbert\nDevi Pillai\nMiriam Weinberg\nNavah Wolfe\nNo Award\nVox Day\n"
+        "raw": "Doctor Who: “The Return of Doctor Mysterio”, written by Steven Moffat, directed by Ed Bazalgette (BBC Cymru Wales)",
+        "title": "Doctor Who: “The Return of Doctor Mysterio”",
+        "author": "Steven Moffat, directed by Ed Bazalgette",
+        "publisher": "BBC Cymru Wales"
       },
       {
-        "raw": "Best Professional Artist"
+        "raw": "Splendor & Misery [album], by Clipping (Daveed Diggs, William Hutson, Jonathan Snipes)",
+        "title": "Splendor & Misery [album]",
+        "author": "Clipping",
+        "publisher": "Daveed Diggs, William Hutson, Jonathan Snipes"
+      }
+    ],
+    "Best Editor, Short Form": [
+      {
+        "raw": "Ellen Datlow",
+        "won": true
       },
       {
-        "raw": "\nJulie Dillon\nSana Takeda\nGalen Dara\nVicto Ngai\nChris McGrath\nJohn Picacio\n"
+        "raw": "Lynne M. Thomas & Michael Damian Thomas"
       },
       {
-        "raw": "Best Semiprozine"
+        "raw": "Neil Clarke"
       },
       {
-        "raw": "\nUncanny Magazine, edited by Lynne M. Thomas & Michael Damian Thomas, Michi Trota, Julia Rios, and podcast produced by Erika Ensign & Steven Schapansky\nStrange Horizons, edited by Niall Harrison, Catherine Krahe, Vajra Chandrasekera, Vanessa Rose Phin, Li Chua, Aishwarya Subramanian, Tim Moore, Anaea Lay, and the Strange Horizons staff\nBeneath Ceaseless Skies, editor-in-chief and publisher Scott H. Andrews\nThe Book Smugglers, edited by Ana Grilo and Thea James\nGigaNotoSaurus, edited by Rashida J. Smith\nNo Award\nCirsova Heroic Fantasy and Science Fiction Magazine, edited by P. Alexander\n"
+        "raw": "John Joseph Adams"
       },
       {
-        "raw": "Best Fanzine "
+        "raw": "Jonathan Strahan"
       },
       {
-        "raw": "\nLady Business, edited by Clare, Ira, Jodie, KJ, Renay, and Susan\nJourney Planet, edited by James Bacon, Chris Garcia, Esther MacCallum-Stewart, Helena Nash, Errick Nunnally, Pádraig Ó Méalóid, Chuck Serface, and Erin Underwood\nnerds of a feather, flock together, edited by The G, Vance Kotrla, and Joe Sherry\nSF Bluestocking, edited by Bridget McKinney\nRocket Stack Rank, edited by Greg Hullender and Eric Wong\nNo Award\nCastalia House Blog, edited by Jeffro Johnson\n"
+        "raw": "Sheila Williams"
+      }
+    ],
+    "Best Editor, Long Form": [
+      {
+        "raw": "Liz Gorinsky",
+        "won": true
       },
       {
-        "raw": "Best Fancast"
+        "raw": "Sheila E. Gilbert"
       },
       {
-        "raw": "\nTea and Jeopardy, presented by Emma Newman with Peter Newman\nThe Coode Street Podcast, presented by Gary K. Wolfe and Jonathan Strahan\nFangirl Happy Hour, presented by Ana Grilo and Renay Williams\nGalactic Suburbia, presented by Alisa Krasnostein, Alexandra Pierce and Tansy Rayner Roberts, produced by Andrew Finch\nDitch Diggers, presented by Mur Lafferty and Matt Wallace\nNo Award\nThe Rageaholic, presented by RazrFist\n"
+        "raw": "Devi Pillai"
       },
       {
-        "raw": "Best Fan Writer "
+        "raw": "Miriam Weinberg"
       },
       {
-        "raw": "\nAbigail Nussbaum\nFoz Meadows\nMike Glyer\nChuck Tingle\nNatalie Luhrs\nNo Award\nJeffro Johnson\n"
+        "raw": "Navah Wolfe"
       },
       {
-        "raw": "Best Fan Artist "
+        "raw": "No Award"
       },
       {
-        "raw": "\nElizabeth Leggett\nVesa Lehtimki\nLikhain (M. Sereno)\nNinni Aalto\nSpring Schoenhuth\nSteve Stiles\n"
+        "raw": "Vox Day"
+      }
+    ],
+    "Best Professional Artist": [
+      {
+        "raw": "Julie Dillon",
+        "won": true
       },
       {
-        "raw": "Worldcon 75 elected to exercise its authority under the WSFS Constitution to add an additional category for 2017 only. A similarly-defined category was added to the WSFS Constitution as a permanent category effective with the 2018 Worldcon; however, the category below is considered an Additional Category under the WSFS Constitution."
+        "raw": "Sana Takeda"
       },
       {
-        "raw": "Best Series\nA multi-volume science fiction or fantasy story, unified by elements such as plot, characters, setting, and presentation, appearing in at least three (3) volumes consisting in total of at least 240,000 words by the close of the previous calendar year, at least one volume of which was published in the previous calendar year. If any series and a subset series thereof both receive sufficient nominations to appear on the final ballot, only the version which received more nominations shall appear."
+        "raw": "Galen Dara"
       },
       {
-        "raw": "\nThe Vorkosigan Saga, by Lois McMaster Bujold (Baen)\nThe Expanse, by James S.A. Corey (Orbit US / Orbit UK)\nThe Temeraire series, by Naomi Novik (Del Rey / Harper Voyager UK)\nThe Craft Sequence, by Max Gladstone (Tor Books)\nThe Peter Grant / Rivers of London series, by Ben Aaronovitch (Gollancz / Del Rey / DAW / Subterranean)\nThe October Daye Books, by Seanan McGuire (DAW / Corsair)\n",
+        "raw": "Victo Ngai"
+      },
+      {
+        "raw": "Chris McGrath"
+      },
+      {
+        "raw": "John Picacio"
+      }
+    ],
+    "Best Semiprozine": [
+      {
+        "raw": "Uncanny Magazine, edited by Lynne M. Thomas & Michael Damian Thomas, Michi Trota, Julia Rios, and podcast produced by Erika Ensign & Steven Schapansky",
+        "won": true
+      },
+      {
+        "raw": "Strange Horizons, edited by Niall Harrison, Catherine Krahe, Vajra Chandrasekera, Vanessa Rose Phin, Li Chua, Aishwarya Subramanian, Tim Moore, Anaea Lay, and the Strange Horizons staff"
+      },
+      {
+        "raw": "Beneath Ceaseless Skies, editor-in-chief and publisher Scott H. Andrews"
+      },
+      {
+        "raw": "The Book Smugglers, edited by Ana Grilo and Thea James"
+      },
+      {
+        "raw": "GigaNotoSaurus, edited by Rashida J. Smith"
+      },
+      {
+        "raw": "No Award"
+      },
+      {
+        "raw": "Cirsova Heroic Fantasy and Science Fiction Magazine, edited by P. Alexander"
+      }
+    ],
+    "Best Fanzine": [
+      {
+        "raw": "Lady Business, edited by Clare, Ira, Jodie, KJ, Renay, and Susan",
+        "won": true
+      },
+      {
+        "raw": "Journey Planet, edited by James Bacon, Chris Garcia, Esther MacCallum-Stewart, Helena Nash, Errick Nunnally, Pádraig Ó Méalóid, Chuck Serface, and Erin Underwood"
+      },
+      {
+        "raw": "nerds of a feather, flock together, edited by The G, Vance Kotrla, and Joe Sherry"
+      },
+      {
+        "raw": "SF Bluestocking, edited by Bridget McKinney"
+      },
+      {
+        "raw": "Rocket Stack Rank, edited by Greg Hullender and Eric Wong"
+      },
+      {
+        "raw": "No Award"
+      },
+      {
+        "raw": "Castalia House Blog, edited by Jeffro Johnson"
+      }
+    ],
+    "Best Fancast": [
+      {
+        "raw": "Tea and Jeopardy, presented by Emma Newman with Peter Newman",
+        "won": true
+      },
+      {
+        "raw": "The Coode Street Podcast, presented by Gary K. Wolfe and Jonathan Strahan"
+      },
+      {
+        "raw": "Fangirl Happy Hour, presented by Ana Grilo and Renay Williams"
+      },
+      {
+        "raw": "Galactic Suburbia, presented by Alisa Krasnostein, Alexandra Pierce and Tansy Rayner Roberts, produced by Andrew Finch"
+      },
+      {
+        "raw": "Ditch Diggers, presented by Mur Lafferty and Matt Wallace"
+      },
+      {
+        "raw": "No Award"
+      },
+      {
+        "raw": "The Rageaholic, presented by RazrFist"
+      }
+    ],
+    "Best Fan Writer": [
+      {
+        "raw": "Abigail Nussbaum",
+        "won": true
+      },
+      {
+        "raw": "Foz Meadows"
+      },
+      {
+        "raw": "Mike Glyer"
+      },
+      {
+        "raw": "Chuck Tingle"
+      },
+      {
+        "raw": "Natalie Luhrs"
+      },
+      {
+        "raw": "No Award"
+      },
+      {
+        "raw": "Jeffro Johnson"
+      }
+    ],
+    "Best Fan Artist": [
+      {
+        "raw": "Elizabeth Leggett",
+        "won": true
+      },
+      {
+        "raw": "Vesa Lehtimki"
+      },
+      {
+        "raw": "Likhain (M. Sereno)"
+      },
+      {
+        "raw": "Ninni Aalto"
+      },
+      {
+        "raw": "Spring Schoenhuth"
+      },
+      {
+        "raw": "Steve Stiles"
+      }
+    ],
+    "Best Series": [
+      {
+        "raw": "The Vorkosigan Saga, by Lois McMaster Bujold (Baen)",
         "title": "The Vorkosigan Saga",
         "author": "Lois McMaster Bujold",
-        "publisher": "Baen"
+        "publisher": "Baen",
+        "won": true
       },
       {
-        "raw": "The John W. Campbell Award for Best New Writer\nAward for the best new professional science fiction or fantasy writer of 2015 or 2016, sponsored by Dell Magazines. (Not a Hugo Award, but administered along with the Hugo Awards.)",
-        "title": "Award for the best new professional science fiction or fantasy writer of 2015 or 2016, sponsored",
-        "author": "Dell Magazines.",
-        "publisher": "Not a Hugo Award, but administered along with the Hugo Awards."
+        "raw": "The Expanse, by James S.A. Corey (Orbit US / Orbit UK)",
+        "title": "The Expanse",
+        "author": "James S.A. Corey",
+        "publisher": "Orbit US / Orbit UK"
       },
       {
-        "raw": "\nAda Palmer\nMalka Older*\nSarah Gailey\nLaurie Penny*\nKelly Robson*\nNo Award\nJ. Mulrooney\n"
+        "raw": "The Temeraire series, by Naomi Novik (Del Rey / Harper Voyager UK)",
+        "title": "The Temeraire series",
+        "author": "Naomi Novik",
+        "publisher": "Del Rey / Harper Voyager UK"
       },
       {
-        "raw": "*Finalists in their 2nd year of eligibility"
+        "raw": "The Craft Sequence, by Max Gladstone (Tor Books)",
+        "title": "The Craft Sequence",
+        "author": "Max Gladstone",
+        "publisher": "Tor Books"
       },
       {
-        "raw": "Declined/Ineligible"
+        "raw": "The Peter Grant / Rivers of London series, by Ben Aaronovitch (Gollancz / Del Rey / DAW / Subterranean)",
+        "title": "The Peter Grant / Rivers of London series",
+        "author": "Ben Aaronovitch",
+        "publisher": "Gollancz / Del Rey / DAW / Subterranean"
       },
       {
-        "raw": "The following nominees received enough votes to qualify for the final ballot, but either declined nomination or were found to be ineligible."
+        "raw": "The October Daye Books, by Seanan McGuire (DAW / Corsair)",
+        "title": "The October Daye Books",
+        "author": "Seanan McGuire",
+        "publisher": "DAW / Corsair"
+      }
+    ],
+    "The following nominees received enough votes to qualify for the final ballot, but either declined nomination or were found to be ineligible.": [
+      {
+        "raw": "Best Dramatic Presentation (Short Form): Game of Thrones: “The Winds of Winter” (No more than two episodes of any one show may be finalists in this category)"
       },
       {
-        "raw": "\nBest Dramatic Presentation (Short Form): Game of Thrones: “The Winds of Winter” (No more than two episodes of any one show may be finalists in this category)\n\nBest Professional Artist: JiHun Lee, Tomek Radziewicz (No qualifying publications in 2016)\nBest Semiprozine: Lightspeed Magazine (Not eligible)\nBest Fanzine: File 770 (Declined nomination)\nBest Fan Artist: Alex Garner, Mansik Yang (Initially announced as finalists but subsequently disqualified due to all published 2016 work being professional)\n"
+        "raw": "Best Professional Artist: JiHun Lee, Tomek Radziewicz (No qualifying publications in 2016)"
       },
       {
-        "raw": "See Hugo Award Categories for a more detailed discussion of the categories. The technical definitions of the categories are in the current version of the WSFS Constitution, and those technical definitions take priority in case of any ambiguity. Decisions regarding eligibility are made by the current year’s Hugo Administration Subcommittee, whose decisions are final in all cases."
+        "raw": "Best Semiprozine: Lightspeed Magazine (Not eligible)"
+      },
+      {
+        "raw": "Best Fanzine: File 770 (Declined nomination)"
+      },
+      {
+        "raw": "Best Fan Artist: Alex Garner, Mansik Yang (Initially announced as finalists but subsequently disqualified due to all published 2016 work being professional)"
       }
     ]
   },
@@ -8232,110 +8468,197 @@
     "Best Novel": [
       {
         "raw": "The City  The City, China Miéville (Del Rey; Macmillan UK)",
+        "title": "The City  The City",
+        "author": "China Miéville",
+        "publisher": "Del Rey; Macmillan UK",
         "won": true
       },
       {
         "raw": "The Windup Girl, Paolo Bacigalupi (Night Shade)",
+        "title": "The Windup Girl",
+        "author": "Paolo Bacigalupi",
+        "publisher": "Night Shade",
         "won": true
       },
       {
-        "raw": "Boneshaker, Cherie Priest (Tor)"
+        "raw": "Boneshaker, Cherie Priest (Tor)",
+        "title": "Boneshaker",
+        "author": "Cherie Priest",
+        "publisher": "Tor"
       },
       {
-        "raw": "Wake, Robert J. Sawyer (Ace; Penguin; Gollancz; Analog)"
+        "raw": "Wake, Robert J. Sawyer (Ace; Penguin; Gollancz; Analog)",
+        "title": "Wake",
+        "author": "Robert J. Sawyer",
+        "publisher": "Ace; Penguin; Gollancz; Analog"
       },
       {
-        "raw": "Julian Comstock: A Story of 22nd-Century America, Robert Charles Wilson (Tor)"
+        "raw": "Julian Comstock: A Story of 22nd-Century America, Robert Charles Wilson (Tor)",
+        "title": "Julian Comstock: A Story of 22nd-Century America",
+        "author": "Robert Charles Wilson",
+        "publisher": "Tor"
       },
       {
-        "raw": "Palimpsest, Catherynne M. Valente (Bantam Spectra)"
+        "raw": "Palimpsest, Catherynne M. Valente (Bantam Spectra)",
+        "title": "Palimpsest",
+        "author": "Catherynne M. Valente",
+        "publisher": "Bantam Spectra"
       }
     ],
     "Best Novella": [
       {
         "raw": "“Palimpsest”, Charles Stross (Wireless; Ace; Orbit)",
+        "title": "“Palimpsest”",
+        "author": "Charles Stross",
+        "publisher": "Wireless; Ace; Orbit",
         "won": true
       },
       {
-        "raw": "The God Engines, John Scalzi (Subterranean)"
+        "raw": "The God Engines, John Scalzi (Subterranean)",
+        "title": "The God Engines",
+        "author": "John Scalzi",
+        "publisher": "Subterranean"
       },
       {
-        "raw": "The Women of Nell Gwynne’s, Kage Baker (Subterranean)"
+        "raw": "The Women of Nell Gwynne’s, Kage Baker (Subterranean)",
+        "title": "The Women of Nell Gwynne’s",
+        "author": "Kage Baker",
+        "publisher": "Subterranean"
       },
       {
-        "raw": "“Act One”, Nancy Kress (Asimov’s 3/09)"
+        "raw": "“Act One”, Nancy Kress (Asimov’s 3/09)",
+        "title": "“Act One”",
+        "author": "Nancy Kress",
+        "publisher": "Asimov’s 3/09"
       },
       {
-        "raw": "“Vishnu at the Cat Circus”, Ian McDonald (Cyberabad Days; Pyr; Gollancz)"
+        "raw": "“Vishnu at the Cat Circus”, Ian McDonald (Cyberabad Days; Pyr; Gollancz)",
+        "title": "“Vishnu at the Cat Circus”",
+        "author": "Ian McDonald",
+        "publisher": "Cyberabad Days; Pyr; Gollancz"
       },
       {
-        "raw": "Shambling Towards Hiroshima, James Morrow (Tachyon)"
+        "raw": "Shambling Towards Hiroshima, James Morrow (Tachyon)",
+        "title": "Shambling Towards Hiroshima",
+        "author": "James Morrow",
+        "publisher": "Tachyon"
       }
     ],
     "Best Novelette": [
       {
         "raw": "The Island”, Peter Watts (The New Space Opera 2; Eos)",
+        "title": "The Island”",
+        "author": "Peter Watts",
+        "publisher": "The New Space Opera 2; Eos",
         "won": true
       },
       {
-        "raw": "“Overtime”, Charles Stross (Tor.com 12/09)"
+        "raw": "“Overtime”, Charles Stross (Tor.com 12/09)",
+        "title": "“Overtime”",
+        "author": "Charles Stross",
+        "publisher": "Tor.com 12/09"
       },
       {
-        "raw": "“Eros, Philia, Agape”, Rachel Swirsky (Tor.com 3/09)"
+        "raw": "“Eros, Philia, Agape”, Rachel Swirsky (Tor.com 3/09)",
+        "title": "“Eros, Philia, Agape”",
+        "author": "Rachel Swirsky",
+        "publisher": "Tor.com 3/09"
       },
       {
-        "raw": "“It Takes Two”, Nicola Griffith (Eclipse Three; Night Shade Books)"
+        "raw": "“It Takes Two”, Nicola Griffith (Eclipse Three; Night Shade Books)",
+        "title": "“It Takes Two”",
+        "author": "Nicola Griffith",
+        "publisher": "Eclipse Three; Night Shade Books"
       },
       {
-        "raw": "“One of Our Bastards is Missing”, Paul Cornell (The Solaris Book of New Science Fiction: Volume Three; Solaris)"
+        "raw": "“One of Our Bastards is Missing”, Paul Cornell (The Solaris Book of New Science Fiction: Volume Three; Solaris)",
+        "title": "“One of Our Bastards is Missing”",
+        "author": "Paul Cornell",
+        "publisher": "The Solaris Book of New Science Fiction: Volume Three; Solaris"
       },
       {
-        "raw": "“Sinner, Baker, Fabulist, Priest; Red Mask, Black Mask, Gentleman, Beast”, Eugie Foster (Interzone 2/09)"
+        "raw": "“Sinner, Baker, Fabulist, Priest; Red Mask, Black Mask, Gentleman, Beast”, Eugie Foster (Interzone 2/09)",
+        "title": "“Sinner, Baker, Fabulist, Priest; Red Mask, Black Mask, Gentleman, Beast”",
+        "author": "Eugie Foster",
+        "publisher": "Interzone 2/09"
       }
     ],
     "Best Short Story": [
       {
         "raw": "“Bridesicle”, Will McIntosh (Asimov’s 1/09)",
+        "title": "“Bridesicle”",
+        "author": "Will McIntosh",
+        "publisher": "Asimov’s 1/09",
         "won": true
       },
       {
-        "raw": "“The Bride of Frankenstein”, Mike Resnick (Asimov’s 12/09)"
+        "raw": "“The Bride of Frankenstein”, Mike Resnick (Asimov’s 12/09)",
+        "title": "“The Bride of Frankenstein”",
+        "author": "Mike Resnick",
+        "publisher": "Asimov’s 12/09"
       },
       {
-        "raw": "“Non-Zero Probabilities”, N.K. Jemisin (Clarkesworld 9/09)"
+        "raw": "“Non-Zero Probabilities”, N.K. Jemisin (Clarkesworld 9/09)",
+        "title": "“Non-Zero Probabilities”",
+        "author": "N.K. Jemisin",
+        "publisher": "Clarkesworld 9/09"
       },
       {
-        "raw": "“Spar”, Kij Johnson (Clarkesworld 10/09)"
+        "raw": "“Spar”, Kij Johnson (Clarkesworld 10/09)",
+        "title": "“Spar”",
+        "author": "Kij Johnson",
+        "publisher": "Clarkesworld 10/09"
       },
       {
-        "raw": "“The Moment”, Lawrence M. Schoen (Footprints; Hadley Rille Books)"
+        "raw": "“The Moment”, Lawrence M. Schoen (Footprints; Hadley Rille Books)",
+        "title": "“The Moment”",
+        "author": "Lawrence M. Schoen",
+        "publisher": "Footprints; Hadley Rille Books"
       }
     ],
     "Best Related Work": [
       {
         "raw": "This is Me, Jack Vance! (Or, More Properly, This is “I”), Jack Vance (Subterranean)",
+        "title": "This is Me, Jack Vance! (Or, More Properly, This is “I”)",
+        "author": "Jack Vance",
+        "publisher": "Subterranean",
         "won": true
       },
       {
-        "raw": "The Inter-Galactic Playground: A Critical Study of Children’s and Teens’ Science Fiction, Farah Mendlesohn (McFarland)"
+        "raw": "The Inter-Galactic Playground: A Critical Study of Children’s and Teens’ Science Fiction, Farah Mendlesohn (McFarland)",
+        "title": "The Inter-Galactic Playground: A Critical Study of Children’s and Teens’ Science Fiction",
+        "author": "Farah Mendlesohn",
+        "publisher": "McFarland"
       },
       {
-        "raw": "Hope-In-The-Mist: The Extraordinary Career and Mysterious Life of Hope Mirrlees, Michael Swanwick (Temporary Culture)"
+        "raw": "Hope-In-The-Mist: The Extraordinary Career and Mysterious Life of Hope Mirrlees, Michael Swanwick (Temporary Culture)",
+        "title": "Hope-In-The-Mist: The Extraordinary Career and Mysterious Life of Hope Mirrlees",
+        "author": "Michael Swanwick",
+        "publisher": "Temporary Culture"
       },
       {
-        "raw": "The Secret Feminist Cabal: A Cultural History of SF Feminisms, Helen Merrick (Aqueduct)"
+        "raw": "The Secret Feminist Cabal: A Cultural History of SF Feminisms, Helen Merrick (Aqueduct)",
+        "title": "The Secret Feminist Cabal: A Cultural History of SF Feminisms",
+        "author": "Helen Merrick",
+        "publisher": "Aqueduct"
       },
       {
-        "raw": "On Joanna Russ, Farah Mendlesohn (ed.) (Wesleyan)"
+        "raw": "On Joanna Russ, Farah Mendlesohn (ed.) (Wesleyan)",
+        "title": "On Joanna Russ",
+        "author": "Farah Mendlesohn",
+        "publisher": "ed.) (Wesleyan"
       },
       {
-        "raw": "Canary Fever: Reviews, John Clute (Beccon)"
+        "raw": "Canary Fever: Reviews, John Clute (Beccon)",
+        "title": "Canary Fever: Reviews",
+        "author": "John Clute",
+        "publisher": "Beccon"
       }
     ],
     "Best Graphic Story": [
       {
         "raw": "Girl Genius, Volume 9: Agatha Heterodyne and the Heirs of the Storm Written by Kaja and Phil Foglio; Art by Phil Foglio; Colours by Cheyenne Wright (Airship Entertainment)",
-        "title": "Girl Genius, Volume 9: Agatha Heterodyne and the Heirs of the Storm Written",
+        "title": "Girl Genius, Volume 9: Agatha Heterodyne and the Heirs of the Storm",
         "author": "Kaja and Phil Foglio; Art by Phil Foglio; Colours by Cheyenne Wright",
         "publisher": "Airship Entertainment",
         "won": true
@@ -8557,7 +8880,7 @@
         "raw": "Sue Mason"
       }
     ],
-    "The John W. Campbell Award for Best New Writer": [
+    "John W. Campbell Award for Best New Writer": [
       {
         "raw": "Seanan McGuire",
         "won": true
@@ -9193,7 +9516,7 @@
         "won": true
       },
       {
-        "raw": "Total Recall (1990) [Carolco/TriStar] Directed by Paul Verhoeven; Screenplay by Ronald Shusett  Dan O’Bannon and Gary Goldman; Screen Story by Ronald\nShusett  Dan O’Bannon and Jon Povill; inspired by the short story “We Can Remember It For You Wholesale” by Philip K. Dick"
+        "raw": "Total Recall (1990) [Carolco/TriStar] Directed by Paul Verhoeven; Screenplay by Ronald Shusett  Dan O’Bannon and Gary Goldman; Screen Story by Ronald Shusett  Dan O’Bannon and Jon Povill; inspired by the short story “We Can Remember It For You Wholesale” by Philip K. Dick"
       },
       {
         "raw": "Ghost (1990) [Paramount] Directed by Jerry Zucker; Written by Bruce Joel Rubin"
@@ -11749,7 +12072,7 @@
         "raw": "Ariela Housman"
       }
     ],
-    "Best Art Book\nUnder the WSFS Constitution every Worldcon has the right to add one category to the Hugo Awards for that year only. Dublin 2019 has chosen to use this right to create an award for an art book.": [
+    "Best Art Book": [
       {
         "raw": "The Books of Earthsea: The Complete Illustrated Edition, illustrated by Charles Vess, written by Ursula K. Le Guin (Saga Press /Gollancz)",
         "title": "The Books of Earthsea: The Complete Illustrated Edition, illustrated",
@@ -11782,7 +12105,7 @@
         "raw": "Spectrum 25: The Best in Contemporary Fantastic Art, ed. John Fleskes (Flesk Publications)"
       }
     ],
-    "Lodestar Award for Best Young Adult Book\nTrophy Design: Sara Felix": [
+    "Lodestar Award for Best Young Adult Book": [
       {
         "raw": "Children of Blood and Bone, by Tomi Adeyemi (Henry Holt / Macmillan Children’s Books)",
         "title": "Children of Blood and Bone",
@@ -12806,27 +13129,6 @@
       {
         "raw": "Taral Wayne"
       }
-    ],
-    "The John W. Campbell Award for Best New Writer\nAward for the best new professional science fiction or fantasy writer of 2006 or 2007, sponsored by Dell Magazines. (Not a Hugo Award, but administered along with the Hugo Awards.)": [
-      {
-        "raw": "Mary Robinette Kowal*",
-        "won": true
-      },
-      {
-        "raw": "Scott Lynch*"
-      },
-      {
-        "raw": "David Louis Edelman*"
-      },
-      {
-        "raw": "Joe Abercrombie*"
-      },
-      {
-        "raw": "Jon Armstrong"
-      },
-      {
-        "raw": "David Anthony Durham"
-      }
     ]
   },
   "1970": {
@@ -13849,7 +14151,7 @@
     ],
     "Best Graphic Story": [
       {
-        "raw": "Girl Genius, Volume 8: Agatha Heterodyne and the Chapel of Bones Written by Kaja & Phil Foglio, art by Phil Foglio, colors by Cheyenne Wright (Airship Entertainment)\n",
+        "raw": "Girl Genius, Volume 8: Agatha Heterodyne and the Chapel of Bones Written by Kaja & Phil Foglio, art by Phil Foglio, colors by Cheyenne Wright (Airship Entertainment)",
         "title": "Girl Genius, Volume 8: Agatha Heterodyne and the Chapel of Bones Written",
         "author": "Kaja & Phil Foglio, art by Phil Foglio, colors by Cheyenne Wright",
         "publisher": "Airship Entertainment",
@@ -14058,24 +14360,6 @@
       },
       {
         "raw": "Alan F. Beck"
-      }
-    ],
-    "The John W. Campbell Award for Best New Writer\nAward for the best new professional science fiction or fantasy writer of 2007 or 2008, sponsored by Dell Magazines. (Not a Hugo Award, but administered along with the Hugo Awards.)": [
-      {
-        "raw": "David Anthony Durham*",
-        "won": true
-      },
-      {
-        "raw": "Aliette de Bodard*"
-      },
-      {
-        "raw": "Tony Pi*"
-      },
-      {
-        "raw": "Gord Sellar"
-      },
-      {
-        "raw": "Felix Gilman"
       }
     ]
   },
@@ -15608,7 +15892,7 @@
         "raw": "Taral Wayne"
       }
     ],
-    "The John W. Campbell Award for Best New Writer": [
+    "John W. Campbell Award for Best New Writer": [
       {
         "raw": "Lev Grossman*",
         "won": true
@@ -16633,7 +16917,7 @@
         "raw": "The Coode Street Podcast, Jonathan Strahan and Gary K. Wolfe"
       },
       {
-        "raw": "Galactic Suburbia Podcast, Alisa Krasnostein, Alexandra Pierce, Tansy Rayner Roberts (Presenters) and Andrew Finch\n(Producer)"
+        "raw": "Galactic Suburbia Podcast, Alisa Krasnostein, Alexandra Pierce, Tansy Rayner Roberts (Presenters) and Andrew Finch (Producer)"
       },
       {
         "raw": "Tea and Jeopardy, Emma Newman and Peter Newman"
@@ -16682,24 +16966,6 @@
       },
       {
         "raw": "Steve Stiles"
-      }
-    ],
-    "The John W. Campbell Award for Best New Writer \nAward for the best new professional science fiction or fantasy writer of 2012 or 2013, sponsored by Dell Magazines. (Not a Hugo Award, but administered along with the Hugo Awards.)": [
-      {
-        "raw": "Sofia Samatar*",
-        "won": true
-      },
-      {
-        "raw": "Max Gladstone*"
-      },
-      {
-        "raw": "Wesley Chu"
-      },
-      {
-        "raw": "Ramez Naam*"
-      },
-      {
-        "raw": "Benjanun Sriduangkaew"
       }
     ]
   },
@@ -16881,7 +17147,7 @@
         "won": true
       },
       {
-        "raw": "Men in Black (1997) [Amblin/Columbia/McDonald/Parkes] Directed by Barry Sonnenfeld; Screenplay by Ed Solomon; Screen Story by Ed Solomon; based on the\ncomic by Lowell Cunningham"
+        "raw": "Men in Black (1997) [Amblin/Columbia/McDonald/Parkes] Directed by Barry Sonnenfeld; Screenplay by Ed Solomon; Screen Story by Ed Solomon; based on the comic by Lowell Cunningham"
       },
       {
         "raw": "Gattaca (1997) [Columbia/Jersey] Directed by Andrew Niccol; Written by Andrew Niccol The Fifth Element (1997) [Gaumont/Columbia] Directed by Luc Besson; Screenplay by Luc Besson  Robert Mark Kamen; Story by Luc Besson"
@@ -18436,7 +18702,7 @@
     ],
     "Best Dramatic Presentation, Short Form": [
       {
-        "raw": "Buffy the Vampire Slayer\n– “Conversations with Dead People” (2002) [20th Century Fox Television/Mutant Enemy Inc.] Directed by Nick Marck; Teleplay by Jane Espenson  Drew Goddard",
+        "raw": "Buffy the Vampire Slayer – “Conversations with Dead People” (2002) [20th Century Fox Television/Mutant Enemy Inc.] Directed by Nick Marck; Teleplay by Jane Espenson  Drew Goddard",
         "won": true
       },
       {
@@ -18748,7 +19014,7 @@
         "raw": "Independence Day (1996) [20th Century Fox/Centropolis] Directed by Roland Emmerich; Written by Dean Devlin  Roland Ememrich"
       },
       {
-        "raw": "Mars Attacks! (1996) [Warner Brothers] Directed by Tim Burton; Screenplay by Jonathan Gems; Screen Story by Jonathan Gems; based on the trading card series by Len Brown  Woody Gelman  Wally Wood  Bob Powell  Norman\nSaunders"
+        "raw": "Mars Attacks! (1996) [Warner Brothers] Directed by Tim Burton; Screenplay by Jonathan Gems; Screen Story by Jonathan Gems; based on the trading card series by Len Brown  Woody Gelman  Wally Wood  Bob Powell  Norman Saunders"
       }
     ],
     "Best Professional Editor": [

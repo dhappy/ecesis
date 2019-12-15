@@ -8,6 +8,11 @@ class Book < ApplicationRecord
     find_or_create_by(author: author, title: title)
   end
 
+  def found?
+    puts "Checking: #{Rails.root}/public/book/by/#{author}/#{title}/html"
+    Dir.glob("#{Rails.root}/public/book/by/#{author}/#{title}/*html").length > 0
+  end
+
   def to_s
     "#{author.name} - #{title.name}"
   end

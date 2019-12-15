@@ -10,6 +10,11 @@ class CategoriesController < ApplicationController
   # GET /categories/1
   # GET /categories/1.json
   def show
+    @entries = @category.entries
+    if params[:year]
+      year = Year.find_by(number: params[:year])
+      @entries = @entries.where(year: year)
+    end
   end
 
   # GET /categories/new

@@ -2,27 +2,32 @@
 
 <p>
   <strong>Award:</strong>
-  <%= @entry.award_id %>
+  <%= link_to @entry.award.name, @entry.award %>
 </p>
 
 <p>
   <strong>Category:</strong>
-  <%= @entry.category_id %>
+  <%= link_to @entry.category.name, @entry.category %>
 </p>
 
 <p>
   <strong>Year:</strong>
-  <%= @entry.year_id %>
+  <%= link_to @entry.year.number, @entry.year %>
 </p>
 
 <p>
-  <strong>Won:</strong>
-  <%= @entry.won %>
+  <strong>Won?</strong>
+  <%= @entry.won? %>
 </p>
 
 <p>
   <strong>Nominee:</strong>
-  <%= @entry.nominee_id %>
+  <%= @entry.nominee %>
+</p>
+
+<p>
+  <strong>Found?</strong>
+  <%= @entry.nominee.found? %>
 </p>
 
 <%= link_to 'Edit', edit_entry_path(@entry) %> |

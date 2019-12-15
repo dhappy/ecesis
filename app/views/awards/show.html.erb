@@ -11,8 +11,8 @@
 </p>
 
 <ul>
-  <li><%= link_to 'By Category', categories_path, { award: @award }%>
-  <li><%= link_to 'By Year', years_path, { award: @award }%>
+  <li><%= link_to 'By Category', categories_path(award: @award) %>
+  <li><%= link_to 'By Year', years_path, { award: @award } %>
 </ul>
 
 <%= link_to 'Years', years_path %> |

@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :servers
+  resources :filenames
+  resources :directories
   resources :source_strings
   resources :entries
   root 'awards#index'
