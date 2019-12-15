@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_14_042310) do
+ActiveRecord::Schema.define(version: 2019_12_15_091721) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -70,6 +70,12 @@ ActiveRecord::Schema.define(version: 2019_12_14_042310) do
     t.index ["year_id"], name: "index_categories_years_on_year_id"
   end
 
+  create_table "directories", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "entries", force: :cascade do |t|
     t.bigint "award_id", null: false
     t.bigint "category_id", null: false
@@ -81,6 +87,30 @@ ActiveRecord::Schema.define(version: 2019_12_14_042310) do
     t.index ["award_id"], name: "index_entries_on_award_id"
     t.index ["category_id"], name: "index_entries_on_category_id"
     t.index ["year_id"], name: "index_entries_on_year_id"
+  end
+
+  create_table "filenames", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "servers", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "shares", force: :cascade do |t|
+    t.bigint "server_id", null: false
+    t.bigint "directory_id", null: false
+    t.string "filename"
+    t.string "references"
+    t.string "size"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["directory_id"], name: "index_shares_on_directory_id"
+    t.index ["server_id"], name: "index_shares_on_server_id"
   end
 
   create_table "source_strings", force: :cascade do |t|
@@ -110,4 +140,6 @@ ActiveRecord::Schema.define(version: 2019_12_14_042310) do
   add_foreign_key "entries", "awards"
   add_foreign_key "entries", "categories"
   add_foreign_key "entries", "years"
+  add_foreign_key "shares", "directories"
+  add_foreign_key "shares", "servers"
 end

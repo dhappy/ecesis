@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Shares</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Server</th>
+      <th>Directory</th>
+      <th>Filename</th>
+      <th>References</th>
+      <th>Size</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @shares.each do |share| %>
+      <tr>
+        <td><%= share.server_id %></td>
+        <td><%= share.directory_id %></td>
+        <td><%= share.filename %></td>
+        <td><%= share.references %></td>
+        <td><%= share.size %></td>
+        <td><%= link_to 'Show', share %></td>
+        <td><%= link_to 'Edit', edit_share_path(share) %></td>
+        <td><%= link_to 'Destroy', share, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Share', new_share_path %>

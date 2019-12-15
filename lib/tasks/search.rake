@@ -6,6 +6,8 @@ namespace :search do
     require "cinch/helpers"
 
     bot = Cinch::Bot.new do
+      admin = nil
+
       configure do |c|
         c.server   = "irc.irchighway.net"
         c.channels = ['#cinch-bots', '#ebooks']
@@ -13,9 +15,10 @@ namespace :search do
       end
 
       on :message, /idx (.*)/ do |m|
+        admin ||= m.user
         svr = m.message.sub(/^idx /, '')
-        m.reply "Requesting List from '#{svr}' in #ebooks"
         m.bot.channels[1].send("@#{svr}")
+        m.reply "Requesting List from '#{svr}' in #ebooks"
       end
 
       on :message, /bb/ do |m|
@@ -28,17 +31,27 @@ namespace :search do
           return
         end
 
-        admin.send("Accepting: #{dcc.filename}")
+        admin&.send("Accepting: #{dcc.filename}")
         filename = "#{Rails.root}/tmp/#{dcc.filename}"
 
         File.open(filename, 'wb') do |f|
           dcc.accept(f)
         end
 
-        admin.send("Saved: #{dcc.filename}")
+        admin&.send("Saved: #{dcc.filename}")
+
+        require 'zip'
+        Zip.on_exists_proc = true
 
         Zip::File.open(filename) do |zipfile|
-          zipfile.each do |file|
+          zipfile.each do |entry|
+            entry.extract
+            shares = Share.parse(entry.get_input_stream)
+            cnt = shares.length
+            admin.send(
+              "Imported #{cnt} #{'Share'.pluralize(cnt)}"
+            )
+          end
         end
       end
 
@@ -53,7 +66,6 @@ namespace :search do
           IPAddr.new(match[3], Socket::AF_INET6)
 
           puts "Reverse Send"
-          byebug
         end
       end
     end
