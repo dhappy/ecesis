@@ -4,7 +4,21 @@ class SharesController < ApplicationController
   # GET /shares
   # GET /shares.json
   def index
-    @shares = Share.all
+    @shares = Share.all.includes(:data).includes(:directory).includes(:server)
+
+    if params[:server]
+      @server = Server.find(params[:server])
+      @shares = @shares.where(
+        server: @server
+      )
+    end
+
+    if params[:dir]
+      dir = Directory.find(params[:dir])
+      @shares = @shares.where(directory: dir)
+    end
+
+    @shares = @shares.limit(5000)
   end
 
   # GET /shares/1

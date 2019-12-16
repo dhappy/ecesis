@@ -7,6 +7,7 @@ ruby '2.6.3'
 #gem 'cinch', path: '/home/will/.../lib/cinch'
 gem 'cinch'
 gem 'rubyzip'
+gem 'react-rails'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.1'

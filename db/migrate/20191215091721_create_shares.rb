@@ -3,8 +3,7 @@ class CreateShares < ActiveRecord::Migration[6.0]
     create_table :shares do |t|
       t.references :server, null: false, foreign_key: true
       t.references :directory, null: false, foreign_key: true
-      t.string :filename
-      t.string :references
+      t.references :data, null: false, foreign_key: true
       t.string :size
 
       t.timestamps
