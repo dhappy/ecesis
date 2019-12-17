@@ -5,6 +5,10 @@ class DirectoriesController < ApplicationController
   # GET /directories.json
   def index
     @directories = Directory.all
+    if params[:server]
+      @server = Server.find(params[:server])
+      @directories = @server.directories.uniq
+    end
   end
 
   # GET /directories/1

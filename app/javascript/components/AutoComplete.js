@@ -4,7 +4,7 @@ import Autosuggest from 'react-autosuggest'
 import axios from 'axios'
 import { debounce } from 'throttle-debounce'
 
-import './Autocomplete.css'
+import './AutoComplete.css'
 
 class AutoComplete extends React.Component {
   state = {
@@ -78,5 +78,4 @@ class AutoComplete extends React.Component {
   }
 }
 
-const rootElement = document.getElementById('root')
-ReactDOM.render(<AutoComplete />, rootElement)
+export default AutoComplete
