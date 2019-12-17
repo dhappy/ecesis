@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  root 'pages#home'
+
   resources :data
   resources :shares
   resources :servers
@@ -6,7 +8,6 @@ Rails.application.routes.draw do
   resources :directories
   resources :source_strings
   resources :entries
-  root 'awards#index'
 
   resources :books_categories
   resources :books
@@ -17,4 +18,5 @@ Rails.application.routes.draw do
   resources :authors
 
   get '/import' => 'pages#import'
+  get '/stats' => 'pages#stats'
 end

@@ -1,0 +1,27 @@
+<ul class='metrics'>
+<li>
+  <span class='metric'>Count</span>
+  <ul class='data'>
+    <li>
+      <span class='name'>Filenames</span>
+      <span class='value'>
+        <%= number_with_delimiter(
+          Datum.all.pluck(:name).uniq.count,
+          delimiter: ','
+        ) %>
+      </span>
+    </li>
+    <li>
+      <span class='name'>Data <em>(Different Sizes)</em>
+        <%= number_with_delimiter(Datum.count, delimiter: ',') %>
+      </span>
+    </li>
+    <li>
+      <span class='name'>Shares <em>(Different Servers)</em></span>
+      <span class='value'>
+        <%= number_with_delimiter(Share.count, delimiter: ',') %>
+      </span>
+    </li>
+  </ul>
+</li>
+</ul>
