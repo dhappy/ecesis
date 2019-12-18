@@ -5,6 +5,7 @@ class ServersController < ApplicationController
   # GET /servers.json
   def index
     @servers = Server.all
+    @title = 'Books: Servers'
   end
 
   # GET /servers/1

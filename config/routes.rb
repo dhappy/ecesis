@@ -19,4 +19,6 @@ Rails.application.routes.draw do
 
   get '/import' => 'pages#import'
   get '/stats' => 'pages#stats'
+  get '/search' => 'pages#search'
+  post '/search' => 'search#complete'
 end

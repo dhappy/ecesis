@@ -10,5 +10,14 @@
   <%= @datum.size %>
 </p>
 
+<ul>
+  <% @datum.shares.each do |share| %>
+    <li><%= link_to(
+      "#{share.server.name}/#{share.data.name}",
+      share
+    ) %></li>
+  <% end %>
+</ul>
+
 <%= link_to 'Edit', edit_datum_path(@datum) %> |
 <%= link_to 'Back', data_path %>

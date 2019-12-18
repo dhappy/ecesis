@@ -6,7 +6,7 @@
       <span class='name'>Filenames</span>
       <span class='value'>
         <%= number_with_delimiter(
-          Datum.all.pluck(:name).uniq.count,
+          Datum.all.select(:name).distinct.count,
           delimiter: ','
         ) %>
       </span>
@@ -17,7 +17,9 @@
       </span>
     </li>
     <li>
-      <span class='name'>Shares <em>(Different Servers)</em></span>
+      <span class='name'>Shares <em>(Different Servers)</em>
+      fg
+      </span>
       <span class='value'>
         <%= number_with_delimiter(Share.count, delimiter: ',') %>
       </span>

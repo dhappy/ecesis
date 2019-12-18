@@ -22,8 +22,7 @@ class AutoComplete extends React.Component {
   renderSuggestion = suggestion => {
     return (
       <div className="result">
-        <div>{suggestion.fullName}</div>
-        <div className="shortCode">{suggestion.shortCode}</div>
+        <div>{suggestion}</div>
       </div>
     )
   }
@@ -34,17 +33,13 @@ class AutoComplete extends React.Component {
 
   onSuggestionsFetchRequested = ({ value }) => {
     axios
-      .post('http://localhost:9200/crm_app/customers/_search', {
-        query: {
-          multi_match: {
-            query: value,
-            fields: ['fullName', 'shortCode']
-          }
-        },
-        sort: ['_score', { createdDate: 'desc' }]
+      .post('/search', {
+        partial: value,
       })
       .then(res => {
-        const results = res.data.hits.hits.map(h => h._source)
+        //const results = res.data.hits.hits.map(h => h._source)
+        const results = res.data
+        console.log('R', results)
         this.setState({ suggestions: results })
       })
   }
@@ -57,23 +52,20 @@ class AutoComplete extends React.Component {
     const { value, suggestions } = this.state
 
     const inputProps = {
-      placeholder: 'customer name or short code',
+      placeholder: 'Book Title, Author, Award, Series, or Genre',
       value,
       onChange: this.onChange
     }
 
     return (
-      <div className="App">
-        <h1>AutoComplete Demo</h1>
-        <Autosuggest
-          suggestions={suggestions}
-          onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
-          onSuggestionsClearRequested={this.onSuggestionsClearRequested}
-          getSuggestionValue={suggestion => suggestion.fullName}
-          renderSuggestion={this.renderSuggestion}
-          inputProps={inputProps}
-        />
-      </div>
+      <Autosuggest
+        suggestions={suggestions}
+        onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
+        onSuggestionsClearRequested={this.onSuggestionsClearRequested}
+        getSuggestionValue={suggestion => suggestion}
+        renderSuggestion={this.renderSuggestion}
+        inputProps={inputProps}
+      />
     )
   }
 }

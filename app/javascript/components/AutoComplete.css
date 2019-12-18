@@ -3,18 +3,10 @@
   text-align: center;
 }
 
-.react-autosuggest__container {
-  position: relative;
-  display: inline-block;
-  margin-top: -10px;
-}
-
 .react-autosuggest__input {
-  width: 200px;
-  height: 16px;
+  width: 75%;
   padding: 10px;
-  font-weight: 300;
-  font-size: 13px;
+  font-size: 150%;
   border: 1px solid rgba(0, 126, 255, 0.24);
   border-radius: 4px;
   color: #000;
@@ -36,12 +28,10 @@
 }
 
 .react-autosuggest__suggestions-list {
-  margin: 0;
-  position: absolute;
-  padding: 0;
+  margin: auto;
   background-color: #fff;
   list-style-type: none;
-  width: 220px;
+  width: 75%;
   border: 1px solid #eee;
 }
 
@@ -49,7 +39,6 @@
   cursor: pointer;
   padding: 10px;
   border-bottom: 1px solid #eee;
-  width: 200px;
   white-space: nowrap;
 }
 
@@ -62,13 +51,6 @@
   align-items: center;
   justify-content: space-between;
   font-size: 80%;
-}
-
-.shortCode {
-  background-color: #4696ec;
-  color: #fff;
-  padding: 4px;
-  border-radius: 2px;
 }
 
 .highlight {
