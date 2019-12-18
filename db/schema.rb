@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_16_002143) do
+ActiveRecord::Schema.define(version: 2019_12_18_040422) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -57,6 +57,7 @@ ActiveRecord::Schema.define(version: 2019_12_16_002143) do
     t.string "size"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "ipfs_id"
   end
 
   create_table "directories", force: :cascade do |t|
@@ -99,7 +100,6 @@ ActiveRecord::Schema.define(version: 2019_12_16_002143) do
     t.string "size"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "ipfs_id"
     t.index ["data_id"], name: "index_shares_on_data_id"
     t.index ["directory_id"], name: "index_shares_on_directory_id"
     t.index ["server_id"], name: "index_shares_on_server_id"

@@ -4,7 +4,8 @@ class SearchController < ApplicationController
   def complete
     @suggestions = Datum
     .where('name ILIKE ?', "%#{params[:partial]}%")
-    .limit(15)
+    .distinct
+    .limit(50)
     .select(:name).pluck(:name)
 
     render json: @suggestions
