@@ -20,17 +20,5 @@
   <%= link_to @share.data.name, @share.data %>
 </p>
 
-<p>
-  <strong title='Interplanetary Filesystem'>IPFS:</strong>
-  <% if @share.ipfs_id %>
-    <%= link_to(
-      '✔️',
-      "http://ipfs.io/ipfs/#{@share.ipfs_id}"
-    ) %>
-  <% else %>
-    <span>❌</span>
-  <% end %>
-</p>
-
 <%= link_to 'Edit', edit_share_path(@share) %> |
 <%= link_to 'Back', shares_path %>

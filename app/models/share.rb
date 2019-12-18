@@ -28,7 +28,7 @@ class Share < ApplicationRecord
         )
         next
       end
-      line =~ /!([^ ]+) (.+) * ::INFO:: (.+)$/
+      line =~ /!([^ ]+) (.+?) * ::INFO:: (.+)$/
       server = Server.find_or_create_by(
         name: $1
       )

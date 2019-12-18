@@ -10,7 +10,7 @@ namespace :import do
     )
     data = File.open(args[:file]) do |f|
       json = JSON.parse(f.read)
-      entries = Entry.parse(json)
+      entries = Entry.parse(json, award)
     end
   end
 

@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   resources :authors
 
   get '/import' => 'pages#import'
+  post '/import' => 'pages#upload'
   get '/stats' => 'pages#stats'
   get '/search' => 'pages#search'
   post '/search' => 'search#complete'

@@ -3,12 +3,13 @@ class Entry < ApplicationRecord
   belongs_to :category
   belongs_to :year
   belongs_to :nominee, class_name: 'Book'
+  belongs_to :source_string
 
   def to_s
     nominee&.to_s
   end
 
-  def self.parse(json)
+  def self.parse(json, award)
     json.each do |yr, data|
       year = Year.find_or_create_by(number: yr.to_i)
       data.each do |cat, data|
@@ -26,7 +27,7 @@ class Entry < ApplicationRecord
             text: nominee['raw']
           )
           Entry.find_or_create_by(
-            source: source,
+            source_string: source,
             award: award,
             year: year,
             category: category,

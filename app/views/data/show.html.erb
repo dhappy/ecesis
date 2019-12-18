@@ -10,6 +10,20 @@
   <%= @datum.size %>
 </p>
 
+<p>
+  <strong title='Interplanetary Filesystem'>IPFS:</strong>
+  <% if @datum.ipfs_id %>
+    <%= link_to(
+      '✔️',
+      "http://ipfs.io/ipfs/#{@datum.ipfs_id}"
+    ) %>
+  <% else %>
+    <span>❌</span>
+  <% end %>
+</p>
+
+
+
 <ul>
   <% @datum.shares.each do |share| %>
     <li><%= link_to(

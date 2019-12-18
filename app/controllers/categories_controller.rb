@@ -5,6 +5,10 @@ class CategoriesController < ApplicationController
   # GET /categories.json
   def index
     @categories = Category.all
+    if params[:year]
+      @year = Year.find(params[:year])
+      @categories = @year.categories
+    end
   end
 
   # GET /categories/1
@@ -12,8 +16,8 @@ class CategoriesController < ApplicationController
   def show
     @entries = @category.entries
     if params[:year]
-      year = Year.find_by(number: params[:year])
-      @entries = @entries.where(year: year)
+      @year = Year.find(params[:year])
+      @entries = @entries.where(year: @year)
     end
   end
 

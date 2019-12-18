@@ -1,5 +1,8 @@
 class Year < ApplicationRecord
-  has_and_belongs_to_many(
-    :categories, -> { distinct }
+  has_many :entries
+  has_many(
+    :categories,
+    -> { distinct },
+    through: :entries
   )
 end

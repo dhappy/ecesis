@@ -1,2 +1,5 @@
-<form>
-</form>
+<%= form_with url: import_path do |form| %>
+  <%= form.label :file, 'JSON Awards:' %>
+  <%= form.file_field :file %>
+  <%= form.submit :Upload %>
+<% end %>

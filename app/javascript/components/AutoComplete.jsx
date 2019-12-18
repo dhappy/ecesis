@@ -33,15 +33,15 @@ class AutoComplete extends React.Component {
 
   onSuggestionsFetchRequested = ({ value }) => {
     axios
-      .post('/search', {
-        partial: value,
-      })
-      .then(res => {
-        //const results = res.data.hits.hits.map(h => h._source)
-        const results = res.data
-        console.log('R', results)
-        this.setState({ suggestions: results })
-      })
+    .post('/search', {
+      partial: value,
+    })
+    .then(res => {
+      //const results = res.data.hits.hits.map(h => h._source)
+      const results = res.data
+      console.log('R', results)
+      this.setState({ suggestions: results })
+    })
   }
 
   onSuggestionsClearRequested = () => {

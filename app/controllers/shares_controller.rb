@@ -24,6 +24,7 @@ class SharesController < ApplicationController
   # GET /shares/1
   # GET /shares/1.json
   def show
+    @title = "Share: #{params[:id]}"
   end
 
   # GET /shares/new
