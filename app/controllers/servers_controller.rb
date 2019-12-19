@@ -13,9 +13,9 @@ class ServersController < ApplicationController
   def show
     @shares = (
       @server.shares
-      .include(:directory)
-      .include(:server)
-      .include(:filename)
+      .includes(:directory)
+      .includes(:server)
+      .includes(:filename)
     )
   end
 

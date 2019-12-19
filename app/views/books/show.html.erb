@@ -12,10 +12,18 @@
 
 <p>
   <strong>Data:</strong>
-  <%= link_to(
-    @book.data.present? ? '✔' : '❌',
-    @book.data
-  ) %>
+  <% if @book.data.empty? %>
+    <span>None</span>
+  <% else %>
+    <ul>
+      <% @book.data.each do |d| %>
+        <%= link_to(
+          "#{d.mimetype}: #{d.present? ? '✔' : '❌'}",
+          d
+        ) %>
+      <% end %>
+    </ul>
+  <% end %>
 </p>
 
 <%= link_to 'Edit', edit_book_path(@book) %> |
