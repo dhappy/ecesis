@@ -1,11 +1,6 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
-  <%= @datum.name %>
-</p>
-
-<p>
   <strong>Size:</strong>
   <%= @datum.size %>
 </p>
@@ -22,16 +17,14 @@
   <% end %>
 </p>
 
-
-
 <ul>
   <% @datum.shares.each do |share| %>
     <li><%= link_to(
-      "#{share.server.name}/#{share.data.name}",
+      "#{share.server.name}/#{share.filename.name}",
       share
     ) %></li>
   <% end %>
 </ul>
 
-<%= link_to 'Edit', edit_datum_path(@datum) %> |
-<%= link_to 'Back', data_path %>
+<%= link_to '✏', edit_datum_path(@datum) %> |
+<%= link_to '⏫', data_path %>

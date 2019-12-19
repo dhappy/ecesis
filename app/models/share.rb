@@ -1,16 +1,18 @@
 class Share < ApplicationRecord
   belongs_to :server
   belongs_to :directory
+  belongs_to :filename
   belongs_to :data, class_name: 'Datum'
 
   def irc_link
-    "!#{server.name} #{data.name}"
+    "!#{server.name} #{filename.name}"
   end
 
   def self.parse(file)
     shares = []
     first_seen = false
     dir = nil
+    server = nil
 
     file.each do |line|
       if line.strip! =~ /^=+$/
@@ -28,18 +30,33 @@ class Share < ApplicationRecord
         )
         next
       end
+      Rails.logger.info "Processing: #{line}"
       line =~ /!([^ ]+) (.+?) * ::INFO:: (.+)$/
-      server = Server.find_or_create_by(
-        name: $1
+      if server.nil? || server.name != $1
+        server = Server.find_or_create_by(
+          name: $1
+        )
+      end
+      filename = Filename.find_or_create_by(
+        name: $2
       )
-      data = Datum.find_or_create_by(
-        name: $2, size: $3
-      )
-      shares << Share.find_or_create_by(
+      share = Share.find_or_create_by(
         server: server,
         directory: dir,
-        data: data
+        filename: filename
       )
+
+      if share.data.nil?
+        share.update(
+          data: Datum.create(size: $3)
+        )
+      else
+        if share.data.size != $3
+          share.data.update(size: $3)
+        end
+      end
+
+      shares << share
     end
 
     shares

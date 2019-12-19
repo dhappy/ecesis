@@ -5,5 +5,14 @@
   <%= @directory.name %>
 </p>
 
-<%= link_to 'Edit', edit_directory_path(@directory) %> |
-<%= link_to 'Back', directories_path %>
+<ul>
+  <% @directory.shares.each do |share| %>
+    <li><%= link_to(
+      "#{share.server.name}/#{share.filename.name}",
+      share
+    ) %></li>
+  <% end %>
+</ul>
+
+<%= link_to '✏', edit_directory_path(@directory) %> |
+<%= link_to '⏫', directories_path %>

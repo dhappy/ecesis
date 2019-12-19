@@ -11,6 +11,12 @@ class ServersController < ApplicationController
   # GET /servers/1
   # GET /servers/1.json
   def show
+    @shares = (
+      @server.shares
+      .include(:directory)
+      .include(:server)
+      .include(:filename)
+    )
   end
 
   # GET /servers/new

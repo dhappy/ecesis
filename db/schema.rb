@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_18_040422) do
+ActiveRecord::Schema.define(version: 2019_12_18_234602) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -100,8 +100,10 @@ ActiveRecord::Schema.define(version: 2019_12_18_040422) do
     t.string "size"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "filename_id", null: false
     t.index ["data_id"], name: "index_shares_on_data_id"
     t.index ["directory_id"], name: "index_shares_on_directory_id"
+    t.index ["filename_id"], name: "index_shares_on_filename_id"
     t.index ["server_id"], name: "index_shares_on_server_id"
   end
 
@@ -133,5 +135,6 @@ ActiveRecord::Schema.define(version: 2019_12_18_040422) do
   add_foreign_key "entries", "years"
   add_foreign_key "shares", "data", column: "data_id"
   add_foreign_key "shares", "directories"
+  add_foreign_key "shares", "filenames"
   add_foreign_key "shares", "servers"
 end

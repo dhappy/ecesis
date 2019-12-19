@@ -4,7 +4,13 @@ class SharesController < ApplicationController
   # GET /shares
   # GET /shares.json
   def index
-    @shares = Share.all.includes(:data).includes(:directory).includes(:server)
+    @shares = (
+      Share.all
+      .includes(:filename)
+      .includes(:data)
+      .includes(:directory)
+      .includes(:server)
+    )
 
     if params[:server]
       @server = Server.find(params[:server])

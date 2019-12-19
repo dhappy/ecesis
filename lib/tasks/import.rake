@@ -5,6 +5,8 @@ namespace :import do
     :json,
     [:file, :award] => [:environment]
   ) do |t, args|
+    Rails.logger.level = 0
+
     award = Award.find_or_create_by(
       name: args[:award]
     )

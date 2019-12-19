@@ -5,15 +5,18 @@ class DirectoriesController < ApplicationController
   # GET /directories.json
   def index
     @directories = Directory.all
+    @title = 'Dirs'
     if params[:server]
       @server = Server.find(params[:server])
       @directories = @server.directories.uniq
+      @title += "@#{@server.name}"
     end
   end
 
   # GET /directories/1
   # GET /directories/1.json
   def show
+    @title = "Dir: #{params[:id]}"
   end
 
   # GET /directories/new

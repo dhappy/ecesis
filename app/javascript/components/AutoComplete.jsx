@@ -22,7 +22,7 @@ class AutoComplete extends React.Component {
   renderSuggestion = suggestion => {
     return (
       <div className="result">
-        <div>{suggestion}</div>
+        <div>{suggestion.text}</div>
       </div>
     )
   }
@@ -37,15 +37,17 @@ class AutoComplete extends React.Component {
       partial: value,
     })
     .then(res => {
-      //const results = res.data.hits.hits.map(h => h._source)
       const results = res.data
-      console.log('R', results)
       this.setState({ suggestions: results })
     })
   }
 
   onSuggestionsClearRequested = () => {
     this.setState({ suggestions: [] })
+  }
+
+  onSuggestionSelected = (evt, { suggestion }) => {
+    window.location = suggestion.url
   }
 
   render() {
@@ -62,9 +64,10 @@ class AutoComplete extends React.Component {
         suggestions={suggestions}
         onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
         onSuggestionsClearRequested={this.onSuggestionsClearRequested}
-        getSuggestionValue={suggestion => suggestion}
+        getSuggestionValue={suggestion => suggestion.text}
         renderSuggestion={this.renderSuggestion}
         inputProps={inputProps}
+        onSuggestionSelected={this.onSuggestionSelected}
       />
     )
   }
