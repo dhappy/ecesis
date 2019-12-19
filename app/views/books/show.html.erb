@@ -10,5 +10,13 @@
   <%= @book.title.name %>
 </p>
 
+<p>
+  <strong>Data:</strong>
+  <%= link_to(
+    @book.data.present? ? '✔' : '❌',
+    @book.data
+  ) %>
+</p>
+
 <%= link_to 'Edit', edit_book_path(@book) %> |
 <%= link_to 'Back', books_path %>
