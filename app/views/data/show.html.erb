@@ -8,10 +8,7 @@
 <p>
   <strong title='Interplanetary Filesystem'>IPFS:</strong>
   <% if @datum.ipfs_id %>
-    <%= link_to(
-      '✔️',
-      "http://ipfs.io/ipfs/#{@datum.ipfs_id}"
-    ) %>
+    <%= link_to '✔️', @datum.url %>
   <% else %>
     <span>❌</span>
   <% end %>

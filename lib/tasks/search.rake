@@ -11,7 +11,7 @@ namespace :search do
       configure do |c|
         c.server   = "irc.irchighway.net"
         c.channels = ['#cinch-bots', '#ebooks']
-        c.nick = 'hugobot_v1'
+        c.nick = 'hugobot'
       end
 
       on :message, /idx (.*)/ do |m|
@@ -19,6 +19,23 @@ namespace :search do
         svr = m.message.sub(/^idx /, '')
         m.bot.channels[1].send("@#{svr}")
         m.reply "Requesting List from '#{svr}' in #ebooks"
+      end
+
+      on :message, /dl (.*)/ do |m|
+        admin ||= m.user
+        cmd = m.message.sub(/^dl /, '')
+        m.bot.channels[1].send(cmd)
+        m.reply "Sending '#{cmd}' to #ebooks"
+      end
+
+      on :message, /Type:.*For My List Of:.*Files/ do |m|
+        msg = m.message.gsub(/\u0003\d+,?\d*\u0095?\u0096?/, '')
+        admin.send("Pong: #{msg}")
+      end
+
+      on :message, /ping/ do |m|
+        admin ||= m.user
+        m.reply("Ping: You are#{admin != m.user ? ' not' : ''} the admin.")
       end
 
       on :message, /bb/ do |m|

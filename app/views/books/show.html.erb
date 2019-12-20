@@ -17,10 +17,14 @@
   <% else %>
     <ul>
       <% @book.data.each do |d| %>
-        <%= link_to(
-          "#{d.mimetype}: #{d.present? ? '✔' : '❌'}",
-          d
-        ) %>
+        <li>
+          <span><%= d.mimetype %>:</span>
+          <% if d.present? %>
+            <%= link_to '✔', d.url %>
+          <% else %>
+            <%= link_to '❌', d%>
+          <% end %>
+        </li>
       <% end %>
     </ul>
   <% end %>

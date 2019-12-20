@@ -5,6 +5,7 @@ class SearchController < ApplicationController
     @filenames = Filename
     .where('name ILIKE ?', "%#{params[:partial]}%")
     .distinct
+    .includes(:shares)
     .limit(50)
 
     @suggestions = @filenames.map do |n|

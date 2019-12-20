@@ -46,16 +46,6 @@ class Share < ApplicationRecord
         filename: filename
       )
 
-      if share.data.nil?
-        share.update(
-          data: Datum.create(size: $3)
-        )
-      else
-        if share.data.size != $3
-          share.data.update(size: $3)
-        end
-      end
-
       shares << share
     end
 
