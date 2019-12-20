@@ -10,6 +10,12 @@ class BooksController < ApplicationController
   # GET /books/1
   # GET /books/1.json
   def show
+    if @book.data.empty?
+      @suggestions = Filename.where(
+        'name ILIKE ?',
+        "%#{@book.author}%#{@book.title}%"
+      )
+    end
   end
 
   # GET /books/new

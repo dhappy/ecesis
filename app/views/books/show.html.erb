@@ -30,5 +30,28 @@
   <% end %>
 </p>
 
-<%= link_to 'Edit', edit_book_path(@book) %> |
-<%= link_to 'Back', books_path %>
+<% if @suggestions %>
+  <ul class='actionlist'>
+    <% @suggestions.each do |s| %>
+      <li>
+        <span><%= s %></span>
+        <% if(
+          Link
+          .where(book: @book, filename: s)
+          .exists?
+        %>
+          <span>Linked</span>
+        <% else %>
+          <%= form_with url: link_path do |f| %>
+            <%= f.hidden_field :book_id, value: @book.id %>
+            <%= f.hidden_field :filename_id, value: s.id %>
+            <%= f.submit :Link %>
+          <% end %>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= link_to '✏', edit_book_path(@book) %> |
+<%= link_to '⏫', books_path %>

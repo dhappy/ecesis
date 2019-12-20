@@ -15,6 +15,12 @@
 </p>
 
 <ul>
+  <% @datum.books.each do |book| %>
+    <li><%= link_to book, book %></li>
+  <% end %>
+</ul>
+
+<ul>
   <% @datum.shares.each do |share| %>
     <li><%= link_to(
       "#{share.server.name}/#{share.filename.name}",

@@ -5,8 +5,8 @@
 <table>
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Size</th>
+      <th>Mimetype</th>
+      <th>IPFS ID</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -14,8 +14,8 @@
   <tbody>
     <% @data.each do |datum| %>
       <tr>
-        <td><%= datum.name %></td>
-        <td><%= datum.size %></td>
+        <td><%= link_to datum.mimetype, datum %></td>
+        <td><%= link_to datum.ipfs_id, datum.url %></td>
         <td><%= link_to 'Show', datum %></td>
         <td><%= link_to 'Edit', edit_datum_path(datum) %></td>
         <td><%= link_to 'Destroy', datum, method: :delete, data: { confirm: 'Are you sure?' } %></td>
