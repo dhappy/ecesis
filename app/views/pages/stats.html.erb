@@ -5,9 +5,12 @@
     <li>
       <span class='name'>Filenames</span>
       <span class='value'>
-        <%= number_with_delimiter(
-          Filename.all.distinct.count,
-          delimiter: ','
+        <%= link_to(
+          number_with_delimiter(
+            Filename.all.distinct.count,
+            delimiter: ','
+          ),
+          filenames_path
         ) %>
       </span>
     </li>

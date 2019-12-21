@@ -98,8 +98,7 @@ namespace :import do
           next if link.book.data.any?
           next if link.filename.shares.empty?
 
-          irc_link = link.filename.shares.first.irc_link
-          queue << irc_link
+          queue << link
         end
 
         admin.send("Queued: #{queue.size} #{'book'.pluralize(queue.size)}")
@@ -111,9 +110,19 @@ namespace :import do
       end
 
       on :message, 'req' do |m|
-        if nxt = queue.shift
-          admin.send("Requesting: #{nxt}")
-          m.bot.channels[1].send(nxt)
+        while nxt = queue.shift
+          author, title = nxt.book.author, nxt.book.title
+          if File.exist?("#{Rails.root}/#{author}/#{title}")
+            admin.send("Duplicate REQ: #{nxt.book}")
+          else
+            break
+          end
+        end
+
+        if nxt
+          share = nxt.filename.shares.sample
+          admin.send("Requesting: #{share.directory}/#{share.filename} @ #{share.server}")
+          m.bot.channels[1].send(share.irc_link)
         end
       end
 
@@ -192,9 +201,19 @@ namespace :import do
 
         book.data << data
 
-        if nxt = queue.shift
-          admin.send("Requesting: #{nxt}")
-          m.bot.channels[1].send(nxt)
+        while nxt = queue.shift
+          author, title = nxt.book.author, nxt.book.title
+          if File.exist?("#{Rails.root}/#{author}/#{title}")
+            admin.send("Duplicate REQ: #{nxt.book}")
+          else
+            break
+          end
+        end
+
+        if nxt
+          share = nxt.filename.shares.sample
+          admin.send("Requesting: #{share.directory}/#{share.filename} @ #{share.server}")
+          m.bot.channels[1].send(share.irc_link)
         end
       end
     end

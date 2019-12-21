@@ -4,7 +4,7 @@ class Book < ApplicationRecord
   has_many :contents
   has_many :data, through: :contents
   has_many :entries, foreign_key: :nominee_id
-  has_many :links
+  has_many :links, dependent: :destroy
 
   def self.for(author, title)
     author = Author.find_or_create_by(name: author)
