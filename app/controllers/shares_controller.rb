@@ -24,7 +24,7 @@ class SharesController < ApplicationController
       @shares = @shares.where(directory: dir)
     end
 
-    @shares = @shares.limit(5000)
+    @shares = @shares.page(params[:page])
   end
 
   # GET /shares/1

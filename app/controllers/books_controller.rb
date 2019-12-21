@@ -4,12 +4,15 @@ class BooksController < ApplicationController
   # GET /books
   # GET /books.json
   def index
+    @title = 'Books'
     @books = Book.all.includes(:author).includes(:title)
   end
 
   # GET /books/1
   # GET /books/1.json
   def show
+    @title = "Book: #{@book}"
+    
     if @book.data.empty?
       @suggestions = @book.possible_filenames
     end

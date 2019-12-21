@@ -4,7 +4,16 @@ class FilenamesController < ApplicationController
   # GET /filenames
   # GET /filenames.json
   def index
-    @filenames = Filename.all.page(params[:page])
+    @title = 'Filenames'
+    @filenames = Filename.all
+    
+    if params[:contains]
+      @filenames = @filenames.where(
+        'name ILIKE ?', "%#{params[:contains]}%"
+      )
+    end
+
+    @filenames = @filenames.page(params[:page])
   end
 
   # GET /filenames/1

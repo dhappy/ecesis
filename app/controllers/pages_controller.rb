@@ -2,14 +2,15 @@ class PagesController < ApplicationController
   protect_from_forgery with: :null_session
 
   def import
-    @title = 'Awards: Import Data'
+    @title = 'Import Data'
   end
 
   def stats
-    @title = 'Awards: Statistics'
+    @title = 'Statistics'
   end
 
   def review
+    @title = 'Review'
     skip = params[:skip].to_i
     count = params[:count].to_i
     count = 10 if count <= 0 || count > 100

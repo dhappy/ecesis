@@ -32,8 +32,16 @@
 
 <p>
   <strong>Filenames:</strong>
-  <% unless @suggestions %>
-    <span>None</span>
+  <% if @suggestions.nil? || @suggestions.empty? %>
+    <% if @book.links.empty? %>
+      <span>None</span>
+    <% else %>
+      <ul>
+        <% @book.links.each do |l| %>
+          <li><%= link_to l.filename, l.filename %></li>
+        <% end %>
+      </ul>
+    <% end %>
   <% else %>
     <ul class='actionlist'>
       <% @suggestions.each do |s| %>

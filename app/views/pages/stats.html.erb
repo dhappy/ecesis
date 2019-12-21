@@ -17,36 +17,51 @@
     <li>
       <span class='name'>Directories</span>
       <span class='value'>
-        <%= number_with_delimiter(
-          Directory.all.distinct.count,
-          delimiter: ','
+        <%= link_to(
+          number_with_delimiter(
+            Directory.all.distinct.count,
+            delimiter: ','
+          ),
+          directories_path
         ) %>
       </span>
     </li>
     <li>
       <span class='name'>Data</em>
-        <%= number_with_delimiter(Datum.count, delimiter: ',') %>
+        <%= link_to(
+          number_with_delimiter(Datum.count, delimiter: ','),
+          data_path
+        ) %>
       </span>
     </li>
     <li>
       <span class='name'>Shares</em>
       </span>
       <span class='value'>
-        <%= number_with_delimiter(Share.count, delimiter: ',') %>
+        <%= link_to(
+          number_with_delimiter(Share.count, delimiter: ','),
+          shares_path
+        ) %>
       </span>
     </li>
     <li>
       <span class='name'>Books</em>
       </span>
       <span class='value'>
-        <%= number_with_delimiter(Book.count, delimiter: ',') %>
+        <%= link_to(
+          number_with_delimiter(Book.count, delimiter: ','),
+          books_path
+        ) %>
       </span>
     </li>
     <li>
       <span class='name'>Links</em>
       </span>
       <span class='value'>
-        <%= number_with_delimiter(Link.count, delimiter: ',') %>
+        <%= link_to(
+          number_with_delimiter(Link.count, delimiter: ','),
+          links_path
+        ) %>
       </span>
     </li>
   </ul>

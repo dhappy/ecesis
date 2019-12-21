@@ -109,10 +109,16 @@ namespace :import do
         admin.send(queue.join("\n"))
       end
 
+      on :message, 'clr' do |m|
+        admin ||= m.user
+        queue = []
+      end
+
       on :message, 'req' do |m|
         while nxt = queue.shift
           author, title = nxt.book.author, nxt.book.title
-          if File.exist?("#{Rails.root}/#{author}/#{title}")
+          admin.send("Checking: #{Rails.root}/public/book/by/#{author}/#{title}")
+          if File.exist?("#{Rails.root}/public/book/by/#{author}/#{title}")
             admin.send("Duplicate REQ: #{nxt.book}")
           else
             break
@@ -174,7 +180,7 @@ namespace :import do
 
           admin.send("Extracting: #{out}")
 
-          system('rar x rar')
+          system('rar x -y rar')
           File.unlink('rar')
 
           if Dir.glob('*epub').size == 1
@@ -203,7 +209,7 @@ namespace :import do
 
         while nxt = queue.shift
           author, title = nxt.book.author, nxt.book.title
-          if File.exist?("#{Rails.root}/#{author}/#{title}")
+          if File.exist?("#{Rails.root}/public/book/by/#{author}/#{title}")
             admin.send("Duplicate REQ: #{nxt.book}")
           else
             break
