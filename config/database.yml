@@ -24,3 +24,4 @@ test:
 
 production:
   <<: *default
+  database: awards_prod

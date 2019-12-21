@@ -50,28 +50,24 @@ namespace :import do
         end
         Dir.glob("#{subd}/*") do |ssd|
           name = ssd.sub(/^.*\//, '')
-          case name
-          when 'epub'
-            cmd = IO.popen(['ipfs', 'add', ssd], 'r+')
-            out = cmd.readlines.first
-            id = out.split[1]
-            data = Datum.find_or_create_by(
-              ipfs_id: id, mimetype: 'application/epub+zip'
-            )
-            book.data << data
-            puts "  Found #{book} epub: #{id}"
-          when 'html', 'xhtml'
-            cmd = IO.popen(['ipfs', 'add', ssd], 'r+')
-            out = cmd.readlines.first
-            id = out.split[1]
-            data = Datum.find_or_create_by(
-              ipfs_id: id, mimetype: 'text/html'
-            )
-            book.data << data
+          mimetype = (
+            case name
+            when 'epub'; 'application/epub+zip'
+            when 'html', 'xhtml'; 'text/html'
+            end
+          )
 
-            puts "  Found #{book} html: #{id}"
+          unless mimetype
+            puts "  Unknown Filetype: #{name}"
           else
-            puts "  Unknown Filesype: #{name}"
+            cmd = IO.popen(['ipfs', 'add', ssd], 'r+')
+            out = cmd.readlines.first
+            id = out.split[1]
+            data = Datum.find_or_create_by(
+              ipfs_id: id, mimetype: mimetype
+            )
+            book.data << data
+            puts "  Found #{book} (#{mimetype}): #{id}"
           end
         end
       end
@@ -109,6 +105,11 @@ namespace :import do
         admin.send(queue.join("\n"))
       end
 
+      on :message, 'lss' do |m|
+        admin ||= m.user
+        admin.send("Queue Size: #{queue.size}")
+      end
+
       on :message, 'clr' do |m|
         admin ||= m.user
         queue = []
@@ -116,9 +117,7 @@ namespace :import do
 
       on :message, 'req' do |m|
         while nxt = queue.shift
-          author, title = nxt.book.author, nxt.book.title
-          admin.send("Checking: #{Rails.root}/public/book/by/#{author}/#{title}")
-          if File.exist?("#{Rails.root}/public/book/by/#{author}/#{title}")
+          if nxt.book.data.any?
             admin.send("Duplicate REQ: #{nxt.book}")
           else
             break
@@ -129,12 +128,18 @@ namespace :import do
           share = nxt.filename.shares.sample
           admin.send("Requesting: #{share.directory}/#{share.filename} @ #{share.server}")
           m.bot.channels[1].send(share.irc_link)
+        else
+          admin.send('Queue Empty')
         end
       end
 
       on :message, 'ping' do |m|
         admin ||= m.user
         m.reply("Ping: You are#{admin != m.user ? ' not' : ''} the admin.")
+      end
+
+      on :notice do |m|
+        admin.send("Notice: #{m.message}")
       end
 
       on :dcc_send do |m, dcc|
@@ -183,12 +188,12 @@ namespace :import do
           system('rar x -y rar')
           File.unlink('rar')
 
-          if Dir.glob('*epub').size == 1
-            FileUtils.mv(Dir.glob('*epub').first, 'epub')
+          if Dir.glob('*.epub').size == 1
+            FileUtils.mv(Dir.glob('*.epub').first, 'epub')
             out = "#{outdir}/epub"
             mimetype = 'application/epub+zip'
-          elsif Dir.glob('*html').size == 1
-            FileUtils.mv(Dir.glob('*html').first, 'html')
+          elsif Dir.glob('*.html').size == 1
+            FileUtils.mv(Dir.glob('*.html').first, 'html')
             out = "#{outdir}/html"
             mimetype = 'application/html'
           else
@@ -196,20 +201,24 @@ namespace :import do
           end
         end
 
-        cmd = IO.popen(['ipfs', 'add', out], 'r+')
-        out = cmd.readlines.first
-        id = out.split[1]
-        data = Datum.find_or_create_by(
-          ipfs_id: id, mimetype: mimetype
-        )
+        if File.exist?(out)
+          cmd = IO.popen(['ipfs', 'add', out], 'r+')
+          out = cmd.readlines.first
+          id = out.split[1]
+          data = Datum.find_or_create_by(
+            ipfs_id: id, mimetype: mimetype
+          )
 
-        admin.send("Saved: #{book} (#{mimetype}) => #{id}")
+          admin.send("Saved: #{book} (#{mimetype}) => #{id}")
 
-        book.data << data
+          name.links.each do |link|
+            admin.send("Linking: #{link.book} & #{data.ipfs_id}")
+            link.book.data << data
+          end
+        end
 
         while nxt = queue.shift
-          author, title = nxt.book.author, nxt.book.title
-          if File.exist?("#{Rails.root}/public/book/by/#{author}/#{title}")
+          if nxt.book.data.any?
             admin.send("Duplicate REQ: #{nxt.book}")
           else
             break

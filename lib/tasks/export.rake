@@ -15,11 +15,11 @@ namespace :export do
 
     endpoints = Award.all
     patterns = [
-      'award/#{award}/#{year}/#{author} - #{title}',
-      'award/#{award}/#{year}/#{category}/#{author} - #{title}',
-      'award/#{award}/#{category}/#{author} - #{title}',
-      'award/#{award}/#{category}/#{year}/#{author} - #{title}',
-      'book/by/#{author}/#{title}/'
+      [:award, '#{award}', '#{year}', '#{author} - #{title}'],
+      [:award, '#{award}', '#{year}', '#{category}', '#{author} - #{title}'],
+      [:award, '#{award}', '#{category}', '#{author} - #{title}'],
+      [:award, '#{award}', '#{category}', '#{year}', '#{author} - #{title}'],
+      [:book, :by, '#{author}', '#{title}']
     ]
     endpoints.each do |award|
       award.years.each do |year|
@@ -42,8 +42,10 @@ namespace :export do
               title: book.title,
             }
             patterns.each do |pattern|
-              path = pattern.gsub(/\#\{(\w+)\}/) { data[$1.to_sym].to_s }
-              puts path
+              path = pattern.map do |pat|
+                pat.gsub(/\#\{(\w+)\}/) { data[$1.to_sym].to_s }
+              end
+              puts path.join('/')
             end
           end
         end

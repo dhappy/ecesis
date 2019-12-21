@@ -3,14 +3,14 @@
   <span class='metric'>Count</span>
   <ul class='data'>
     <li>
-      <span class='name'>Filenames</span>
+      <span class='name'>Servers</span>
       <span class='value'>
         <%= link_to(
           number_with_delimiter(
-            Filename.all.distinct.count,
+            Server.count,
             delimiter: ','
           ),
-          filenames_path
+          servers_path
         ) %>
       </span>
     </li>
@@ -23,6 +23,18 @@
             delimiter: ','
           ),
           directories_path
+        ) %>
+      </span>
+    </li>
+    <li>
+      <span class='name'>Filenames</span>
+      <span class='value'>
+        <%= link_to(
+          number_with_delimiter(
+            Filename.all.distinct.count,
+            delimiter: ','
+          ),
+          filenames_path
         ) %>
       </span>
     </li>

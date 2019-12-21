@@ -13,9 +13,13 @@ class PagesController < ApplicationController
     @title = 'Review'
     skip = params[:skip].to_i
     count = params[:count].to_i
-    count = 10 if count <= 0 || count > 100
+    count = 10 if count <= 0 || count > 500
     @books = []
-    Book.find_each do |book|
+    search = Book
+    if params[:cat]
+      search = Category.find(params[:cat]).nominees
+    end
+    search.find_each do |book|
       next if book.contents.any? # has data
       next if book.links.any? # has guess
       next if book.possible_filenames.empty? # no guesses

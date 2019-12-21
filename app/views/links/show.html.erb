@@ -11,4 +11,5 @@
 </p>
 
 <%= link_to '✏', edit_link_path(@link) %> |
-<%= link_to '⏫', links_path %>
+<%= link_to '⏫', links_path %> |
+<%= link_to '🗑', @link, method: :delete, data: { confirm: 'Are you sure?' } %>
