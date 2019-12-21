@@ -24,11 +24,13 @@ class LinksController < ApplicationController
   # POST /links
   # POST /links.json
   def create
-    @link = Link.new(link_params)
+    @link = Link.find_or_create_by(
+      link_params
+    )
 
     respond_to do |format|
       if @link.save
-        format.html { redirect_to @link, notice: 'Link was successfully created.' }
+        format.html { head :no_content }
         format.json { render :show, status: :created, location: @link }
       else
         format.html { render :new }

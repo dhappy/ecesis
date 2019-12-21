@@ -7,7 +7,7 @@
 
 <p>
   <strong>Title:</strong>
-  <%= @book.title.name %>
+  <%= link_to @book.title, @book.title %>
 </p>
 
 <p>
@@ -30,28 +30,33 @@
   <% end %>
 </p>
 
-<% if @suggestions %>
-  <ul class='actionlist'>
-    <% @suggestions.each do |s| %>
-      <li>
-        <span><%= s %></span>
-        <% if(
-          Link
-          .where(book: @book, filename: s)
-          .exists?
-        %>
-          <span>Linked</span>
-        <% else %>
-          <%= form_with url: link_path do |f| %>
-            <%= f.hidden_field :book_id, value: @book.id %>
-            <%= f.hidden_field :filename_id, value: s.id %>
-            <%= f.submit :Link %>
+<p>
+  <strong>Filenames:</strong>
+  <% unless @suggestions %>
+    <span>None</span>
+  <% else %>
+    <ul class='actionlist'>
+      <% @suggestions.each do |s| %>
+        <li>
+          <span><%= s %></span>
+          <% if(
+            l = Link.find_by(
+              book: @book, filename: s
+            )
+          ) %>
+            <%= link_to 'Unlink', l, method: :delete, data: { confirm: 'Are you sure?' } %>
+          <% else %>
+            <%= form_with model: Link.new() do |f| %>
+              <%= f.hidden_field :book_id, value: @book.id %>
+              <%= f.hidden_field :filename_id, value: s.id %>
+              <%= f.submit :Link %>
+            <% end %>
           <% end %>
-        <% end %>
-      </li>
-    <% end %>
-  </ul>
-<% end %>
+        </li>
+      <% end %>
+    </ul>
+  <% end %>
+</p>
 
 <%= link_to '✏', edit_book_path(@book) %> |
 <%= link_to '⏫', books_path %>

@@ -1,5 +1,11 @@
 class Award < ApplicationRecord
-  has_and_belongs_to_many(
-    :years, -> { distinct }
+  has_many :entries
+  has_many(
+    :years, -> { order(:number).distinct },
+    through: :entries
   )
+
+  def to_s
+    name
+  end
 end

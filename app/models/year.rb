@@ -5,4 +5,6 @@ class Year < ApplicationRecord
     -> { distinct },
     through: :entries
   )
+
+  def to_s; number.to_s; end
 end

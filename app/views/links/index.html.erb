@@ -14,11 +14,11 @@
   <tbody>
     <% @links.each do |link| %>
       <tr>
-        <td><%= link.book_id %></td>
-        <td><%= link.filename_id %></td>
-        <td><%= link_to 'Show', link %></td>
-        <td><%= link_to 'Edit', edit_link_path(link) %></td>
-        <td><%= link_to 'Destroy', link, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to link.book, link.book %></td>
+        <td><%= link_to link.filename, link.filename %></td>
+        <td><%= link_to '👁', link %></td>
+        <td><%= link_to '✏', edit_link_path(link) %></td>
+        <td><%= link_to '🗑', link, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

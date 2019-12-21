@@ -4,7 +4,13 @@ class EntriesController < ApplicationController
   # GET /entries
   # GET /entries.json
   def index
-    @entries = Entry.all
+    @entries = (
+      Entry.all
+      .includes(:award)
+      .includes(:year)
+      .includes(:category)
+      .includes(:nominee)
+    )
   end
 
   # GET /entries/1

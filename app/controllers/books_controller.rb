@@ -11,10 +11,7 @@ class BooksController < ApplicationController
   # GET /books/1.json
   def show
     if @book.data.empty?
-      @suggestions = Filename.where(
-        'name ILIKE ?',
-        "%#{@book.author}%#{@book.title}%"
-      )
+      @suggestions = @book.possible_filenames
     end
   end
 
@@ -30,7 +27,22 @@ class BooksController < ApplicationController
   # POST /books
   # POST /books.json
   def create
-    @book = Book.new(book_params)
+    @author = Author.find_or_create_by!(
+      name: params[:author]
+    )
+    @title = Title.find_or_create_by!(
+      name: params[:title]
+    )
+    @book = Book.find_or_create_by!(
+      author: @author, title: @title
+    )
+
+    if params[:filename_id]
+      @filename = Filename.find(params[:filename_id])
+      @link = Link.find_or_create_by!(
+        book: @book, filename: @filename
+      )
+    end
 
     respond_to do |format|
       if @book.save

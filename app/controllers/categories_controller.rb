@@ -5,6 +5,7 @@ class CategoriesController < ApplicationController
   # GET /categories.json
   def index
     @categories = Category.all
+    @title = 'Awards: Categories'
     if params[:year]
       @year = Year.find(params[:year])
       @categories = @year.categories
@@ -14,6 +15,7 @@ class CategoriesController < ApplicationController
   # GET /categories/1
   # GET /categories/1.json
   def show
+    @title = "Awards: #{@category.name}"
     @entries = @category.entries
     if params[:year]
       @year = Year.find(params[:year])

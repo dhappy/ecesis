@@ -1,5 +1,5 @@
 class Title < ApplicationRecord
-  def to_s
-    name
-  end
+  has_many :books
+
+  def to_s; name; end
 end

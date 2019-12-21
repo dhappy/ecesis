@@ -16,3 +16,11 @@
 body {
   font-size: 150%;
 }
+
+input {
+  font-size: 100%;
+}
+
+tr:hover {
+  background-color: rgba(210, 0, 210, .25);
+}

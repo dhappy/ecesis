@@ -2,13 +2,13 @@
 
 <p>
   <strong>Book:</strong>
-  <%= @link.book_id %>
+  <%= link_to @link.book, @link.book %>
 </p>
 
 <p>
   <strong>Filename:</strong>
-  <%= @link.filename_id %>
+  <%= link_to @link.filename, @link.filename %>
 </p>
 
-<%= link_to 'Edit', edit_link_path(@link) %> |
-<%= link_to 'Back', links_path %>
+<%= link_to '✏', edit_link_path(@link) %> |
+<%= link_to '⏫', links_path %>

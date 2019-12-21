@@ -16,6 +16,7 @@ class ServersController < ApplicationController
       .includes(:directory)
       .includes(:server)
       .includes(:filename)
+      .page(params[:page])
     )
   end
 

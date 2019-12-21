@@ -11,7 +11,9 @@ class SearchController < ApplicationController
     @suggestions = @filenames.map do |n|
       {
         text: n.name,
-        url: share_path(n.shares.first),
+        url: (
+          n.shares.any? ? share_path(n.shares.first) : filename_path(n)
+        ),
       }
     end
 

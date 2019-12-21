@@ -24,4 +24,5 @@ Rails.application.routes.draw do
   get '/stats' => 'pages#stats'
   get '/search' => 'pages#search'
   post '/search' => 'search#complete'
+  get '/review' => 'pages#review'
 end

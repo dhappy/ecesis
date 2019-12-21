@@ -14,9 +14,9 @@
     <% @directories.each do |directory| %>
       <tr>
         <td><%= link_to directory.name, shares_path(dir: directory) %></td>
-        <td><%= link_to 'Show', directory %></td>
-        <td><%= link_to 'Edit', edit_directory_path(directory) %></td>
-        <td><%= link_to 'Destroy', directory, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to '👁', directory %></td>
+        <td><%= link_to '✏', edit_directory_path(directory) %></td>
+        <td><%= link_to '🗑', directory, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

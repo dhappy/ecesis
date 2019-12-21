@@ -6,22 +6,44 @@
       <span class='name'>Filenames</span>
       <span class='value'>
         <%= number_with_delimiter(
-          Datum.all.select(:name).distinct.count,
+          Filename.all.distinct.count,
           delimiter: ','
         ) %>
       </span>
     </li>
     <li>
-      <span class='name'>Data <em>(Different Sizes)</em>
+      <span class='name'>Directories</span>
+      <span class='value'>
+        <%= number_with_delimiter(
+          Directory.all.distinct.count,
+          delimiter: ','
+        ) %>
+      </span>
+    </li>
+    <li>
+      <span class='name'>Data</em>
         <%= number_with_delimiter(Datum.count, delimiter: ',') %>
       </span>
     </li>
     <li>
-      <span class='name'>Shares <em>(Different Servers)</em>
-      fg
+      <span class='name'>Shares</em>
       </span>
       <span class='value'>
         <%= number_with_delimiter(Share.count, delimiter: ',') %>
+      </span>
+    </li>
+    <li>
+      <span class='name'>Books</em>
+      </span>
+      <span class='value'>
+        <%= number_with_delimiter(Book.count, delimiter: ',') %>
+      </span>
+    </li>
+    <li>
+      <span class='name'>Links</em>
+      </span>
+      <span class='value'>
+        <%= number_with_delimiter(Link.count, delimiter: ',') %>
       </span>
     </li>
   </ul>

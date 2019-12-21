@@ -2,14 +2,13 @@ class Share < ApplicationRecord
   belongs_to :server
   belongs_to :directory
   belongs_to :filename
-  belongs_to :data, class_name: 'Datum'
+  belongs_to :data, class_name: 'Datum', optional: true
 
   def irc_link
     "!#{server.name} #{filename.name}"
   end
 
   def self.parse(file)
-    shares = []
     first_seen = false
     dir = nil
     server = nil
@@ -25,7 +24,7 @@ class Share < ApplicationRecord
         next
       end
       if dir.nil?
-        dir = Directory.find_or_create_by(
+        dir = Directory.find_or_create_by!(
           name: line
         )
         next
@@ -33,22 +32,18 @@ class Share < ApplicationRecord
       Rails.logger.info "Processing: #{line}"
       line =~ /!([^ ]+) (.+?) * ::INFO:: (.+)$/
       if server.nil? || server.name != $1
-        server = Server.find_or_create_by(
+        server = Server.find_or_create_by!(
           name: $1
         )
       end
-      filename = Filename.find_or_create_by(
+      filename = Filename.find_or_create_by!(
         name: $2
       )
-      share = Share.find_or_create_by(
+      Share.find_or_create_by!(
         server: server,
         directory: dir,
         filename: filename
       )
-
-      shares << share
     end
-
-    shares
   end
 end

@@ -4,7 +4,7 @@ class FilenamesController < ApplicationController
   # GET /filenames
   # GET /filenames.json
   def index
-    @filenames = Filename.all
+    @filenames = Filename.all.page(params[:page])
   end
 
   # GET /filenames/1

@@ -3006,88 +3006,157 @@
     "Best Novel": [
       {
         "raw": "Among Others, Jo Walton (Tor)",
+        "title": "Among Others",
+        "author": "Jo Walton",
+        "publisher": "Tor",
         "won": true
       },
       {
-        "raw": "Embassytown, China Miville (Macmillan / Del Rey)"
+        "raw": "Embassytown, China Miville (Macmillan / Del Rey)",
+        "title": "Embassytown",
+        "author": "China Miville",
+        "publisher": "Macmillan / Del Rey"
       },
       {
-        "raw": "Leviathan Wakes, James S. A. Corey (Orbit)"
+        "raw": "Leviathan Wakes, James S. A. Corey (Orbit)",
+        "title": "Leviathan Wakes",
+        "author": "James S. A. Corey",
+        "publisher": "Orbit"
       },
       {
-        "raw": "Deadline, Mira Grant (Orbit)"
+        "raw": "Deadline, Mira Grant (Orbit)",
+        "title": "Deadline",
+        "author": "Mira Grant",
+        "publisher": "Orbit"
       },
       {
-        "raw": "A Dance With Dragons, George R. R. Martin (Bantam Spectra)"
+        "raw": "A Dance With Dragons, George R. R. Martin (Bantam Spectra)",
+        "title": "A Dance With Dragons",
+        "author": "George R. R. Martin",
+        "publisher": "Bantam Spectra"
       }
     ],
     "Best Novella": [
       {
         "raw": "“The Man Who Bridged the Mist”, Kij Johnson (Asimov’s)",
+        "title": "“The Man Who Bridged the Mist”",
+        "author": "Kij Johnson",
+        "publisher": "Asimov’s",
         "won": true
       },
       {
-        "raw": "“Kiss Me Twice”, Mary Robinette Kowal (Asimov’s)"
+        "raw": "“Kiss Me Twice”, Mary Robinette Kowal (Asimov’s)",
+        "title": "“Kiss Me Twice”",
+        "author": "Mary Robinette Kowal",
+        "publisher": "Asimov’s"
       },
       {
-        "raw": "Silently and Very Fast, Catherynne M. Valente (WSFA)"
+        "raw": "Silently and Very Fast, Catherynne M. Valente (WSFA)",
+        "title": "Silently and Very Fast",
+        "author": "Catherynne M. Valente",
+        "publisher": "WSFA"
       },
       {
-        "raw": "“The Man Who Ended History: A Documentary”, Ken Liu (Panverse 3)"
+        "raw": "“The Man Who Ended History: A Documentary”, Ken Liu (Panverse 3)",
+        "title": "“The Man Who Ended History: A Documentary”",
+        "author": "Ken Liu",
+        "publisher": "Panverse 3"
       },
       {
-        "raw": "Countdown, Mira Grant (Orbit)"
+        "raw": "Countdown, Mira Grant (Orbit)",
+        "title": "Countdown",
+        "author": "Mira Grant",
+        "publisher": "Orbit"
       },
       {
-        "raw": "“The Ice Owl”, Carolyn Ives Gilman (The Magazine of Fantasy & Science Fiction)"
+        "raw": "“The Ice Owl”, Carolyn Ives Gilman (The Magazine of Fantasy & Science Fiction)",
+        "title": "“The Ice Owl”",
+        "author": "Carolyn Ives Gilman",
+        "publisher": "The Magazine of Fantasy & Science Fiction"
       }
     ],
     "Best Novelette": [
       {
         "raw": "“Six Months, Three Days”, Charlie Jane Anders (Tor.com)",
+        "title": "“Six Months",
+        "author": "Three Days”, Charlie Jane Anders",
+        "publisher": "Tor.com",
         "won": true
       },
       {
-        "raw": "“Ray of Light”, Brad R. Torgersen (Analog)"
+        "raw": "“Ray of Light”, Brad R. Torgersen (Analog)",
+        "title": "“Ray of Light”",
+        "author": "Brad R. Torgersen",
+        "publisher": "Analog"
       },
       {
-        "raw": "“The Copenhagen Interpretation”, Paul Cornell (Asimov’s)"
+        "raw": "“The Copenhagen Interpretation”, Paul Cornell (Asimov’s)",
+        "title": "“The Copenhagen Interpretation”",
+        "author": "Paul Cornell",
+        "publisher": "Asimov’s"
       },
       {
-        "raw": "“What We Found”, Geoff Ryman (The Magazine of Fantasy and Science Fiction)"
+        "raw": "“What We Found”, Geoff Ryman (The Magazine of Fantasy and Science Fiction)",
+        "title": "“What We Found”",
+        "author": "Geoff Ryman",
+        "publisher": "The Magazine of Fantasy and Science Fiction"
       },
       {
-        "raw": "“Fields of Gold”, Rachel Swirsky (Eclipse Four)"
+        "raw": "“Fields of Gold”, Rachel Swirsky (Eclipse Four)",
+        "title": "“Fields of Gold”",
+        "author": "Rachel Swirsky",
+        "publisher": "Eclipse Four"
       }
     ],
     "Best Short Story": [
       {
         "raw": "“The Paper Menagerie”, Ken Liu (The Magazine of Fantasy and Science Fiction)",
+        "title": "“The Paper Menagerie”",
+        "author": "Ken Liu",
+        "publisher": "The Magazine of Fantasy and Science Fiction",
         "won": true
       },
       {
-        "raw": "“The Cartographer Wasps and the Anarchist Bees”, E. Lily Yu (Clarkesworld)"
+        "raw": "“The Cartographer Wasps and the Anarchist Bees”, E. Lily Yu (Clarkesworld)",
+        "title": "“The Cartographer Wasps and the Anarchist Bees”",
+        "author": "E. Lily Yu",
+        "publisher": "Clarkesworld"
       },
       {
-        "raw": "“The Homecoming”, Mike Resnick (Asimov’s)"
+        "raw": "“The Homecoming”, Mike Resnick (Asimov’s)",
+        "title": "“The Homecoming”",
+        "author": "Mike Resnick",
+        "publisher": "Asimov’s"
       },
       {
-        "raw": "“Movement”, Nancy Fulda (Asimov’s)"
+        "raw": "“Movement”, Nancy Fulda (Asimov’s)",
+        "title": "“Movement”",
+        "author": "Nancy Fulda",
+        "publisher": "Asimov’s"
       },
       {
-        "raw": "“Shadow War of the Night Dragons: Book One: The Dead City: Prologue”, John Scalzi (Tor.com)"
+        "raw": "“Shadow War of the Night Dragons: Book One: The Dead City: Prologue”, John Scalzi (Tor.com)",
+        "title": "“Shadow War of the Night Dragons: Book One: The Dead City: Prologue”",
+        "author": "John Scalzi",
+        "publisher": "Tor.com"
       }
     ],
     "Best Related Work": [
       {
         "raw": "The Encyclopedia of Science Fiction, Third Edition, edited by John Clute, David Langford, Peter Nicholls, and Graham Sleight (Gollancz)",
+        "title": "The Encyclopedia of Science Fiction",
+        "author": "Third Edition, edited by John Clute, David Langford, Peter Nicholls, and Graham Sleight",
+        "publisher": "Gollancz",
         "title": "The Encyclopedia of Science Fiction, Third Edition, edited",
         "author": "John Clute, David Langford, Peter Nicholls, and Graham Sleight",
         "publisher": "Gollancz",
         "won": true
       },
       {
-        "raw": "The Steampunk Bible: An Illustrated Guide to the World of Imaginary Airships, Corsets and Goggles, Mad Scientists, and Strange Literature, Jeff VanderMeer and S. J. Chambers (Abrams Image)"
+        "raw": "The Steampunk Bible: An Illustrated Guide to the World of Imaginary Airships, Corsets and Goggles, Mad Scientists, and Strange Literature, Jeff VanderMeer and S. J. Chambers (Abrams Image)",
+        "title": "The Steampunk Bible: An Illustrated Guide to the World of Imaginary Airships",
+        "author": "Corsets and Goggles, Mad Scientists, and Strange Literature, Jeff VanderMeer and S. J. Chambers",
+        "publisher": "Abrams Image"
       },
       {
         "raw": "Wicked Girls (CD), Seanan McGuire"
@@ -3096,7 +3165,10 @@
         "raw": "Writing Excuses, Season 6 (podcast series), Brandon Sanderson, Dan Wells, Howard Tayler, Mary Robinette Kowal, and Jordan Sanderson"
       },
       {
-        "raw": "Jar Jar Binks Must Die…and other Observations about Science Fiction Movies, Daniel M. Kimmel (Fantastic Books)"
+        "raw": "Jar Jar Binks Must Die…and other Observations about Science Fiction Movies, Daniel M. Kimmel (Fantastic Books)",
+        "title": "Jar Jar Binks Must Die…and other Observations about Science Fiction Movies",
+        "author": "Daniel M. Kimmel",
+        "publisher": "Fantastic Books"
       }
     ],
     "Best Graphic Story": [
@@ -6509,30 +6581,29 @@
   "2013": {
     "Best Novel": [
       {
-          "raw": "Redshirts: A Novel with Three Codas, John Scalzi (Tor)",
-          "title": "Redshirts: A Novel with Three Codas",
-	  "author": "John Scalzi",
-	  "publisher": "Tor",
+        "raw": "Redshirts: A Novel with Three Codas, John Scalzi (Tor)",
+        "title": "Redshirts: A Novel with Three Codas",
+        "author": "John Scalzi",
+        "publisher": "Tor",
         "won": true
       },
       {
-          "raw": "Captain Vorpatril’s Alliance, Lois McMaster Bujold (Baen)",
-          "title": "Captain Vorpatril’s Alliance",
-	  "author": "Lois McMaster Bujold",
-	  "publisher": "Bae"
+        "raw": "Captain Vorpatril’s Alliance, Lois McMaster Bujold (Baen)",
+        "title": "Captain Vorpatril’s Alliance",
+        "author": "Lois McMaster Bujold",
+        "publisher": "Bae"
       },
       {
-          "raw": "2312, Kim Stanley Robinson (Orbit)",
-          "title": "2312",
-	  "author": "Kim Stanley Robinson",
-	  "publisher": "Orbi"
+        "raw": "2312, Kim Stanley Robinson (Orbit)",
+        "title": "2312",
+        "author": "Kim Stanley Robinson",
+        "publisher": "Orbi"
       },
       {
-          "raw": "Throne of the Crescent Moon, Saladin Ahmed (DAW)",
-	  "title": "Throne of the Crescent Moon",
-	  "author": "Saladin Ahmed",
-	  "publisher": "DAW"
-
+        "raw": "Throne of the Crescent Moon, Saladin Ahmed (DAW)",
+        "title": "Throne of the Crescent Moon",
+        "author": "Saladin Ahmed",
+        "publisher": "DAW"
       },
       {
           "raw": "Blackout, Mira Grant (Orbit)",
@@ -6591,25 +6662,43 @@
 
       },
       {
-        "raw": "“Fade To White”, Catherynne M. Valente (Clarkesworld, August 2012)"
+        "raw": "“Fade To White”, Catherynne M. Valente (Clarkesworld, August 2012)",
+        "title": "“Fade To White”",
+        "author": "Catherynne M. Valente",
+        "publisher": "Clarkesworld, August 2012"
       },
       {
-        "raw": "“Rat-Catcher”, Seanan McGuire (A Fantasy Medley 2, Subterranean)"
+        "raw": "“Rat-Catcher”, Seanan McGuire (A Fantasy Medley 2, Subterranean)",
+        "title": "“Rat-Catcher”",
+        "author": "Seanan McGuire",
+        "publisher": "A Fantasy Medley 2, Subterranean"
       },
       {
-        "raw": "“The Boy Who Cast No Shadow”, Thomas Olde Heuvelt (Postscripts: Unfit For Eden, PS Publications)"
+        "raw": "“The Boy Who Cast No Shadow”, Thomas Olde Heuvelt (Postscripts: Unfit For Eden, PS Publications)",
+        "title": "“The Boy Who Cast No Shadow”",
+        "author": "Thomas Olde Heuvelt",
+        "publisher": "Postscripts: Unfit For Eden, PS Publications"
       }
     ],
     "Best Short Story": [
       {
         "raw": "“Mono no Aware”, Ken Liu (The Future is Japanese, VIZ Media LLC)",
+        "title": "“Mono no Aware”",
+        "author": "Ken Liu",
+        "publisher": "The Future is Japanese, VIZ Media LLC",
         "won": true
       },
       {
-        "raw": "“Immersion”, Aliette de Bodard (Clarkesworld, June 2012)"
+        "raw": "“Immersion”, Aliette de Bodard (Clarkesworld, June 2012)",
+        "title": "“Immersion”",
+        "author": "Aliette de Bodard",
+        "publisher": "Clarkesworld, June 2012"
       },
       {
-        "raw": "“Mantis Wives”, Kij Johnson (Clarkesworld, August 2012)"
+        "raw": "“Mantis Wives”, Kij Johnson (Clarkesworld, August 2012)",
+        "title": "“Mantis Wives”",
+        "author": "Kij Johnson",
+        "publisher": "Clarkesworld, August 2012"
       }
     ],
     "Best Related Work": [
@@ -12483,14 +12572,6 @@
       }
     ]
   },
-  "1939": {
-    "Best Novel": [
-      {
-        "raw": "The Sword in the Stone",
-        "won": true
-      }
-    ]
-  },
   "1943": {
     "Best Novel": [
       {
@@ -14017,7 +14098,10 @@
         "publisher": "Ace; Orbit UK"
       },
       {
-        "raw": "Zoe’s Tale by John Scalzi (Tor) "
+        "raw": "Zoe’s Tale by John Scalzi (Tor)",
+        "title": "Zoe’s Tale",
+        "author": "John Scalzi",
+        "publisher": "Tor"
       }
     ],
     "Best Novella": [
@@ -15580,70 +15664,127 @@
     "Best Novel": [
       {
         "raw": "Blackout/All Clear, Connie Willis (Ballantine Spectra)",
+        "title": "Blackout/All Clear",
+        "author": "Connie Willis",
+        "publisher": "Ballantine Spectra",
         "won": true
       },
       {
-        "raw": "Feed, Mira Grant (Orbit)"
+        "raw": "Feed, Mira Grant (Orbit)",
+        "title": "Feed",
+        "author": "Mira Grant",
+        "publisher": "Orbit"
       },
       {
-        "raw": "Cryoburn, Lois McMaster Bujold (Baen)"
+        "raw": "Cryoburn, Lois McMaster Bujold (Baen)",
+        "title": "Cryoburn",
+        "author": "Lois McMaster Bujold",
+        "publisher": "Baen"
       },
       {
-        "raw": "The Hundred Thousand Kingdoms, N.K. Jemisin (Orbit)"
+        "raw": "The Hundred Thousand Kingdoms, N.K. Jemisin (Orbit)",
+        "title": "The Hundred Thousand Kingdoms",
+        "author": "N.K. Jemisin",
+        "publisher": "Orbit"
       },
       {
-        "raw": "The Dervish House, Ian McDonald (Gollancz; Pyr)"
+        "raw": "The Dervish House, Ian McDonald (Gollancz; Pyr)",
+        "title": "The Dervish House",
+        "author": "Ian McDonald",
+        "publisher": "Gollancz; Pyr"
       }
     ],
     "Best Novella": [
       {
         "raw": "The Lifecycle of Software Objects, Ted Chiang (Subterranean)",
+        "title": "The Lifecycle of Software Objects",
+        "author": "Ted Chiang",
+        "publisher": "Subterranean",
         "won": true
       },
       {
-        "raw": "“Troika”, Alastair Reynolds (Godlike Machines, Science Fiction Book Club)"
+        "raw": "“Troika”, Alastair Reynolds (Godlike Machines, Science Fiction Book Club)",
+        "title": "“Troika”",
+        "author": "Alastair Reynolds",
+        "publisher": "Godlike Machines, Science Fiction Book Club"
       },
       {
-        "raw": "“The Lady Who Plucked Red Flowers beneath the Queen’s Window”, Rachel Swirsky (Subterranean Magazine, Summer 2010)"
+        "raw": "“The Lady Who Plucked Red Flowers beneath the Queen’s Window”, Rachel Swirsky (Subterranean Magazine, Summer 2010)",
+        "title": "“The Lady Who Plucked Red Flowers beneath the Queen’s Window”",
+        "author": "Rachel Swirsky",
+        "publisher": "Subterranean Magazine, Summer 2010"
       },
       {
-        "raw": "“The Sultan of the Clouds”, Geoffrey A. Landis (Asimov’s, September 2010)"
+        "raw": "“The Sultan of the Clouds”, Geoffrey A. Landis (Asimov’s, September 2010)",
+        "title": "“The Sultan of the Clouds”",
+        "author": "Geoffrey A. Landis",
+        "publisher": "Asimov’s, September 2010"
       },
       {
-        "raw": "“The Maiden Flight of McCauley’s Bellerophon”, Elizabeth Hand (Stories: All New Tales, William Morrow)"
+        "raw": "“The Maiden Flight of McCauley’s Bellerophon”, Elizabeth Hand (Stories: All New Tales, William Morrow)",
+        "title": "“The Maiden Flight of McCauley’s Bellerophon”",
+        "author": "Elizabeth Hand",
+        "publisher": "Stories: All New Tales, William Morrow"
       }
     ],
     "Best Novelette": [
       {
         "raw": "“The Emperor of Mars”, Allen M. Steele (Asimov’s, June 2010)",
+        "title": "“The Emperor of Mars”",
+        "author": "Allen M. Steele",
+        "publisher": "Asimov’s, June 2010",
         "won": true
       },
       {
-        "raw": "“Eight Miles”, Sean McMullen (Analog, September 2010)"
+        "raw": "“Eight Miles”, Sean McMullen (Analog, September 2010)",
+        "title": "“Eight Miles”",
+        "author": "Sean McMullen",
+        "publisher": "Analog, September 2010"
       },
       {
-        "raw": "“Plus or Minus”, James Patrick Kelly (Asimov’s, December 2010)"
+        "raw": "“Plus or Minus”, James Patrick Kelly (Asimov’s, December 2010)",
+        "title": "“Plus or Minus”",
+        "author": "James Patrick Kelly",
+        "publisher": "Asimov’s, December 2010"
       },
       {
-        "raw": "“That Leviathan, Whom Thou Hast Made”, Eric James Stone (Analog, September 2010)"
+        "raw": "“That Leviathan, Whom Thou Hast Made”, Eric James Stone (Analog, September 2010)",
+        "title": "“That Leviathan",
+        "author": "Whom Thou Hast Made”, Eric James Stone",
+        "publisher": "Analog, September 2010"
       },
       {
-        "raw": "“The Jaguar House, in Shadow”, Aliette de Bodard (Asimov’s, July 2010)"
+        "raw": "“The Jaguar House, in Shadow”, Aliette de Bodard (Asimov’s, July 2010)",
+        "title": "“The Jaguar House",
+        "author": "in Shadow”, Aliette de Bodard",
+        "publisher": "Asimov’s, July 2010"
       }
     ],
     "Best Short Story": [
       {
         "raw": "“For Want of a Nail”, Mary Robinette Kowal (Asimov’s, September 2010)",
+        "title": "“For Want of a Nail”",
+        "author": "Mary Robinette Kowal",
+        "publisher": "Asimov’s, September 2010",
         "won": true
       },
       {
-        "raw": "“Amaryllis”, Carrie Vaughn (Lightspeed, June 2010)"
+        "raw": "“Amaryllis”, Carrie Vaughn (Lightspeed, June 2010)",
+        "title": "“Amaryllis”",
+        "author": "Carrie Vaughn",
+        "publisher": "Lightspeed, June 2010"
       },
       {
-        "raw": "“The Things”, Peter Watts (Clarkesworld, January 2010)"
+        "raw": "“The Things”, Peter Watts (Clarkesworld, January 2010)",
+        "title": "“The Things”",
+        "author": "Peter Watts",
+        "publisher": "Clarkesworld, January 2010"
       },
       {
-        "raw": "“Ponies”, Kij Johnson (Tor.com, November 17, 2010)"
+        "raw": "“Ponies”, Kij Johnson (Tor.com, November 17, 2010)",
+        "title": "“Ponies”",
+        "author": "Kij Johnson",
+        "publisher": "Tor.com, November 17, 2010"
       }
     ],
     "Best Related Work": [
@@ -15655,16 +15796,25 @@
         "won": true
       },
       {
-        "raw": "Robert A. Heinlein: In Dialogue with His Century, Volume 1: (1907–1948): Learning Curve, William H. Patterson, Jr. (Tor)"
+        "raw": "Robert A. Heinlein: In Dialogue with His Century, Volume 1: (1907–1948): Learning Curve, William H. Patterson, Jr. (Tor)",
+        "title": "Robert A. Heinlein: In Dialogue with His Century",
+        "author": "Volume 1: (1907–1948): Learning Curve, William H. Patterson, Jr.",
+        "publisher": "Tor"
       },
       {
-        "raw": "The Business of Science Fiction: Two Insiders Discuss Writing and Publishing, Mike Resnick and Barry N. Malzberg (McFarland)"
+        "raw": "The Business of Science Fiction: Two Insiders Discuss Writing and Publishing, Mike Resnick and Barry N. Malzberg (McFarland)",
+        "title": "The Business of Science Fiction: Two Insiders Discuss Writing and Publishing",
+        "author": "Mike Resnick and Barry N. Malzberg",
+        "publisher": "McFarland"
       },
       {
         "raw": "Writing Excuses, Season 4, Brandon Sanderson, Jordan Sanderson, Howard Tayler, Dan Wells"
       },
       {
-        "raw": "Bearings: Reviews 1997-2001, Gary K. Wolfe (Beccon)"
+        "raw": "Bearings: Reviews 1997-2001, Gary K. Wolfe (Beccon)",
+        "title": "Bearings: Reviews 1997-2001",
+        "author": "Gary K. Wolfe",
+        "publisher": "Beccon"
       }
     ],
     "Best Graphic Story": [
@@ -15688,7 +15838,10 @@
         "publisher": "Hypernode"
       },
       {
-        "raw": "Grandville Mon Amour, Bryan Talbot (Dark Horse)"
+        "raw": "Grandville Mon Amour, Bryan Talbot (Dark Horse)",
+        "title": "Grandville Mon Amour",
+        "author": "Bryan Talbot",
+        "publisher": "Dark Horse"
       },
       {
         "raw": "The Unwritten, Volume 2: Inside Man, written by Mike Carey; illustrated by Peter Gross (Vertigo)",
@@ -16626,88 +16779,157 @@
     "Best Novel": [
       {
         "raw": "Ancillary Justice, Ann Leckie (Orbit US/Orbit UK)",
+        "title": "Ancillary Justice",
+        "author": "Ann Leckie",
+        "publisher": "Orbit US/Orbit UK",
         "won": true
       },
       {
-        "raw": "Neptune’s Brood, Charles Stross (Ace / Orbit UK)"
+        "raw": "Neptune’s Brood, Charles Stross (Ace / Orbit UK)",
+        "title": "Neptune’s Brood",
+        "author": "Charles Stross",
+        "publisher": "Ace / Orbit UK"
       },
       {
-        "raw": "Parasite, Mira Grant (Orbit US/Orbit UK)"
+        "raw": "Parasite, Mira Grant (Orbit US/Orbit UK)",
+        "title": "Parasite",
+        "author": "Mira Grant",
+        "publisher": "Orbit US/Orbit UK"
       },
       {
-        "raw": "The Wheel of Time, Robert Jordan and Brandon Sanderson (Tor Books / Orbit UK)"
+        "raw": "The Wheel of Time, Robert Jordan and Brandon Sanderson (Tor Books / Orbit UK)",
+        "title": "The Wheel of Time",
+        "author": "Robert Jordan and Brandon Sanderson",
+        "publisher": "Tor Books / Orbit UK"
       },
       {
-        "raw": "Warbound, Book III of the Grimnoir Chronicles, Larry Correia (Baen Books)"
+        "raw": "Warbound, Book III of the Grimnoir Chronicles, Larry Correia (Baen Books)",
+        "title": "Warbound",
+        "author": "Book III of the Grimnoir Chronicles, Larry Correia",
+        "publisher": "Baen Books"
       }
     ],
     "Best Novella": [
       {
         "raw": "“Equoid”, Charles Stross (Tor.com, 09-2013)",
+        "title": "“Equoid”",
+        "author": "Charles Stross",
+        "publisher": "Tor.com, 09-2013",
         "won": true
       },
       {
-        "raw": "Six-Gun Snow White, Catherynne M. Valente (Subterranean Press)"
+        "raw": "Six-Gun Snow White, Catherynne M. Valente (Subterranean Press)",
+        "title": "Six-Gun Snow White",
+        "author": "Catherynne M. Valente",
+        "publisher": "Subterranean Press"
       },
       {
-        "raw": "“Wakulla Springs”, Andy Duncan and Ellen Klages (Tor.com, 10-2013)"
+        "raw": "“Wakulla Springs”, Andy Duncan and Ellen Klages (Tor.com, 10-2013)",
+        "title": "“Wakulla Springs”",
+        "author": "Andy Duncan and Ellen Klages",
+        "publisher": "Tor.com, 10-2013"
       },
       {
-        "raw": "“The Chaplain’s Legacy”, Brad Torgersen (Analog, Jul-Aug 2013)"
+        "raw": "“The Chaplain’s Legacy”, Brad Torgersen (Analog, Jul-Aug 2013)",
+        "title": "“The Chaplain’s Legacy”",
+        "author": "Brad Torgersen",
+        "publisher": "Analog, Jul-Aug 2013"
       },
       {
-        "raw": "The Butcher of Khardov, Dan Wells (Privateer Press)"
+        "raw": "The Butcher of Khardov, Dan Wells (Privateer Press)",
+        "title": "The Butcher of Khardov",
+        "author": "Dan Wells",
+        "publisher": "Privateer Press"
       }
     ],
     "Best Novelette": [
       {
         "raw": "“The Lady Astronaut of Mars”, Mary Robinette Kowal (maryrobinettekowal.com/Tor.com, 09-2013)",
+        "title": "“The Lady Astronaut of Mars”",
+        "author": "Mary Robinette Kowal",
+        "publisher": "maryrobinettekowal.com/Tor.com, 09-2013",
         "won": true
       },
       {
-        "raw": "“The Truth of Fact, the Truth of Feeling”, Ted Chiang (Subterranean, Fall 2013)"
+        "raw": "“The Truth of Fact, the Truth of Feeling”, Ted Chiang (Subterranean, Fall 2013)",
+        "title": "“The Truth of Fact",
+        "author": "the Truth of Feeling”, Ted Chiang",
+        "publisher": "Subterranean, Fall 2013"
       },
       {
-        "raw": "“The Waiting Stars”, Aliette de Bodard (The Other Half of the Sky, Candlemark & Gleam)"
+        "raw": "“The Waiting Stars”, Aliette de Bodard (The Other Half of the Sky, Candlemark & Gleam)",
+        "title": "“The Waiting Stars”",
+        "author": "Aliette de Bodard",
+        "publisher": "The Other Half of the Sky, Candlemark & Gleam"
       },
       {
-        "raw": "“The Exchange Officers”, Brad Torgersen (Analog, Jan-Feb 2013)"
+        "raw": "“The Exchange Officers”, Brad Torgersen (Analog, Jan-Feb 2013)",
+        "title": "“The Exchange Officers”",
+        "author": "Brad Torgersen",
+        "publisher": "Analog, Jan-Feb 2013"
       },
       {
-        "raw": "“Opera Vita Aeterna”, Vox Day (The Last Witchking, Marcher Lord Hinterlands)"
+        "raw": "“Opera Vita Aeterna”, Vox Day (The Last Witchking, Marcher Lord Hinterlands)",
+        "title": "“Opera Vita Aeterna”",
+        "author": "Vox Day",
+        "publisher": "The Last Witchking, Marcher Lord Hinterlands"
       }
     ],
     "Best Short Story": [
       {
         "raw": "“The Water That Falls on You from Nowhere”, John Chu (Tor.com, 02-2013)",
+        "title": "“The Water That Falls on You from Nowhere”",
+        "author": "John Chu",
+        "publisher": "Tor.com, 02-2013",
         "won": true
       },
       {
-        "raw": "“Selkie Stories Are for Losers”, Sofia Samatar (Strange Horizons, Jan-2013)"
+        "raw": "“Selkie Stories Are for Losers”, Sofia Samatar (Strange Horizons, Jan-2013)",
+        "title": "“Selkie Stories Are for Losers”",
+        "author": "Sofia Samatar",
+        "publisher": "Strange Horizons, Jan-2013"
       },
       {
-        "raw": "“If You Were a Dinosaur, My Love”, Rachel Swirsky (Apex Magazine, Mar-2013)"
+        "raw": "“If You Were a Dinosaur, My Love”, Rachel Swirsky (Apex Magazine, Mar-2013)",
+        "title": "“If You Were a Dinosaur",
+        "author": "My Love”, Rachel Swirsky",
+        "publisher": "Apex Magazine, Mar-2013"
       },
       {
-        "raw": "“The Ink Readers of Doi Saket”, Thomas Olde Heuvelt (Tor.com, 04-2013)"
+        "raw": "“The Ink Readers of Doi Saket”, Thomas Olde Heuvelt (Tor.com, 04-2013)",
+        "title": "“The Ink Readers of Doi Saket”",
+        "author": "Thomas Olde Heuvelt",
+        "publisher": "Tor.com, 04-2013"
       }
     ],
     "Best Related Work": [
       {
         "raw": "“We Have Always Fought: Challenging the Women, Cattle and Slaves Narrative”, Kameron Hurley (A Dribble of Ink)",
+        "title": "“We Have Always Fought: Challenging the Women",
+        "author": "Cattle and Slaves Narrative”, Kameron Hurley",
+        "publisher": "A Dribble of Ink",
         "won": true
       },
       {
-        "raw": "Wonderbook: The Illustrated Guide to Creating Imaginative Fiction, Jeff VanderMeer, with Jeremy Zerfoss (Abrams Image)"
+        "raw": "Wonderbook: The Illustrated Guide to Creating Imaginative Fiction, Jeff VanderMeer, with Jeremy Zerfoss (Abrams Image)",
+        "title": "Wonderbook: The Illustrated Guide to Creating Imaginative Fiction",
+        "author": "Jeff VanderMeer, with Jeremy Zerfoss",
+        "publisher": "Abrams Image"
       },
       {
         "raw": "Queers Dig Time Lords: A Celebration of Doctor Who by the LGBTQ Fans Who Love It, Edited by Sigrid Ellis & Michael Damian Thomas (Mad Norwegian Press)",
+        "title": "Queers Dig Time Lords: A Celebration of Doctor Who by the LGBTQ Fans Who Love It",
+        "author": "Edited by Sigrid Ellis & Michael Damian Thomas",
+        "publisher": "Mad Norwegian Press",
         "title": "Queers Dig Time Lords: A Celebration of Doctor Who",
         "author": "the LGBTQ Fans Who Love It, Edited by Sigrid Ellis & Michael Damian Thomas",
         "publisher": "Mad Norwegian Press"
       },
       {
-        "raw": "Speculative Fiction 2012: The Best Online Reviews, Essays and Commentary, Justin Landon & Jared Shurin (Jurassic London)"
+        "raw": "Speculative Fiction 2012: The Best Online Reviews, Essays and Commentary, Justin Landon & Jared Shurin (Jurassic London)",
+        "title": "Speculative Fiction 2012: The Best Online Reviews",
+        "author": "Essays and Commentary, Justin Landon & Jared Shurin",
+        "publisher": "Jurassic London"
       },
       {
         "raw": "Writing Excuses Season 8, Brandon Sanderson, Dan Wells, Mary Robinette Kowal, Howard Tayler, and Jordan Sanderson"
@@ -16716,6 +16938,9 @@
     "Best Graphic Story": [
       {
         "raw": "“Time”, Randall Munroe (XKCD)",
+        "title": "“Time”",
+        "author": "Randall Munroe",
+        "publisher": "XKCD",
         "won": true
       },
       {
@@ -18030,16 +18255,24 @@
         "won": true
       },
       {
-        "raw": "Call Him Dead, by Eric Frank Russell"
+        "raw": "Call Him Dead, by Eric Frank Russell",
+        "title": "Call Him Dead",
+        "author": "Eric Frank Russell"
       },
       {
-        "raw": "The End of Eternity, by Isaac Asimov"
+        "raw": "The End of Eternity, by Isaac Asimov",
+        "title": "The End of Eternity",
+        "author": "Isaac Asimov"
       },
       {
-        "raw": "Not this August, by Cyril Kornbluth"
+        "raw": "Not this August, by Cyril Kornbluth",
+        "title": "Not this August",
+        "author": "Cyril Kornbluth"
       },
       {
-        "raw": "The Long Tomorrow, by Leigh Brackett"
+        "raw": "The Long Tomorrow, by Leigh Brackett",
+        "title": "The Long Tomorrow",
+        "author": "Leigh Brackett"
       }
     ],
     "Best Novelette": [
@@ -18051,25 +18284,39 @@
         "won": true
       },
       {
-        "raw": "“A Gun for Dinosaur”, by L. Sprague de Camp"
+        "raw": "“A Gun for Dinosaur”, by L. Sprague de Camp",
+        "title": "“A Gun for Dinosaur”",
+        "author": "L. Sprague de Camp"
       },
       {
-        "raw": "“Brightside Crossing”, by Alan Nourse"
+        "raw": "“Brightside Crossing”, by Alan Nourse",
+        "title": "“Brightside Crossing”",
+        "author": "Alan Nourse"
       },
       {
-        "raw": "“Home There’s No Returning”, by Henry Kuttner and C.L. Moore"
+        "raw": "“Home There’s No Returning”, by Henry Kuttner and C.L. Moore",
+        "title": "“Home There’s No Returning”",
+        "author": "Henry Kuttner and C.L. Moore"
       },
       {
-        "raw": "“Legwork”, by Eric Frank Russell"
+        "raw": "“Legwork”, by Eric Frank Russell",
+        "title": "“Legwork”",
+        "author": "Eric Frank Russell"
       },
       {
-        "raw": "“The Assistant Self”, by F.L. Wallace"
+        "raw": "“The Assistant Self”, by F.L. Wallace",
+        "title": "“The Assistant Self”",
+        "author": "F.L. Wallace"
       },
       {
-        "raw": "“The End of Summer”, by Algis Budrys"
+        "raw": "“The End of Summer”, by Algis Budrys",
+        "title": "“The End of Summer”",
+        "author": "Algis Budrys"
       },
       {
-        "raw": "“Who?”, by Theodore Sturgeon"
+        "raw": "“Who?”, by Theodore Sturgeon",
+        "title": "“Who?”",
+        "author": "Theodore Sturgeon"
       }
     ],
     "Best Short Story": [
@@ -18081,25 +18328,39 @@
         "won": true
       },
       {
-        "raw": "“End as a World”, by F.L. Wallace"
+        "raw": "“End as a World”, by F.L. Wallace",
+        "title": "“End as a World”",
+        "author": "F.L. Wallace"
       },
       {
-        "raw": "“King of the Hill”, by James Blish"
+        "raw": "“King of the Hill”, by James Blish",
+        "title": "“King of the Hill”",
+        "author": "James Blish"
       },
       {
-        "raw": "“Nobody Bothers Gus”, by Algis Budrys"
+        "raw": "“Nobody Bothers Gus”, by Algis Budrys",
+        "title": "“Nobody Bothers Gus”",
+        "author": "Algis Budrys"
       },
       {
-        "raw": "“The Game of Rat and Dragon”, by Cordwainer Smith"
+        "raw": "“The Game of Rat and Dragon”, by Cordwainer Smith",
+        "title": "“The Game of Rat and Dragon”",
+        "author": "Cordwainer Smith"
       },
       {
-        "raw": "“The Dragon”, by Ray Bradbury"
+        "raw": "“The Dragon”, by Ray Bradbury",
+        "title": "“The Dragon”",
+        "author": "Ray Bradbury"
       },
       {
-        "raw": "“Spy Story”, by Robert Sheckley"
+        "raw": "“Spy Story”, by Robert Sheckley",
+        "title": "“Spy Story”",
+        "author": "Robert Sheckley"
       },
       {
-        "raw": "“Twink”, by Theodore Sturgeon"
+        "raw": "“Twink”, by Theodore Sturgeon",
+        "title": "“Twink”",
+        "author": "Theodore Sturgeon"
       }
     ],
     "Best Professional Magazine": [
