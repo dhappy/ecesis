@@ -30,4 +30,6 @@
 </ul>
 
 <%= link_to '✏', edit_datum_path(@datum) %> |
-<%= link_to '⏫', data_path %>
+<%= link_to '⏫', data_path %>|
+<%= link_to '🗑', @datum, method: :delete, data: { confirm: 'Are you sure?' } %>
+

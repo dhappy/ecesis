@@ -5,5 +5,14 @@
   <%= @title.name %>
 </p>
 
-<%= link_to 'Edit', edit_title_path(@title) %> |
-<%= link_to 'Back', titles_path %>
+<p>
+  <strong>Books:</strong>
+  <ul>
+    <% @title.books.each do |book| %>
+      <li><%= link_to book, book %></li>
+    <% end %>
+  </ul>
+</p>
+
+<%= link_to '✏', edit_title_path(@title) %> |
+<%= link_to '⏫', titles_path %>

@@ -4,6 +4,7 @@ class TitlesController < ApplicationController
   # GET /titles
   # GET /titles.json
   def index
+    @title = 'Titles'
     @titles = Title.all
   end
 

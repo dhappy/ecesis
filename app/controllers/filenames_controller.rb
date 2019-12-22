@@ -7,9 +7,9 @@ class FilenamesController < ApplicationController
     @title = 'Filenames'
     @filenames = Filename.all
     
-    if params[:contains]
+    if match = params[:contains] || params[:match]
       @filenames = @filenames.where(
-        'name ILIKE ?', "%#{params[:contains]}%"
+        'name ILIKE ?', "%#{match}%"
       )
     end
 

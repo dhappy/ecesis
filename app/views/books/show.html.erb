@@ -18,7 +18,7 @@
     <ul>
       <% @book.data.each do |d| %>
         <li>
-          <span><%= d.mimetype %>:</span>
+          <span><%= link_to d.mimetype, d %>:</span>
           <% if d.present? %>
             <%= link_to '✔', d.url %>
           <% else %>

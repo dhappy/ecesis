@@ -19,7 +19,10 @@ class PagesController < ApplicationController
     if params[:cat]
       search = Category.find(params[:cat]).nominees
     end
-    search.find_each do |book|
+    search
+    .includes(:author).includes(:title)
+    .includes(:contents).includes(:links)
+    .find_each do |book|
       next if book.contents.any? # has data
       next if book.links.any? # has guess
       next if book.possible_filenames.empty? # no guesses
