@@ -22,13 +22,14 @@ class PagesController < ApplicationController
     search
     .includes(:author).includes(:title)
     .includes(:contents).includes(:links)
-    .find_each do |book|
+    .order('RANDOM()')
+    .limit(1000).each do |book|
       next if book.contents.any? # has data
       next if book.links.any? # has guess
       next if book.possible_filenames.empty? # no guesses
       next if (skip -= 1) > 0
       @books << book
-      break if @books.size > count
+      break if @books.size >= count
     end
   end
 

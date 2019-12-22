@@ -1,7 +1,7 @@
 class Book < ApplicationRecord
   belongs_to :author
   belongs_to :title
-  has_many :contents
+  has_many :contents, dependent: :destroy
   has_many :data, through: :contents
   has_many :entries, foreign_key: :nominee_id
   has_many :links, dependent: :destroy

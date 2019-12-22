@@ -153,6 +153,16 @@ namespace :import do
 
         if name.nil?
           admin.send("Couldn't Find: #{dcc.filename}")
+
+          outdir = "#{Rails.root}/tmp/books"
+          FileUtils.makedirs(outdir)
+          out = "#{outdir}/#{dcc.filename}"
+          File.open(out, 'wb') do |f|
+            dcc.accept(f)
+          end
+
+          admin.send(" Saved To: #{out}")
+
           return
         end
 

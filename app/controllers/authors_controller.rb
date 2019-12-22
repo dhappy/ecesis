@@ -4,12 +4,19 @@ class AuthorsController < ApplicationController
   # GET /authors
   # GET /authors.json
   def index
+    @title = 'Authors'
     @authors = Author.all
   end
 
   # GET /authors/1
   # GET /authors/1.json
   def show
+    @title = "Author: #{@author}"
+    @filenames = (
+      Filename
+      .where('name ILIKE ?', "%#{@author}%epub%")
+      # ToDo: Handle Last, First cases
+    )
   end
 
   # GET /authors/new

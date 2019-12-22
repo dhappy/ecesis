@@ -67,6 +67,16 @@
       </span>
     </li>
     <li>
+      <span class='name'>Authors</em>
+      </span>
+      <span class='value'>
+        <%= link_to(
+          number_with_delimiter(Author.count, delimiter: ','),
+          authors_path
+        ) %>
+      </span>
+    </li>
+    <li>
       <span class='name'>Links</em>
       </span>
       <span class='value'>
