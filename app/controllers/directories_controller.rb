@@ -11,6 +11,12 @@ class DirectoriesController < ApplicationController
       @directories = @server.directories.uniq
       @title += "@#{@server.name}"
     end
+    if params[:match]
+      @directories = @directories.where(
+        'name ILIKE ?', "%#{params[:match]}%"
+      )
+    end
+    @directories = @directories.page(params[:page])
   end
 
   # GET /directories/1

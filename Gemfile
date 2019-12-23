@@ -9,6 +9,7 @@ gem 'cinch'
 gem 'rubyzip'
 gem 'react-rails'
 gem 'kaminari'
+gem 'mysql2'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.1'

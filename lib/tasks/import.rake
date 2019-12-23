@@ -1,6 +1,8 @@
 namespace :import do
   desc 'Import data from external sources'
 
+  BANNED = ['DukeLupus']
+
   task(
     :json,
     [:file, :award] => [:environment]
@@ -78,10 +80,30 @@ namespace :import do
     require "cinch"
     require "cinch/helpers"
 
+    def dequeue(queue, admin, channel)
+      admin.send("Dequeuing: #{queue.size}")
+
+      while nxt = queue.shift
+        if nxt.has_data?
+          admin.send("Duplicate REQ: #{nxt}")
+        else
+          break
+        end
+      end
+
+      if nxt
+        share = nxt.shares.sample
+        admin.send("Requesting: #{share.directory}/#{share.filename} @ #{share.server}")
+        channel.send(share.irc_link)
+      else
+        admin.send('Queue Empty')
+      end
+    end
+
     bot = Cinch::Bot.new do
       queue = []
       admin = nil
-
+  
       configure do |c|
         c.server   = "irc.irchighway.net"
         c.channels = ['#cinch-bots', '#ebooks']
@@ -90,11 +112,21 @@ namespace :import do
 
       on :message, 'cue' do |m|
         admin ||= m.user
-        Link.all.each do |link|
-          next if link.book.data.any?
-          next if link.filename.shares.empty?
+        filenames = Link.joins(:filename).includes(:filename).map(&:filename).uniq
 
-          queue << link
+        filenames.each do |fname|
+          next if fname.has_data?
+          next if fname.shares.empty?
+
+          if(
+            fname.shares.size == 1 \
+            && BANNED.include?(fname.shares.first.server.name)
+          )
+            admin.send("Skipping Banned: (#{fname.shares.first.server.name}) #{fname}")
+            next
+          end
+
+          queue << fname
         end
 
         admin.send("Queued: #{queue.size} #{'book'.pluralize(queue.size)}")
@@ -113,24 +145,15 @@ namespace :import do
       on :message, 'clr' do |m|
         admin ||= m.user
         queue = []
+        admin.send('Cleared the Queue')
+      end
+
+      on :message, 'deq' do |m|
+        admin ||= m.user
+        dequeue(queue, admin, m.bot.channels[1])
       end
 
       on :message, 'req' do |m|
-        while nxt = queue.shift
-          if nxt.book.data.any?
-            admin.send("Duplicate REQ: #{nxt.book}")
-          else
-            break
-          end
-        end
-
-        if nxt
-          share = nxt.filename.shares.sample
-          admin.send("Requesting: #{share.directory}/#{share.filename} @ #{share.server}")
-          m.bot.channels[1].send(share.irc_link)
-        else
-          admin.send('Queue Empty')
-        end
       end
 
       on :message, 'ping' do |m|
@@ -227,22 +250,23 @@ namespace :import do
           end
         end
 
-        while nxt = queue.shift
-          if nxt.book.data.any?
-            admin.send("Duplicate REQ: #{nxt.book}")
-          else
-            break
-          end
-        end
-
-        if nxt
-          share = nxt.filename.shares.sample
-          admin.send("Requesting: #{share.directory}/#{share.filename} @ #{share.server}")
-          m.bot.channels[1].send(share.irc_link)
-        end
+        dequeue(queue, admin, m.bot.channels[1])
       end
     end
 
     bot.start
+  end
+
+  task isfdb: :environment do |args, t|
+    client = Mysql2::Client.new(
+      host: 'localhost', database: 'isfdb'
+    )
+    results = client.query(
+      'SELECT * FROM awards LIMIT 10',
+      cast: false # dates are of form YYYY-00-00
+    )
+    results.each do |row|
+      puts "#{row['award_title']} by #{row['award_author']}"
+    end
   end
 end

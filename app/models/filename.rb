@@ -18,7 +18,16 @@ class Filename < ApplicationRecord
           author: $1, title: $2
         })
       end
+
+      names.each do |n|
+        n[:title].gsub!(/ *\([^\)]+\) */, '')
+        n[:title].sub!(/^\[[^\]]+\] *- */, '')
+      end
     end
+  end
+
+  def has_data?
+    links.joins(book: :data).any?
   end
 
   def mimetype
