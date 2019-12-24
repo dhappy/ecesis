@@ -1,7 +1,7 @@
 namespace :import do
   desc 'Import data from external sources'
 
-  BANNED = ['DukeLupus']
+  BANNED = []
 
   task(
     :json,

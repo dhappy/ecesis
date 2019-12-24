@@ -10,7 +10,9 @@
     <li>
       <%= link_to entry, entry %>
       <span> </span>
-      <%= entry.nominee&.found? ? '|' : 'x' %>
+      <%= entry.nominee&.data.present? ? '✔️' : '❌' %>
+      <span> </span>
+      <%= entry.nominee&.found? ? '✔️' : '❌' %>
     </li>
   <% end %>
 </ul>

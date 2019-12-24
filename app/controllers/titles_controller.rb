@@ -11,6 +11,11 @@ class TitlesController < ApplicationController
   # GET /titles/1
   # GET /titles/1.json
   def show
+    @filenames = (
+      Filename
+      .where('name ILIKE ?', "%#{@title}%epub%")
+      # ToDo: Handle Last, First cases
+    )
   end
 
   # GET /titles/new

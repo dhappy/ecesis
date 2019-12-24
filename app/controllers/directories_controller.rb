@@ -8,7 +8,7 @@ class DirectoriesController < ApplicationController
     @title = 'Dirs'
     if params[:server]
       @server = Server.find(params[:server])
-      @directories = @server.directories.uniq
+      @directories = @server.directories.distinct
       @title += "@#{@server.name}"
     end
     if params[:match]
