@@ -5,7 +5,12 @@ class BooksController < ApplicationController
   # GET /books.json
   def index
     @title = 'Books'
-    @books = Book.all.includes(:author).includes(:title)
+    @books = (
+      Book.all
+      .includes(:author)
+      .includes(:title)
+      .page(params[:page])
+    )
   end
 
   # GET /books/1

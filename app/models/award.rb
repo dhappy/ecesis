@@ -4,6 +4,10 @@ class Award < ApplicationRecord
     :years, -> { order(:number).distinct },
     through: :entries
   )
+  has_many(
+    :categories, -> { order(:name).distinct },
+    through: :entries
+  )
 
   def to_s; name; end
 end

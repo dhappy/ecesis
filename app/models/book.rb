@@ -14,11 +14,11 @@ class Book < ApplicationRecord
 
   def possible_filenames
     @fnames ||= Filename.where(
-      'name ILIKE ?', "%#{author}%#{title}%"
+      'name ILIKE ?', "%#{title}%"
     )
-    .or(Filename.where(
-      'name ILIKE ?', "%#{title}%#{author}%"
-    ))
+    .where(
+      'name ILIKE ?', "%#{author}%"
+    )
   end
 
   def found?

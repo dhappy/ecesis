@@ -2,6 +2,16 @@ class Filename < ApplicationRecord
   has_many :shares
   has_many :links
 
+  MIMETYPES = {
+    epub: 'application/epub+zip',
+    html: 'text/html',
+    xhtml: 'text/html',
+    pdf: 'application/pdf',
+    rar: 'application/x-rar-compressed',
+    rtf: 'application/rtf',
+    zip: 'application/zip',
+  }
+
   def extension
     name.sub(/^.*\./, '').downcase
   end
@@ -31,13 +41,7 @@ class Filename < ApplicationRecord
   end
 
   def mimetype
-    case extension
-    when 'epub'; 'application/epub+zip'
-    when 'html', 'xhtml'; 'text/html'
-    when 'pdf'; 'application/pdf'
-    when 'rar'; 'application/x-rar-compressed'
-    else; 'unknown/unknown'
-    end
+    MIMETYPES[extension.to_sym] || 'unknown/unknown'
   end
 
   def to_s; name; end

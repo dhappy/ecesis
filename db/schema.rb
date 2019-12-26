@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_22_005518) do
+ActiveRecord::Schema.define(version: 2019_12_25_044655) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_trgm"
@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 2019_12_22_005518) do
     t.text "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "shortname"
   end
 
   create_table "books", force: :cascade do |t|

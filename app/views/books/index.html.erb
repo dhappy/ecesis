@@ -7,6 +7,7 @@
     <tr>
       <th>Author</th>
       <th>Title</th>
+      <th>Data</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -16,6 +17,15 @@
       <tr>
         <td><%= link_to book.author.name, book.author %></td>
         <td><%= link_to book.title.name, book.title %></td>
+        <td>
+          <% if book.contents.exists? %>
+            <ul>
+              <% book.contents.each do |c| %>
+                <li><%= link_to c.data.mimetype, c.data %>
+              <% end %>
+            </ul>
+          <% end %>
+        </td>
         <td><%= link_to '👁', book %></td>
         <td><%= link_to '✏', edit_book_path(book) %></td>
         <td><%= link_to '🗑', book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -23,6 +33,8 @@
     <% end %>
   </tbody>
 </table>
+
+<%= paginate @books %>
 
 <br>
 

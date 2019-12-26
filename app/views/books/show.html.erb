@@ -46,20 +46,18 @@
     <ul class='actionlist'>
       <% @suggestions.each do |s| %>
         <li>
-          <span><%= s %></span>
-          <% if(
-            l = Link.find_by(
+          <% link = (
+            Link.find_by(
               book: @book, filename: s
             )
           ) %>
-            <%= link_to 'Unlink', l, method: :delete, data: { confirm: 'Are you sure?' } %>
-          <% else %>
-            <%= form_with model: Link.new() do |f| %>
-              <%= f.hidden_field :book_id, value: @book.id %>
-              <%= f.hidden_field :filename_id, value: s.id %>
-              <%= f.submit :Link %>
-            <% end %>
-          <% end %>
+          <%= react_component(
+            'Link',
+            filename: s.to_s,
+            filename_id: s.id,
+            book_id: @book.id,
+            link_id: link&.id
+          ) %>
         </li>
       <% end %>
     </ul>

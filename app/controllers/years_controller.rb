@@ -4,7 +4,12 @@ class YearsController < ApplicationController
   # GET /years
   # GET /years.json
   def index
-    @years = Year.all.order(:number)
+    @years = Year.all
+    if params[:award]
+      @award = Award.find(params[:award])
+      @years = @award.years
+    end
+    @years = @years.order(:number)
   end
 
   # GET /years/1

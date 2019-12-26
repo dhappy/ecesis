@@ -1,4 +1,7 @@
 class LinksController < ApplicationController
+  # Overzealous, needed for create
+  protect_from_forgery with: :null_session, only: [:create]
+
   before_action :set_link, only: [:show, :edit, :update, :destroy]
 
   # GET /links
@@ -72,6 +75,7 @@ class LinksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def link_params
+      byebug
       params.require(:link).permit(:book_id, :filename_id)
     end
 end

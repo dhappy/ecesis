@@ -10,6 +10,10 @@ class CategoriesController < ApplicationController
       @year = Year.find(params[:year])
       @categories = @year.categories
     end
+    if params[:award]
+      @award = Award.find(params[:award])
+      @categories = @award.categories
+    end
   end
 
   # GET /categories/1

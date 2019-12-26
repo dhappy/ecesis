@@ -6,6 +6,17 @@ class TitlesController < ApplicationController
   def index
     @title = 'Titles'
     @titles = Title.all
+    if params[:match]
+      @titles = @titles.where(
+        'name ILIKE ?', "%#{params[:match]}%"
+      )
+    end
+    @titles = (
+      @titles
+      .order(:name)
+      .page(params[:page])
+      .per(params[:per_page])
+    )
   end
 
   # GET /titles/1

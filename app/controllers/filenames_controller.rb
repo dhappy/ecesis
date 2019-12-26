@@ -13,7 +13,12 @@ class FilenamesController < ApplicationController
       )
     end
 
-    @filenames = @filenames.page(params[:page])
+    @filenames = (
+      @filenames
+      .order(:name)
+      .page(params[:page])
+      .per(params[:per_page])
+    )
   end
 
   # GET /filenames/1

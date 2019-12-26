@@ -1,7 +1,7 @@
 namespace :import do
   desc 'Import data from external sources'
 
-  BANNED = []
+  BANNED = ['bsk']
 
   task(
     :json,
@@ -162,7 +162,7 @@ namespace :import do
       end
 
       on :notice do |m|
-        admin.send("Notice: #{m.message}")
+        admin.send("#{m.user}: Notice: #{m.message}")
       end
 
       on :dcc_send do |m, dcc|
@@ -174,7 +174,7 @@ namespace :import do
         name = Filename.find_by(name: dcc.filename)
         name ||= Filename.find_by(name: dcc.filename.gsub('_', ' '))
 
-        if name.nil?
+        if name.nil? || name.links.size <= 0
           admin.send("Couldn't Find: #{dcc.filename}")
 
           outdir = "#{Rails.root}/tmp/books"
@@ -191,11 +191,6 @@ namespace :import do
 
         admin.send("Accepting: #{name}")
 
-        if name.links.size <= 0
-          admin.send("No Links: #{name}")
-          return
-        end
-        
         if name.links.size > 1
           admin.send("Unexpected # of links: #{name.links.size}")
         end
@@ -221,20 +216,24 @@ namespace :import do
           system('rar x -y rar')
           File.unlink('rar')
 
-          if Dir.glob('*.epub').size == 1
-            FileUtils.mv(Dir.glob('*.epub').first, 'epub')
-            out = "#{outdir}/epub"
-            mimetype = 'application/epub+zip'
-          elsif Dir.glob('*.html').size == 1
-            FileUtils.mv(Dir.glob('*.html').first, 'html')
-            out = "#{outdir}/html"
-            mimetype = 'application/html'
+          if (
+            Dir.glob('*').size == 1 \
+            && File.file?(Dir.glob('*').first)
+          )
+            f = Filename.new(
+              name: Dir.glob('*').first
+            )
+            FileUtils.mv(
+              f.name, f.extension
+            )
+            out = "#{outdir}/#{f.extension}"
+            mimetype = f.mimetype
           else
             admin.send("RAR Difficulty In: #{outdir}")
           end
         end
 
-        if File.exist?(out)
+        if File.file?(out)
           cmd = IO.popen(['ipfs', 'add', out], 'r+')
           out = cmd.readlines.first
           id = out.split[1]
@@ -261,12 +260,46 @@ namespace :import do
     client = Mysql2::Client.new(
       host: 'localhost', database: 'isfdb'
     )
-    results = client.query(
-      'SELECT * FROM awards LIMIT 10',
-      cast: false # dates are of form YYYY-00-00
+    types = client.query(
+      'SELECT DISTINCT' \
+      + ' award_type_id AS id,' \
+      + ' award_type_short_name AS shortname,' \
+      + ' award_type_name AS name' \
+      + ' FROM award_types',
+      symbolize_keys: true
     )
-    results.each do |row|
-      puts "#{row['award_title']} by #{row['award_author']}"
+    types.each do |type|
+      award = Award.find_or_create_by(
+        name: type[:name],
+        shortname: type[:shortname]
+      )
+      entries = client.query(
+        'SELECT' \
+        + ' award_title AS title,' \
+        + ' award_author AS author,' \
+        + ' award_cat_name AS cat,' \
+        + ' award_year AS year' \
+        + ' FROM awards' \
+        + ' INNER JOIN award_cats' \
+        + ' ON awards.award_cat_id = award_cats.award_cat_id' \
+        + " WHERE award_type_id = #{type[:id]}",
+        symbolize_keys: true,
+        cast: false # dates are of form YYYY-00-00
+      )
+      entries.each do |entry|
+        puts "#{entry[:cat]}: #{entry[:title]} by #{entry[:author]}"
+        Entry.find_or_create_by!(
+          award: award,
+          year: Year.find_or_create_by!(
+            number: entry[:year].sub(/-.*/, '')
+          ),
+          category: Category.find_or_create_by!(
+            name: entry[:cat]
+          ),
+          won: true,
+          nominee: Book.for(entry[:author], entry[:title])
+        )
+      end
     end
   end
 end

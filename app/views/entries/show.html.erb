@@ -32,7 +32,7 @@
 
 <p>
   <strong>Source:</strong>
-  <%= @entry.source_string.text %>
+  <%= @entry.source_string&.text %>
 </p>
 
 <%= link_to '✏', edit_entry_path(@entry) %> |
