@@ -75,7 +75,6 @@ class LinksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def link_params
-      byebug
       params.require(:link).permit(:book_id, :filename_id)
     end
 end

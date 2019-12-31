@@ -13,12 +13,18 @@
       <td><ul class='actionlist'>
         <% book.possible_filenames.each do |f| %>
           <li>
-            <span><%= link_to f, f %></span>
-            <%= form_with model: Link.new() do |form| %>
-              <%= form.hidden_field :book_id, value: book.id %>
-              <%= form.hidden_field :filename_id, value: f.id %>
-              <%= form.submit :Link %>
-            <% end %>
+            <% link = (
+              Link.find_by(
+                book: book, filename: f
+              )
+            ) %>
+            <%= react_component(
+              'Link',
+              filename: f.to_s,
+              filenameId: f.id,
+              bookId: book.id,
+              linkId: link&.id
+            ) %>
           </li>
         <% end %>
       </ul></td>

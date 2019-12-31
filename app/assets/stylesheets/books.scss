@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-.actionlist li {
+.actionlist li, .actionlist label {
   display: flex;
 
   &:hover {
@@ -10,6 +10,7 @@
   }
 
   & > *:first-child {
+    padding: 0.1em;
     flex-grow: 1;
   }
 }
