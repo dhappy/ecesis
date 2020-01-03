@@ -1,7 +1,17 @@
 Rails.application.routes.draw do
+  root 'pages#home'
+
+  get '/import' => 'pages#import'
+  post '/import' => 'pages#upload'
+  get '/stats' => 'pages#stats'
+  get '/search' => 'pages#search'
+  post '/search' => 'search#complete'
+  get '/review' => 'pages#review'
+  get '/paths' => 'pages#paths'
+  
+  resources :paths
   resources :links
   resources :contents
-  root 'pages#home'
 
   resources :data
   resources :shares
@@ -18,11 +28,4 @@ Rails.application.routes.draw do
   resources :years
   resources :awards
   resources :authors
-
-  get '/import' => 'pages#import'
-  post '/import' => 'pages#upload'
-  get '/stats' => 'pages#stats'
-  get '/search' => 'pages#search'
-  post '/search' => 'search#complete'
-  get '/review' => 'pages#review'
 end

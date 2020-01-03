@@ -2,15 +2,19 @@ namespace :export do
   desc 'Export data to external sources'
 
   task(dirs: :environment) do |t|
+    paths = []
+
     endpoints = Content.all.includes(:book).map(&:book)
-    pattern = 'book/by/#{author}/#{title}/'
+    pattern = [:book, :by, '#{author}', '#{title}']
     endpoints.each do |book|
       data = {
         author: book.author,
         title: book.title,
       }
-      path = pattern.gsub(/\#\{(\w+)\}/) { data[$1.to_sym] }
-      puts path
+      path = pattern.map do |pat|
+        pat.to_s.gsub(/\#\{(\w+)\}/) { data[$1.to_sym].to_s }
+      end
+      paths.push(path)
     end
 
     endpoints = Award.all
@@ -43,13 +47,15 @@ namespace :export do
             }
             patterns.each do |pattern|
               path = pattern.map do |pat|
-                pat.gsub(/\#\{(\w+)\}/) { data[$1.to_sym].to_s }
+                pat.to_s.gsub(/\#\{(\w+)\}/) { data[$1.to_sym].to_s }
               end
-              puts path.join('/')
+              paths.push(path)
             end
           end
         end
       end
     end
+
+    puts paths.to_json
   end
 end

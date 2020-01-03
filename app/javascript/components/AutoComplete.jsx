@@ -4,8 +4,6 @@ import Autosuggest from 'react-autosuggest'
 import axios from 'axios'
 import { debounce } from 'throttle-debounce'
 
-import './AutoComplete.css'
-
 class AutoComplete extends React.Component {
   state = {
     value: '',

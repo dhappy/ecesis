@@ -37,4 +37,8 @@ class PagesController < ApplicationController
 
   def upload # Uploads in FF not Chrome
   end
+
+  def paths;
+    @title = 'Treework'
+  end
 end
