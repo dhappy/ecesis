@@ -3,41 +3,41 @@ import { Suspense } from 'react'
 import { PouchDB, useDB } from 'react-pouchdb'
 import { Alert } from 'antd'
 
-const Descendants = () => {
+let data = null
+
+const getDescendants = () => {
   const db = useDB()
 
-  throw db.query(
-    (doc, emit) => {
-      for(var i in doc.path) { 
-        emit([doc.path[i], doc.path], doc) 
+  if(data !== null) {
+    return data
+  } else {
+    throw db.query(
+      'tree/descendants',
+      {
+        startkey: ['book', 'by'],
+        endkey: ['book', 'by', {}],
       }
-    },
-    {
-      startkey: ['book', 'by'],
-      endkey: ['book', 'by', {}],
-    }
-  )
-  .then((res) => {
-    console.info('RES', res)
-    return (
-      <ul>
-        {/*
-        {res.rows.map((entry) => (
-          <li>{entry.dir}</li>
-        ))}
-        */}
-      </ul>
     )
-  })
-  .catch((err) => {
-    console.error('Map', err)
-    return <Alert message='Error Mapping' banner/>
-  })
+    .then((res) => res.rows)
+    .then((rows) => data = rows)
+  }
+}
+
+const Descendants = () => {
+  const desc = getDescendants()
+
+  return (
+    <ul>
+      {desc.map((entry) => (
+        <li>{entry.dir}</li>
+      ))}
+    </ul>
+  )
 }
 
 export default () => (
   <PouchDB name='books'>
-    <Suspense fallback="Loading…">
+    <Suspense fallback={<Alert message='Loading Descendants…'/>}>
       <Descendants />
     </Suspense>
   </PouchDB>
