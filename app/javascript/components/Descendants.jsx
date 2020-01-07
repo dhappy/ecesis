@@ -14,12 +14,14 @@ const getDescendants = () => {
     throw db.query(
       'tree/descendants',
       {
-        startkey: ['book', 'by'],
-        endkey: ['book', 'by', {}],
+        startkey: ['1968'],
+        endkey: ['1968', {}],
       }
     )
-    .then((res) => res.rows)
-    .then((rows) => data = rows)
+    .then((res) => res.rows.map(
+      (row) => row.value
+    ))
+    .then((vals) => data = vals)
   }
 }
 
@@ -28,9 +30,11 @@ const Descendants = () => {
 
   return (
     <ul>
-      {desc.map((entry) => (
-        <li>{entry.dir}</li>
-      ))}
+      {desc.map((entry) => {
+        return <li key={entry._id}>
+          {entry.dir}
+        </li>
+      })}
     </ul>
   )
 }
