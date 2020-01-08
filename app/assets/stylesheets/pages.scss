@@ -1,7 +1,18 @@
-.App {
-  font-family: sans-serif;
+[data-react-class = "PathComplete"] {
   text-align: center;
+
+  .ant-select input.ant-input {
+    height: 3ex;
+  }
+
+  .ant-select-selection__placeholder {
+    height: auto;
+    line-height: inherit;
+    margin-top: .1ex;
+  }
 }
+
+// For react-autocomplete
 
 .react-autosuggest__input {
   width: 75%;
