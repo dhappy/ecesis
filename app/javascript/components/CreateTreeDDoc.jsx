@@ -30,7 +30,7 @@ export default () => {
   
   return (
     <Button onClick={createDesign}>
-      Create Design Doc
+      Create Tree Design Doc
     </Button>
   )
 }

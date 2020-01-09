@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { AutoComplete } from 'antd'
 import 'antd/dist/antd.css'
-import { useDB } from 'react-pouchdb'
+import { useDB, useFind } from 'react-pouchdb'
 
 export default () => {
   const [dataSource, setDS] = useState([])
@@ -12,19 +12,25 @@ export default () => {
     console.info('onSelect', value)
   }
 
-  const onSearch = async (searchText) => {
-    db.allDocs({
-      startkey: searchText,
-      endkey: `${searchText}\uffff`,
-      limit: 25,
-      include_docs: true,
-    })
-    .then((res) => res.rows.map(
-      (row) => row.doc.dir
-    ))
+  const onSearch = (search) => {
+    console.log(search)
+    db.query(
+      'paths/full',
+      {
+        startkey: search,
+        endkey: `${search}\uFFFF`,
+        limit: 25,
+        group: true,
+      }
+    )
     .then((res) => {
-      console.log('res', res)
-      setDS(res)
+      return res.rows.map((d) => d.key)
+    })
+    .then((dirs) => {
+      setDS(dirs)
+    })
+    .catch((err) => {
+      console.error('Finding', err)
     })
   }
 
