@@ -14,7 +14,10 @@ namespace :export do
       path = pattern.map do |pat|
         pat.to_s.gsub(/\#\{(\w+)\}/) { data[$1.to_sym].to_s }
       end
-      paths.push(path)
+      paths.push({
+        path: path,
+        ipfs_id: book.data.first&.ipfs_id
+      })
     end
 
     endpoints = Award.all
@@ -49,7 +52,10 @@ namespace :export do
               path = pattern.map do |pat|
                 pat.to_s.gsub(/\#\{(\w+)\}/) { data[$1.to_sym].to_s }
               end
-              paths.push(path)
+              paths.push({
+                path: path,
+                ipfs_id: book.data.first&.ipfs_id
+              })
             end
           end
         end

@@ -302,4 +302,52 @@ namespace :import do
       end
     end
   end
+
+  task(
+    :gutenberg,
+    [:dir] => [:environment]
+  ) do |t, args|
+    def processEntry(lines)
+      if(!(match = lines[0].match(/^(\S.+)\s+(\d+)\s*$/)))
+        raise ArgumentError.new('Invalid Entry Start')
+      else
+        main = match[1]
+        id = match[2]
+
+      end
+    end
+
+    Dir.glob("#{args[:dir]}/GUTINDEX.*").each do |file|
+      prefaced = false
+      inEntry = false
+      lines = []
+
+      if file.match?(/\d\d\d\d$/)
+        puts "Processing: #{file}"
+        File.readlines(file).each.with_index do |line, lineNum|
+          if !prefaced
+            if(prefaced = line.match?(/^TITLE and AUTHOR/))
+              puts "  #{lineNum}: Header Found"
+              next
+            end
+          end
+          next if !prefaced
+          if line.match?(/^\s*$/)
+            if inEntry
+              begin
+                processEntry(lines)
+              rescue
+                prefaced = false
+              end
+              lines = []
+              inEntry = false
+            end
+            next
+          end
+          inEntry = true
+          lines.push(line)
+        end
+      end
+    end
+  end
 end

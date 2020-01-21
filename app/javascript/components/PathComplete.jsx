@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { AutoComplete } from 'antd'
 import 'antd/dist/antd.css'
-import { useDB, useFind } from 'react-pouchdb'
+import { useDB } from 'react-pouchdb'
 
 export default () => {
   const [dataSource, setDS] = useState([])

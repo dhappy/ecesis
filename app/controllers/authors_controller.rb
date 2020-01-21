@@ -6,6 +6,12 @@ class AuthorsController < ApplicationController
   def index
     @title = 'Authors'
     @authors = Author.all
+    
+    if params[:match]
+      @authors = @authors.where('name ILIKE ?', "%#{params[:match]}%")
+    end
+    
+    @authors = @authors.page(params[:page])
   end
 
   # GET /authors/1
@@ -15,6 +21,7 @@ class AuthorsController < ApplicationController
     @filenames = (
       Filename
       .where('name ILIKE ?', "%#{@author}%epub%")
+      .page(params[:page])
       # ToDo: Handle Last, First cases
     )
   end

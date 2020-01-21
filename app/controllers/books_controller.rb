@@ -19,7 +19,10 @@ class BooksController < ApplicationController
     @title = "Book: #{@book}"
     
     if @book.data.empty?
-      @suggestions = @book.possible_filenames
+      @suggestions = (
+        @book.possible_filenames
+        .page(params[:page])
+      )
     end
   end
 
