@@ -1,25 +1,34 @@
-# Mïmis
+# Mïmis Prep
 
 ## The Goal
 
-A relable search system for [IPFS](//ipfs.io) bootstrapped soely from IPFS itself.
+[Μïmis](//forets.web.app) aims to be a distributed interface system for [IPFS](//ipfs.io) bootstrapped soely from IPFS itself.
 
-The gist is a program creates a forest of trees to the various content. For example, the book A Wizard of Earthsea by Ursula K. LeGuinn; paths to it might include:
+Μïmis is backed by CouchDB for ease of syncing and efficency of computation. It is not as simple an interface for massaging data as [ActiveRecord](https://api.rubyonrails.org/classes/ActiveRecord/Base.html).
 
-* /A Wizard of Earthsea by Ursula K. LeGuinn
+The idea is to conglomerate sets of overlapping paths in a conext forest. For example, a set of paths might include:
+
 * /book/by/Ursula K. LeGuinn/A Wizard of Earthsea
-* /award/Hugo/1978/Best Novella
+* /A Wizard of Earthsea by Ursula K. LeGuinn
+* /award/Hugo/1978/Best Novella/winner/1
+* /user/23jkl4…/favorite/books/34
 
-There are myriad others.  Those are saved as directories and symlinks in IPFS.
+Each path represents a tree. Trees are published as IPFS directories. The tree is shredded as it is intaken into branches. A filesystem containing only the given path is created and its IPFS id is saved.
 
-[PouchDB](//pouchdb.com) reads in these tens of thousands of entries and runs an autocomplete off them.
+There is a special symlink starting with `...` that will be processed by finding the IPFS id for that directory branch.
 
-The goal is to be able to aggregate from several sources so that the metadata tree covers as much of what we might want to find as possible.
+# Tasks
 
-Users should be able to dedicate a portion of their storage to preservation and whereas pinning saves the entire file, preserving randomly pins subsections of all the preserved data.
+There is a frontend interface with this app, but most of the work is done in rake tasks.
 
-## Current Status
+* `rake import:gutenberg[/home/will/Downloads/gutenberg]`
 
-I've got the list of [Hugo Award](//thehugoaward.com) winners and nominees and I'm working at generating a context forest.
+Search the given directory for files named like `GUTINDEX.\d\d\d\d`. It will then attempt to parse them and import the data as `Book`s.
 
-The interface is meant to terminate at the actual data, so I'm working on a way to increase the corpus.
+It is about 99% accurate at the moment.
+
+* `rake import:irc`
+
+Connect to `#ebooks` and `#cinch-bots` as `hugobot` on [IRCHighway](irc://irc.irchighway.net/#ebooks), and listen for commands.
+
+There are really only two commands: `que` and `deq`. The first populates a queue with shares of books that don't have data. The seconds begins clearning the queue by requesting the given share and repeatining after the download completes.
