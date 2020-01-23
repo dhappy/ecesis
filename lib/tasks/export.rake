@@ -64,4 +64,22 @@ namespace :export do
 
     puts paths.to_json
   end
+
+  task(gutenberg: :environment) do |t|
+    Datum.where('gutenberg_id IS NOT NULL').each do |data|
+      data.books.each do |book|
+        gdir = data.gutenberg_id.split('')[0..-2] + [data.gutenberg_id]
+        if book.author
+          path = %W[tmp book by #{book.author.to_s}]
+          byebug
+          FileUtils.makedirs(File.join(path))
+          FileUtils.symlink(
+            File.join(pat h + [  book.title.to_s]),
+            File.join(['...', :gutenberg] + gdir)
+          )
+        end
+        puts data.url
+      end
+    end
+  end
 end

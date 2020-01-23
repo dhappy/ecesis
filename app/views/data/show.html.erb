@@ -14,6 +14,15 @@
   <% end %>
 </p>
 
+<p>
+  <strong title='Project Gutenberg'>Gutenberg:</strong>
+  <% if @datum.gutenberg_id %>
+    <%= link_to '✔️', @datum.guten_url %>
+  <% else %>
+    <span>❌</span>
+  <% end %>
+</p>
+
 <ul>
   <% @datum.books.each do |book| %>
     <li><%= link_to book, book %></li>

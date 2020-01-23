@@ -6,6 +6,7 @@
   <thead>
     <tr>
       <th>Name</th>
+      <th>Book Count</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -14,6 +15,7 @@
     <% @authors.each do |author| %>
       <tr>
         <td><%= link_to author.name, author %></td>
+        <td><%= link_to author.books.count, author %></td>
         <td><%= link_to '👁', author %></td>
         <td><%= link_to '✏', edit_author_path(author) %></td>
         <td><%= link_to '🗑', author, method: :delete, data: { confirm: 'Are you sure?' } %></td>

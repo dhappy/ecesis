@@ -307,6 +307,29 @@ namespace :import do
     :gutenberg,
     [:dir] => [:environment]
   ) do |t, args|
+    def saveBook(id, main, metas = [])
+      if(match = (
+        main.match(/^(.+),\s*(?:by|par|di)\s+(\S.*?)\s*$/i) \
+        || main.match(/^(.+)\s+by\s+(\S.*?)\s*$/i)
+      ))
+        author = Author.find_or_create_by!(name: match[2])
+        title = Title.find_or_create_by!(name: match[1])
+      else
+        author = nil
+        title = Title.find_or_create_by!(name: main)
+      end
+
+      book = Book.find_or_create_by!(
+        author: author, title: title
+      )
+
+      book.data << Datum.find_or_create_by!(
+        gutenberg_id: id
+      )
+
+      puts "#{id}: #{title}#{author ? ", by #{author}" : ''}"
+    end
+
     def processEntry(lines)
       lines.each{ |l| l.gsub!("\u00A0", ' ') } # nbsp not in \s
       if(!(match = lines[0].match(/^(\S.+?)\s+(\d+)(C?)\s*$/)))
@@ -334,15 +357,7 @@ namespace :import do
           end
         end
 
-        if(match = (
-          main.match(/^(.+),\s*(by|par|di)\s+(\S.*?)\s*$/i) \
-          || main.match(/^(.+)\s+by\s+(\S.*?)\s*$/i)
-        ))
-          author = match[2]
-          title = match[1]
-        # elsif
-          #puts " No By: #{main}"
-        end
+        saveBook(id, main, metas)
       end
     end
 

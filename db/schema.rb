@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(version: 2020_01_23_030459) do
   end
 
   create_table "books", force: :cascade do |t|
-    t.bigint "author_id", null: false
+    t.bigint "author_id"
     t.bigint "title_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -98,6 +98,7 @@ ActiveRecord::Schema.define(version: 2020_01_23_030459) do
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["name"], name: "index_filenames_on_name", using: :gin
   end
 
   create_table "links", force: :cascade do |t|
