@@ -21,7 +21,7 @@ There is a special symlink starting with `...` that will be processed by finding
 
 There is a frontend interface with this app, but most of the work is done in rake tasks.
 
-* `rake import:gutenberg[/home/will/Downloads/gutenberg]`
+* `rake import:gutenberg[tmp/gutenberg]`
 
 Search the given directory for files named like `GUTINDEX.\d\d\d\d`. It will then attempt to parse them and import the data as `Book`s.
 
@@ -31,4 +31,13 @@ It is about 99% accurate at the moment.
 
 Connect to `#ebooks` and `#cinch-bots` as `hugobot` on [IRCHighway](irc://irc.irchighway.net/#ebooks), and listen for commands.
 
-There are really only two commands: `que` and `deq`. The first populates a queue with shares of books that don't have data. The seconds begins clearning the queue by requesting the given share and repeatining after the download completes.
+There are really only two commands: `que` and `deq`. The first populates a queue with shares of books that don't have data. The seconds begins clearing the queue by requesting the given share and repeating after the download completes.
+
+* `rake export:gutenberg`
+
+For the Gutenberg data, create a forest of links of the format:
+
+* `book/by/#{author}/#{title}` → `.../gutenberg/1/2/3/1234/`
+* `book/by/#{title}(, #{author})?` → `.../gutenberg/1/2/3/1234/`
+
+In each directory there is also a link `...` → `../...` which, ultimately extends outside the tree. On uptake, links into `...` create contextualizations between branch ids.

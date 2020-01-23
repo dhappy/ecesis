@@ -66,7 +66,7 @@ namespace :export do
   end
 
   task(gutenberg: :environment) do |t|
-    Datum.where('gutenberg_id IS NOT NULL').each do |data|
+    Datum.where('gutenberg_id IS NOT NULL').find_each do |data|
       data.books.each do |book|
         gdir = data.gutenberg_id.split('')[0..-2] + [data.gutenberg_id]
         if book.author
@@ -74,8 +74,8 @@ namespace :export do
           byebug
           FileUtils.makedirs(File.join(path))
           FileUtils.symlink(
-            File.join(pat h + [  book.title.to_s]),
-            File.join(['...', :gutenberg] + gdir)
+            File.join(path + [book.title.to_s]),
+            File.join(%w[... gutenberg] + gdir)
           )
         end
         puts data.url
