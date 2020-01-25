@@ -1,5 +1,5 @@
 class Book < ApplicationRecord
-  belongs_to :author
+  belongs_to :author, optional: true
   belongs_to :title
   has_many :contents, dependent: :destroy
   has_many :data, through: :contents
@@ -23,7 +23,7 @@ class Book < ApplicationRecord
 
   def found?
     puts "Checking: #{Rails.root}/public/book/by/#{author}/#{title}/html"
-    Dir.glob("#{Rails.root}/public/book/by/#{author}/#{title}/*html").length > 0
+    Dir.glob("#{Rails.root}/public/book/by/#{author}/#{title}/*").length > 0
   end
 
   def to_s

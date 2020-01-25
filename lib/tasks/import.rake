@@ -331,33 +331,37 @@ namespace :import do
     end
 
     def processEntry(lines)
-      lines.each{ |l| l.gsub!("\u00A0", ' ') } # nbsp not in \s
-      if(!(match = lines[0].match(/^(\S.+?)\s+(\d+)(C?)\s*$/)))
-        raise ArgumentError.new("Invalid Entry Start: #{lines[0]}")
-      else
-        main = match[1]
-        id = match[2]
-        copyright = !match[3].empty?
-        current = main
-        inMain = true
-        metas = []
+      begin
+        lines.each{ |l| l.gsub!("\u00A0", ' ') } # nbsp not in \s
+        if(!(match = lines[0].match(/^(\S.+?)\s+(\d+)(C?)\s*$/)))
+          raise ArgumentError.new("Invalid Entry Start: #{lines[0]}")
+        else
+          main = match[1]
+          id = match[2]
+          copyright = !match[3].empty?
+          current = main
+          inMain = true
+          metas = []
 
-        lines[1..].each do |line|
-          if(match = line.match(/^\s*\[(.+?)\]?\s*$/))
-            inMain = false
-            metas.push(match[1])
-          elsif(match = line.match(/^\s+(\S.+?)\]?\s*$/))
-            if inMain
-              main += " #{match[1]}"
+          lines[1..].each do |line|
+            if(match = line.match(/^\s*\[(.+?)\]?\s*$/))
+              inMain = false
+              metas.push(match[1])
+            elsif(match = line.match(/^\s+(\S.+?)\]?\s*$/))
+              if inMain
+                main += " #{match[1]}"
+              else
+                metas[-1] += " #{match[1]}"
+              end
             else
-              metas[-1] += " #{match[1]}"
+              raise ArgumentError.new("Invalid Entry Continuation: #{line}")
             end
-          else
-            raise ArgumentError.new("Invalid Entry Continuation: #{line}")
           end
-        end
 
-        saveBook(id, main, metas)
+          saveBook(id, main, metas)
+        end
+      rescue => e
+        puts e
       end
     end
 
@@ -376,27 +380,20 @@ namespace :import do
           next if !prefaced
           if line.match?(/^\s*$/)
             if inEntry
-              begin
-                processEntry(lines)
-              rescue => e
-                puts e
-              end
+              processEntry(lines)
               lines = []
             end
             inEntry = false
             next
           end
           if inEntry && line.match?(/^\S/) && line[0] != '[' # GUTINDEX.2004
-            begin
-              processEntry(lines)
-            rescue => e
-              puts e
-            end
+            processEntry(lines)
             lines = []
           end
           inEntry = true
           lines.push(line)
         end
+        processEntry(lines) # last entry
       end
     end
   end
