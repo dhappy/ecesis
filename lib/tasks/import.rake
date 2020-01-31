@@ -4,6 +4,35 @@ namespace :import do
   BANNED = ['bsk']
 
   task(
+    :gutencache,
+    [:dir] => [:environment]
+  ) do |t, args|
+    puts "Searching: #{args[:dir]}/*/*-images.epub"
+    Dir.glob("#{args[:dir]}/*/*-images.epub").each do |epub|
+      puts "Importing: #{epub}"
+
+      # cmd = IO.popen(['ipfs', 'add', out], 'r+')
+      # coverId = cmd.readlines.first
+
+      # filename = %w[cover jpg]
+      # ipfs.files.cp(new CID(coverId), filename)
+      # containedId = ipfs.files.stat(:cover)
+
+      # db.put({
+      #   type: :file, ipfs_id: containedId,
+      #   path: filename,
+      # })
+
+      # parent = %W[book #{book.fulltitle}]
+      # ipfs.files.mkdir(parent)
+      # branchId = ipfs.files.stat(:cover)
+      # db.put({
+      #   type: :context, branch_id: 
+      # })
+    end
+  end
+
+  task(
     :json,
     [:file, :award] => [:environment]
   ) do |t, args|

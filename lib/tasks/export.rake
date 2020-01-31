@@ -103,7 +103,7 @@ namespace :export do
     # collision with a predefined method?
     def linkk(src, dest, out)
       out.push({
-        type: :context, source: src, destination: dest,
+        type: :link, source: src, destination: dest,
       })
       $stderr.puts "#{File.join(src)} → #{File.join(dest)}"
     end
@@ -115,7 +115,7 @@ namespace :export do
         gdir = data.gutenberg_id.split('')[0..-2] + [data.gutenberg_id]
         if book.author
           linkk(
-            %w[book by] + %W[#{book.author}, #{book.title}],
+            %W[book by #{book.author} #{book.title}],
             %w[gutenberg] + gdir,
             out
           )

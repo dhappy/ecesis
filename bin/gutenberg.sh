@@ -18,6 +18,7 @@ rsync -avHS --progress --delete \
   --exclude "*.mp3"  --exclude "*.spx" \
   --exclude "*.ogg" \
   --exclude "*.mobi" \
+  --exclude "*.log" \
   --exclude "parts" --exclude '*.iso' \
   --exclude "*-parts" --exclude "*-rar" \
   --exclude "*-page-images" \
