@@ -64,7 +64,7 @@ Imports the epubs, covers, & metadata from Project Gutenberg's [ebook cache](bin
 A IPFS id is returned for a filesystem with paths following these patterns:
 
 * `['book', 'by', author, title, ipfsId]`
-* `['book', 'by', author.biblio, title, ipfsId]`
+* `['book', 'by', 'bibliographically', author.biblio, title, ipfsId]`
 * `['book', "title #{author && ', by #{author}'}", ipfsId]`
 * `['book', 'language', lang, "title #{author && ', (by|par|di) #{author}'}", ipfsId]`
 * `subjects.each((s) => ['subject', ...s.path, ipfsId])`

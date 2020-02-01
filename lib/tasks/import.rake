@@ -8,11 +8,101 @@ namespace :import do
     [:dir] => [:environment]
   ) do |t, args|
     puts "Searching: #{args[:dir]}/*/*-images.epub"
-    Dir.glob("#{args[:dir]}/*/*-images.epub").each do |epub|
-      puts "Importing: #{epub}"
+    outdir = "gutenlinks-#{Time.now.iso8601}"
+    puts " For: #{outdir}"
 
-      # cmd = IO.popen(['ipfs', 'add', out], 'r+')
-      # coverId = cmd.readlines.first
+    Dir.glob("#{args[:dir]}/*").each.with_index do |dir, idx|
+      ls = Dir.glob("#{dir}/*-images.epub")
+      ls = Dir.glob("#{dir}/*.epub") if ls.empty?
+      epub = ls.first
+      guten_id = dir.match(/(\d+)$/)[1]
+
+      unless epub
+        puts "Error: No epub in #{dir}"
+        next
+      end
+
+      puts "Importing: #{epub} (#{idx})"
+      path = Pathname.new(epub)
+      FileUtils.chdir(File.dirname(epub))
+    
+      epub = File.basename(epub)
+      htmlz = "#{File.basename(epub, '.*')}.htmlz"
+
+      print ' First, generate htmlz:'
+      system('ebook-convert', epub, htmlz)
+      puts ' Done'
+
+      FileUtils.makedirs('html')
+
+      print ' Next, unzip it:'
+      system('unzip', '-od', 'html/', htmlz)
+      puts ' Done'
+
+      print ' Then, import it into IPFS:'
+      cmd = IO.popen(['ipfs', 'add', '-r', 'html'], 'r+')
+      out = cmd.readlines.last
+      bookId = out.split[1]
+      puts " Done: #{bookId}"
+
+      raise StandardError.new('Missing IPFS Id') if bookId.nil?
+
+      unless File.exists?('html/metadata.opf')
+        puts "Error: No Metadata for: #{guten_id}"
+        next
+      end
+
+      puts ' Next read the metadata:'
+      File.open('html/metadata.opf') do |file|
+        doc = Nokogiri::XML(file)
+
+        xpath = ->(path, asNodes = false) {
+          res = doc.xpath(
+            path,
+            dc: 'http://purl.org/dc/elements/1.1/',
+            opf: 'http://www.idpf.org/2007/opf'
+          )
+          if !asNodes && res.size == 0
+            nil
+          elsif !asNodes && res.size === 1
+            res.to_s
+          else
+            res
+          end
+        }
+
+        add = ->(paths) {
+          paths.each do |path|
+            next if path.any?{ |p| p.nil? || p.empty? }
+            path.map!{ |p| p.gsub('%', '%25').gsub('/', '%2F').gsub("\u0000", '%00')}
+            puts " Placing @: /#{File.join(path)}"
+            system('ipfs', 'files', 'mkdir', '-p', "/#{outdir}/#{File.join(path[0..-2])}")
+            system('ipfs', 'files', 'cp', "/ipfs/#{bookId}", "/#{outdir}/#{File.join(path)}")
+          end
+        }
+
+        author = xpath.call('//dc:creator/text()')
+        author = author.map(&:to_s).join(' & ') if author.kind_of?(Nokogiri::XML::NodeSet)
+        bibauthor = xpath.call('//dc:creator[1]/@opf:file-as')
+        title = xpath.call('//dc:title/text()')
+        lang = xpath.call('//dc:language/text()')
+        subs = (
+          xpath.call('//dc:subject/text()', true)
+          .map{ |sub| sub.to_s.split(' -- ') }
+        )
+        fulltitle = "#{title}#{author && ", by #{author}"}"
+ 
+        add.call([
+          ['book', 'by', author, title],
+          ['book', 'by', 'bibliographically', bibauthor, title],
+          ['book', fulltitle],
+          # ['book', 'language', lang, fulltitle], # always 'en'
+          ['project', 'Gutenberg', guten_id]
+      ])
+
+        add.call(subs.map{ |s| ['subject'] + s + [fulltitle] })
+      end
+      puts ' Done'
 
       # filename = %w[cover jpg]
       # ipfs.files.cp(new CID(coverId), filename)
