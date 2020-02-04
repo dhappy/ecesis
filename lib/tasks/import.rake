@@ -28,7 +28,7 @@ namespace :import do
       FileUtils.chdir(File.dirname(epub))
     
       if File.directory?('html')
-        puts "Found HTML Directory: Skipping Generation"
+        puts ' Found HTML Directory: Skipping Generation'
       else
         begin
           epub = File.basename(epub)
@@ -66,7 +66,7 @@ namespace :import do
           end
           puts ' Done'
         rescue RuntimeError => err
-          $stderr.puts "Error: #{err.message}"
+          puts "Error: #{err.message}"
           FileUtils.rmtree('html')
           next
         end
@@ -78,7 +78,8 @@ namespace :import do
         out = cmd.readlines.last
         bookId = out&.split.try(:[], 1)
         unless $?.success? && bookId
-          raise RuntimeError, "IPFS Import of #{guten_id}"
+            puts "Error: IPFS Import of #{guten_id} (#{bookId})"
+          next
         end
       end
       puts " Done: #{bookId}"
@@ -124,10 +125,18 @@ namespace :import do
         author = authors.join(' & ')
         title = xpath.call('//dcterms:title/text()').gsub(/\r?\n/, ' ')
         lang = xpath.call('//dcterms:language//rdf:value/text()')
+        if lang.is_a?(Nokogiri::XML::NodeSet)
+          lang = "#{lang[0..-2].map(&:to_s).join(', ')} & #{lang[-1]}"
+        end
         subs = (
-          xpath.call('//dcterms:subject//rdf:value/text()', true).map do |sub|
-            # ToDo: Handle LCC codes separately
-            sub.to_s.split(/\s+--\s+/)
+          xpath.call('//dcterms:subject', true).map do |sub|
+            val = sub.xpath('.//rdf:value/text()')
+            val = val.to_s.split(/\s+--\s+/)
+            taxonomy = sub.xpath('.//dcam:memberOf/@rdf:resource').to_s
+            if taxonomy == 'http://purl.org/dc/terms/LCC'
+              val = ['Library of Congress', 'code'] + val
+            end
+            val
           end
         )
         shelves = (
