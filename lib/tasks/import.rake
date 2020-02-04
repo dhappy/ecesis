@@ -12,13 +12,14 @@ namespace :import do
     puts " For: #{outdir}"
 
     Dir.glob("#{args[:dir]}/*").each.with_index do |dir, idx|
+      next unless File.directory?(dir)
       ls = Dir.glob("#{dir}/*-images.epub")
       ls = Dir.glob("#{dir}/*.epub") if ls.empty?
       epub = ls.first
-      guten_id = dir.match(/(\d+)$/)[1]
+      guten_id = dir.match(/(\d+)$/).try(:[], 1)
 
-      unless epub
-        puts "Error: No epub in #{dir}"
+      unless epub && guten_id
+        $stderr.puts "Error: No epub (#{guten_id}) in #{dir}"
         next
       end
 
@@ -26,46 +27,79 @@ namespace :import do
       path = Pathname.new(epub)
       FileUtils.chdir(File.dirname(epub))
     
-      epub = File.basename(epub)
-      htmlz = "#{File.basename(epub, '.*')}.htmlz"
+      if File.directory?('html')
+        puts "Found HTML Directory: Skipping Generation"
+      else
+        begin
+          epub = File.basename(epub)
+          htmlz = "#{File.basename(epub, '.*')}.htmlz"
 
-      print ' First, generate htmlz:'
-      system('ebook-convert', epub, htmlz)
-      puts ' Done'
+          print ' First, generate htmlz:'
+          unless system('ebook-convert', epub, htmlz)
+            raise RuntimeError, "Converting #{guten_id}"
+          end
+          puts ' Done'
 
-      FileUtils.makedirs('html')
+          FileUtils.makedirs('html')
 
-      print ' Next, unzip it:'
-      system('unzip', '-od', 'html/', htmlz)
-      puts ' Done'
+          print ' Next, unzip it:'
+          unless system('unzip', '-qod', 'html/', htmlz)
+            raise RuntimeError, "Unzipping #{guten_id}"
+          end
+          puts ' Done'
 
-      print ' Then, import it into IPFS:'
-      cmd = IO.popen(['ipfs', 'add', '-r', 'html'], 'r+')
-      out = cmd.readlines.last
-      bookId = out.split[1]
-      puts " Done: #{bookId}"
+          print ' Next, copy complete metadata:'
+          metadata = Dir.glob('*.rdf').try(:[], 0)
+          unless metadata
+            raise RuntimeError, "No Metadata for #{guten_id}"
+          end
+          FileUtils.copy(metadata, 'html/metadata.rdf')
+          puts ' Done'
 
-      raise StandardError.new('Missing IPFS Id') if bookId.nil?
-
-      unless File.exists?('html/metadata.opf')
-        puts "Error: No Metadata for: #{guten_id}"
-        next
+          print ' Then, fix links:'
+          unless system(
+            'xsltproc', '--html', '-o', 'html/index.html',
+            Rails.root.join('bin', 'relativize_paths.xslt').to_s,
+            'html/index.html'
+          )
+            raise RuntimeError, "Cleaning HTML: #{guten_id}"
+          end
+          puts ' Done'
+        rescue RuntimeError => err
+          $stderr.puts "Error: #{err.message}"
+          FileUtils.rmtree('html')
+          next
+        end
       end
 
-      puts ' Next read the metadata:'
-      File.open('html/metadata.opf') do |file|
+      print ' Then, import it into IPFS:'
+      bookId = nil
+      IO.popen(['ipfs', 'add', '-r', 'html'], 'r+') do |cmd|
+        out = cmd.readlines.last
+        bookId = out&.split.try(:[], 1)
+        unless $?.success? && bookId
+          raise RuntimeError, "IPFS Import of #{guten_id}"
+        end
+      end
+      puts " Done: #{bookId}"
+
+      puts ' Next, read the metadata:'
+      File.open('html/metadata.rdf') do |file|
         doc = Nokogiri::XML(file)
 
         xpath = ->(path, asNodes = false) {
           res = doc.xpath(
             path,
             dc: 'http://purl.org/dc/elements/1.1/',
-            opf: 'http://www.idpf.org/2007/opf'
+            opf: 'http://www.idpf.org/2007/opf',
+            dcterms: 'http://purl.org/dc/terms/',
+            rdf: 'http://www.w3.org/1999/02/22-rdf-syntax-ns#',
+            pgterms: 'http://www.gutenberg.org/2009/pgterms/'
           )
           if !asNodes && res.size == 0
             nil
           elsif !asNodes && res.size === 1
-            res.to_s
+            Nokogiri::HTML.parse(res.to_s).text # uses & escapes
           else
             res
           end
@@ -81,44 +115,40 @@ namespace :import do
           end
         }
 
-        author = xpath.call('//dc:creator/text()')
-        author = author.map(&:to_s).join(' & ') if author.kind_of?(Nokogiri::XML::NodeSet)
-        bibauthor = xpath.call('//dc:creator[1]/@opf:file-as')
-        title = xpath.call('//dc:title/text()')
-        lang = xpath.call('//dc:language/text()')
+        bibauthors = xpath.call('//dcterms:creator//pgterms:name/text()', true)
+        bibauthor = bibauthors.map(&:to_s).join(' & ')
+        authors = bibauthors.map do |a|
+          a.to_s.sub(/^(.+?), (.+)$/, '\2 \1')
+          .gsub(/\s+\(.*?\)\s*/, ' ')
+        end
+        author = authors.join(' & ')
+        title = xpath.call('//dcterms:title/text()').gsub(/\r?\n/, ' ')
+        lang = xpath.call('//dcterms:language//rdf:value/text()')
         subs = (
-          xpath.call('//dc:subject/text()', true)
-          .map{ |sub| sub.to_s.split(' -- ') }
+          xpath.call('//dcterms:subject//rdf:value/text()', true).map do |sub|
+            # ToDo: Handle LCC codes separately
+            sub.to_s.split(/\s+--\s+/)
+          end
+        )
+        shelves = (
+          xpath.call('//pgterms:bookshelf//rdf:value/text()', true).map do |shelf|
+            shelf.to_s.sub(/\s*\(Bookshelf\)/, '')
+          end
         )
         fulltitle = "#{title}#{author && ", by #{author}"}"
- 
+
         add.call([
           ['book', 'by', author, title],
-          ['book', 'by', 'bibliographically', bibauthor, title],
-          ['book', fulltitle],
-          # ['book', 'language', lang, fulltitle], # always 'en'
-          ['project', 'Gutenberg', guten_id]
-      ])
-
+          ['book', 'bibliographically', bibauthor, title],
+          ['book', 'entitled', fulltitle],
+          ['book', 'language', lang, fulltitle],
+          ['project', 'Gutenberg', 'id', guten_id]
+        ])
         add.call(subs.map{ |s| ['subject'] + s + [fulltitle] })
+        add.call(shelves.map do |s|
+          %w[project Gutenberg bookshelf] + [s, fulltitle]
+        end)
       end
-      puts ' Done'
-
-      # filename = %w[cover jpg]
-      # ipfs.files.cp(new CID(coverId), filename)
-      # containedId = ipfs.files.stat(:cover)
-
-      # db.put({
-      #   type: :file, ipfs_id: containedId,
-      #   path: filename,
-      # })
-
-      # parent = %W[book #{book.fulltitle}]
-      # ipfs.files.mkdir(parent)
-      # branchId = ipfs.files.stat(:cover)
-      # db.put({
-      #   type: :context, branch_id: 
-      # })
     end
   end
 
