@@ -58,4 +58,26 @@
       </xsl:choose>
     </xsl:attribute>
   </xsl:template>
+
+  <!-- Allow images to be linked to -->
+  <xsl:template match="html:img|img">
+    <xsl:copy>
+      <xsl:copy-of select="@*[not(name() = 'id')]" />
+      <xsl:attribute name='id'>
+        <xsl:text>img-</xsl:text>
+        <xsl:value-of select='@src'/>
+      </xsl:attribute>
+      <xsl:apply-templates />
+    </xsl:copy>
+  </xsl:template>
+
+  <!-- Insert styles for ereader -->
+  <xsl:template match="html:head|head">
+    <xsl:copy>
+      <xsl:copy-of select="@*"/>
+      <xsl:apply-templates />
+      <script src='mimir.js'/>
+      <link href='mimir.css' rel='stylesheet'/>
+    </xsl:copy>
+  </xsl:template>
 </xsl:stylesheet>
