@@ -194,6 +194,11 @@ namespace :import do
         next
       end
 
+      if File.new(epub).size == 0
+        puts "Error: #{epub} is empty"
+        next
+      end
+
       puts "Importing: #{epub} (#{idx})"
       path = Pathname.new(epub)
       FileUtils.chdir(File.dirname(epub))
@@ -223,6 +228,9 @@ namespace :import do
               rootdir = File.dirname(root)
               rootdir += '/' unless rootdir.empty? 
               doc = epub_zip.glob("#{rootdir}#{coverref}").first
+              unless doc
+                raise RuntimeError, "Missing in zip: #{rootdir}#{coverref}"
+              end
               doc.extract(cover)
             end
           end
@@ -240,7 +248,7 @@ namespace :import do
           out = cmd.readlines.last
           coverId = out&.split.try(:[], 1)
           unless $?.success? && coverId
-            puts "Error: Cover Import of #{guten_id} (#{bookId})"
+            puts "Error: Cover Import of #{guten_id} (#{coverId})"
             next
           end
         end
