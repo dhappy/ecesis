@@ -234,6 +234,8 @@ namespace :import do
               doc.extract(cover)
             end
           end
+        rescue Zip::Error => err
+          puts "Error: #{err.message}"
         rescue RuntimeError => err
           puts "Error: #{err.message}"
         end
@@ -322,7 +324,11 @@ namespace :import do
           .gsub(/\s+\(.*?\)\s*/, ' ')
         end
         author = authors.join(' & ')
-        title = xpath.call('//dcterms:title/text()').gsub(/\r?\n/, ' ')
+        title = xpath.call('//dcterms:title/text()')
+        if title.is_a?(Nokogiri::XML::NodeSet)
+          title = title.map(&:to_s).join(' / ')
+        end
+        title.gsub!(/\r?\n/, ' ')
         lang = xpath.call('//dcterms:language//rdf:value/text()')
         if lang.is_a?(Nokogiri::XML::NodeSet)
           lang = "#{lang[0..-2].map(&:to_s).join(', ')} & #{lang[-1]}"
@@ -343,7 +349,7 @@ namespace :import do
             shelf.to_s.sub(/\s*\(Bookshelf\)/, '')
           end
         )
-        fulltitle = "#{title}#{author && ", by #{author}"}"
+        fulltitle = "#{title}#{author.present? && ", by #{author}"}"
 
         add.call([
           ['book', 'by', author, title],
