@@ -77,12 +77,20 @@
       </span>
     </li>
     <li>
-      <span class='name'>Links</em>
-      </span>
+      <span class='name'>Links</span>
       <span class='value'>
         <%= link_to(
           number_with_delimiter(Link.count, delimiter: ','),
           links_path
+        ) %>
+      </span>
+    </li>
+    <li>
+      <span class='name'>Awards</span>
+      <span class='value'>
+        <%= link_to(
+          number_with_delimiter(Award.count, delimiter: ','),
+          awards_path
         ) %>
       </span>
     </li>

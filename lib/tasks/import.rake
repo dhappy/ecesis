@@ -1,7 +1,7 @@
 namespace :import do
   desc 'Import data from external sources'
 
-  BANNED = ['bsk']
+  BANNED = []
 
   task(
     :gutencache,
@@ -476,7 +476,7 @@ namespace :import do
         admin ||= m.user
         filenames = Link.joins(:filename).includes(:filename).map(&:filename).uniq
 
-        filenames.each do |fname|
+          filenames.each do |fname|
           next if fname.has_data?
           next if fname.shares.empty?
 
@@ -547,67 +547,62 @@ namespace :import do
           end
 
           admin.send(" Saved To: #{out}")
+        else
+          admin.send("Accepting: #{name}")
 
-          return
-        end
-
-        admin.send("Accepting: #{name}")
-
-        if name.links.size > 1
-          admin.send("Unexpected # of links: #{name.links.size}")
-        end
-
-        link = name.links.first
-        mimetype = name.mimetype
-        book = link.book
-        outdir = "#{Rails.root}/public/book/by/#{book.author}/#{book.title}"
-        FileUtils.makedirs(outdir)
-        out = "#{outdir}/#{name.extension}"
-
-        File.open(out, 'wb') do |f|
-          dcc.accept(f)
-        end
-
-        admin.send("Saved: #{out}")
-
-        if name.extension == 'rar'
-          Dir.chdir(outdir)
-
-          admin.send("Extracting: #{out}")
-
-          system('rar x -y rar')
-          File.unlink('rar')
-
-          if (
-            Dir.glob('*').size == 1 \
-            && File.file?(Dir.glob('*').first)
-          )
-            f = Filename.new(
-              name: Dir.glob('*').first
-            )
-            FileUtils.mv(
-              f.name, f.extension
-            )
-            out = "#{outdir}/#{f.extension}"
-            mimetype = f.mimetype
-          else
-            admin.send("RAR Difficulty In: #{outdir}")
+          if name.links.size > 1
+            admin.send("Unexpected # of links: #{name.links.size}")
           end
-        end
 
-        if File.file?(out)
-          cmd = IO.popen(['ipfs', 'add', out], 'r+')
-          out = cmd.readlines.first
-          id = out.split[1]
-          data = Datum.find_or_create_by(
-            ipfs_id: id, mimetype: mimetype
-          )
+          link = name.links.first
+          mimetype = name.mimetype
+          book = link.book
+          outdir = "#{Rails.root}/public/book/by/#{book.author}/#{book.title}"
+          FileUtils.makedirs(outdir)
+          out = "#{outdir}/#{name.extension}"
 
-          admin.send("Saved: #{book} (#{mimetype}) => #{id}")
+          File.open(out, 'wb') do |f|
+            dcc.accept(f)
+          end
 
-          name.links.each do |link|
-            admin.send("Linking: #{link.book} & #{data.ipfs_id}")
-            link.book.data << data
+          admin.send("Saved: #{out}")
+
+          if name.extension == 'rar'
+            begin
+              Dir.chdir(outdir)
+
+              admin.send("Extracting: #{out}")
+
+              system('unrar x -y rar')
+              # File.unlink('rar')
+
+              files = Dir.glob('*epub') + Dir.glob('*html')
+              raise RuntimeError, 'Too many files' if files.size > 1
+              raise RuntimeError, 'No files extracted' if files.size < 1
+              file = files.first
+              f = Filename.new(file)
+              FileUtils.mv(f.name, f.extension)
+              file = "#{outdir}/#{f.extension}"
+              mimetype = f.mimetype
+            rescue RuntimeError => err
+              admin.send("RAR Error: #{err.message}")
+            end
+          end
+
+          if File.file?(file)
+            cmd = IO.popen(['ipfs', 'add', file], 'r+')
+            out = cmd.readlines.first
+            id = out.split[1]
+            data = Datum.find_or_create_by(
+              ipfs_id: id, mimetype: mimetype
+            )
+
+            admin.send("Saved: #{book} (#{mimetype}) => #{id}")
+
+            name.links.each do |link|
+              admin.send("Linking: #{link.book} & #{data.ipfs_id}")
+              link.book.data << data
+            end
           end
         end
 
