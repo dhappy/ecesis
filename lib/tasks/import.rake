@@ -1,8 +1,7 @@
 namespace :import do
-  desc 'Import data from external sources'
+  BANNED = %w[Pondering42]
 
-  BANNED = []
-
+  desc 'Import epubs from Project Gutenberg'
   task(
     :gutencache,
     [:dir] => [:environment]
@@ -172,6 +171,7 @@ namespace :import do
     end
   end
 
+  desc 'Import epubs and covers from Project Gutenberg'
   task(
     :gutenepubs,
     [:dir] => [:environment]
@@ -365,6 +365,7 @@ namespace :import do
     end
   end
 
+  desc 'Import awards from JSON'
   task(
     :json,
     [:file, :award] => [:environment]
@@ -380,6 +381,7 @@ namespace :import do
     end
   end
 
+  desc 'Import shares list from OmenServe'
   task(
     :omenserve,
     [:file] => [:environment]
@@ -389,6 +391,7 @@ namespace :import do
     end
   end
 
+  desc 'Import epubs author/title directories'
   task(
     :dir,
     [:dir] => [:environment]
@@ -438,6 +441,7 @@ namespace :import do
     end
   end
 
+  desc 'IRC bot to download shares without data'
   task(irc: :environment) do |t, args|
     require "cinch"
     require "cinch/helpers"
@@ -455,6 +459,10 @@ namespace :import do
 
       if nxt
         share = nxt.shares.sample
+        while BANNED.include?(share.server.name)
+          admin.send("Skipping Banned: #{share.directory}/#{share.filename} @ #{share.server}")
+          share = nxt.shares.sample
+        end
         admin.send("Requesting: #{share.directory}/#{share.filename} @ #{share.server}")
         channel.send(share.irc_link)
       else
@@ -485,6 +493,33 @@ namespace :import do
             && BANNED.include?(fname.shares.first.server.name)
           )
             admin.send("Skipping Banned: (#{fname.shares.first.server.name}) #{fname}")
+            next
+          end
+
+          queue << fname
+        end
+
+        admin.send("Queued: #{queue.size} #{'book'.pluralize(queue.size)}")
+      end
+
+      on :message, 'hugos' do |m|
+        admin ||= m.user
+        filenames = Filename.where("name ILIKE 'Hugo %'")
+        filenames.each do |fname|
+          next if fname.has_data?
+          next if fname.shares.empty?
+
+          if(
+            fname.shares.size == 1 \
+            && BANNED.include?(fname.shares.first.server.name)
+          )
+            admin.send("Skipping Banned: (#{fname.shares.first.server.name}) #{fname}")
+            next
+          end
+
+          outdir = "#{Rails.root}/tmp/books"
+          if File.exists?("#{outdir}/#{fname}")
+            admin.send("Skipping Existing: #{fname}")
             next
           end
 
@@ -559,31 +594,32 @@ namespace :import do
           book = link.book
           outdir = "#{Rails.root}/public/book/by/#{book.author}/#{book.title}"
           FileUtils.makedirs(outdir)
-          out = "#{outdir}/#{name.extension}"
+          file = "#{outdir}/index.#{name.extension}"
 
-          File.open(out, 'wb') do |f|
+          File.open(file, 'wb') do |f|
             dcc.accept(f)
           end
 
-          admin.send("Saved: #{out}")
+          admin.send("Saved: #{file}")
 
           if name.extension == 'rar'
             begin
               Dir.chdir(outdir)
 
-              admin.send("Extracting: #{out}")
+              admin.send("Extracting: #{file}")
 
-              system('unrar x -y rar')
-              # File.unlink('rar')
+              system('unrar x -y index.rar')
 
               files = Dir.glob('*epub') + Dir.glob('*html')
               raise RuntimeError, 'Too many files' if files.size > 1
               raise RuntimeError, 'No files extracted' if files.size < 1
               file = files.first
-              f = Filename.new(file)
+              f = Filename.new(name: file)
               FileUtils.mv(f.name, f.extension)
               file = "#{outdir}/#{f.extension}"
               mimetype = f.mimetype
+
+              File.unlink('index.rar')
             rescue RuntimeError => err
               admin.send("RAR Error: #{err.message}")
             end
@@ -613,6 +649,7 @@ namespace :import do
     bot.start
   end
 
+  desc 'Import award information from the ISFDb'
   task isfdb: :environment do |args, t|
     client = Mysql2::Client.new(
       host: 'localhost', database: 'isfdb'
@@ -660,6 +697,7 @@ namespace :import do
     end
   end
 
+  desc 'Read metadata from Gutenberg'
   task(
     :gutenberg,
     [:dir] => [:environment]
