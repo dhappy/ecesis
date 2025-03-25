@@ -458,13 +458,15 @@ namespace :import do
       end
 
       if nxt
-        share = nxt.shares.sample
-        while BANNED.include?(share.server.name)
-          admin.send("Skipping Banned: #{share.directory}/#{share.filename} @ #{share.server}")
-          share = nxt.shares.sample
+        shares = nxt.shares
+        shares = shares.reject{ |s| BANNED.include?(s.server.name) }
+        share = shares.sample
+        unless share
+          admin.send("Shares Filtered: #{BANNED}")
+        else
+          admin.send("Requesting: #{share.directory}/#{share.filename} @ #{share.server}")
+          channel.send(share.irc_link)
         end
-        admin.send("Requesting: #{share.directory}/#{share.filename} @ #{share.server}")
-        channel.send(share.irc_link)
       else
         admin.send('Queue Empty')
       end
@@ -507,6 +509,34 @@ namespace :import do
         filenames = Filename.where("name ILIKE 'Hugo %'")
         filenames.each do |fname|
           next if fname.has_data?
+          next if fname.shares.empty?
+
+          if(
+            fname.shares.size == 1 \
+            && BANNED.include?(fname.shares.first.server.name)
+          )
+            admin.send("Skipping Banned: (#{fname.shares.first.server.name}) #{fname}")
+            next
+          end
+
+          outdir = "#{Rails.root}/tmp/books"
+          if File.exists?("#{outdir}/#{fname}")
+            # admin.send("Skipping Existing: #{fname}") // Too slow
+            next
+          end
+
+          queue << fname
+        end
+
+        admin.send("Queued: #{queue.size} #{'book'.pluralize(queue.size)}")
+      end
+
+      on :message, 'comics' do |m|
+        admin ||= m.user
+        filenames = Filename.where("name ILIKE '%cbr'")
+        filenames.each do |fname|
+          next if fname.has_data?
+          
           next if fname.shares.empty?
 
           if(
@@ -618,10 +648,10 @@ namespace :import do
               FileUtils.mv(f.name, f.extension)
               file = "#{outdir}/#{f.extension}"
               mimetype = f.mimetype
-
-              File.unlink('index.rar')
             rescue RuntimeError => err
               admin.send("RAR Error: #{err.message}")
+            ensure
+              File.unlink('index.rar')
             end
           end
 
